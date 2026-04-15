@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="背脂記錄">
+<title>母豬背脂記錄</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+:root{
+  --bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3350;
+  --text:#e8eaf6;--text2:#8b90b8;--accent:#4f8ef7;
+  --fat:#e05c5c;--fat-bg:#2a1a1a;--mid:#4caf7d;--mid-bg:#1a2a20;
+  --thin:#e0a040;--thin-bg:#2a2010;--btn:#252942;--btn-active:#3a3f6e;--radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;max-width:430px;margin:0 auto;padding-bottom:80px;user-select:none}
+.screen{display:none;padding:0 16px}.screen.active{display:block}
+.card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:16px;margin-bottom:12px}
+.sec-title{font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.thresh-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}
+.thresh-row:last-child{border-bottom:none}
+.thresh-val{display:flex;align-items:center;gap:8px}
+.thresh-val span{font-size:16px;font-weight:700;min-width:32px;text-align:right}
+.adj{width:32px;height:32px;background:var(--btn);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit}
+.adj:active{background:var(--btn-active)}
+.primary-btn{width:100%;padding:18px;background:var(--accent);border:none;border-radius:var(--radius);color:#fff;font-size:18px;font-weight:700;font-family:inherit;cursor:pointer;transition:opacity .15s}
+.primary-btn:active{opacity:.85}
+.sort-btn{flex:1;padding:10px 0;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:13px;font-family:inherit;cursor:pointer;transition:all .15s}
+.sort-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.num-btn{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:26px;font-weight:500;font-family:inherit;padding:20px 0;cursor:pointer;transition:background .1s;text-align:center}
+.num-btn:active{background:var(--btn-active)}
+.confirm-btn{background:var(--accent);border-color:var(--accent);color:#fff;font-size:18px;font-weight:700}
+.confirm-btn:active{opacity:.85}
+.nav-action{padding:16px;background:var(--btn);border:1px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;cursor:pointer;text-align:center}
+.nav-action:active{background:var(--btn-active)}
+.result-panel{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:16px;margin-bottom:12px;min-height:90px;display:flex;align-items:center;justify-content:space-between;transition:all .2s}
+.result-panel.fat{border-color:var(--fat);background:var(--fat-bg)}
+.result-panel.mid{border-color:var(--mid);background:var(--mid-bg)}
+.result-panel.thin{border-color:var(--thin);background:var(--thin-bg)}
+.grade-badge{font-size:20px;font-weight:700;padding:8px 16px;border-radius:10px}
+.fat .grade-badge{color:var(--fat);background:rgba(224,92,92,.15)}
+.mid .grade-badge{color:var(--mid);background:rgba(76,175,125,.15)}
+.thin .grade-badge{color:var(--thin);background:rgba(224,160,64,.15)}
+.input-display{background:var(--surface);border:2px solid var(--border);border-radius:var(--radius);padding:14px 16px;font-size:28px;font-weight:700;letter-spacing:2px;min-height:64px;display:flex;align-items:center;transition:border-color .15s;margin-bottom:8px}
+.input-display.active{border-color:var(--accent)}
+.cursor{display:inline-block;width:2px;height:32px;background:var(--accent);margin-left:2px;animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.placeholder{color:var(--text2);font-size:18px;font-weight:400;letter-spacing:0}
+.step-bar{display:flex;gap:6px;margin-bottom:12px}
+.step{flex:1;height:4px;border-radius:2px;background:var(--border);transition:background .2s}
+.step.active{background:var(--accent)}
+.input-label{font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;display:block}
+.sow-card{background:var(--surface2);border:1px solid var(--accent);border-radius:var(--radius);padding:12px 16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.sync-banner{background:var(--surface2);border:1px solid var(--thin);border-radius:10px;padding:8px 12px;font-size:13px;color:var(--thin);margin-bottom:8px;display:none;align-items:center;gap:8px}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:var(--surface);border-top:1px solid var(--border);display:flex;z-index:100}
+.nav-btn{flex:1;padding:12px 0 16px;background:none;border:none;color:var(--text2);font-size:11px;font-family:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px}
+.nav-btn.active{color:var(--accent)}
+.nav-icon{font-size:22px}
+.tab-bar{display:flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
+.tab-btn{flex:1;height:40px;border:none;background:var(--surface2);color:var(--text2);font-size:14px;font-family:inherit;cursor:pointer}
+.tab-btn.active{background:var(--surface);color:var(--text);font-weight:500}
+.record-item{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:8px}
+.record-item.fat{border-left:3px solid var(--fat)}
+.record-item.mid{border-left:3px solid var(--mid)}
+.record-item.thin{border-left:3px solid var(--thin)}
+.rec-grade.fat{color:var(--fat)}.rec-grade.mid{color:var(--mid)}.rec-grade.thin{color:var(--thin)}
+.stat-card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:12px;text-align:center}
+.stat-num{font-size:28px;font-weight:700}
+.stat-label{font-size:11px;color:var(--text2);margin-top:2px}
+.search-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:15px;color:var(--text);font-family:inherit;width:100%;margin-bottom:12px;outline:none}
+.search-box:focus{border-color:var(--accent)}
+.history-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border)}
+.history-row:last-child{border-bottom:none}
+.history-bar-wrap{flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.history-bar{height:100%;border-radius:4px}
+.history-bar.fat{background:var(--fat)}.history-bar.mid{background:var(--mid)}.history-bar.thin{background:var(--thin)}
+.empty-msg{text-align:center;padding:48px 0;color:var(--text2);font-size:15px}
+</style>
+</head>
+<body>
+
+<!-- SETUP -->
+<div class="screen active" id="screen-setup">
+<div style="padding:0 0 20px">
+  <div style="padding:48px 0 24px;text-align:center">
+    <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.5px">母豬背脂記錄</h1>
+    <p style="font-size:14px;color:var(--text2);margin-top:6px">開始前設定量測參數</p>
+  </div>
+
+  <div class="card">
+    <div class="sec-title">懷孕天數</div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <input type="number" id="cfg-day" value="29" min="1" max="114"
+        style="flex:1;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:28px;font-weight:700;font-family:inherit;padding:14px 16px;text-align:center;-webkit-appearance:none"
+        oninput="config.day=parseInt(this.value)||1">
+      <span style="font-size:16px;color:var(--text2)">天</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sec-title">分級閾值（mm）</div>
+    <div class="thresh-row">
+      <span style="font-size:14px;color:var(--fat)">偏肥 ≥</span>
+      <div class="thresh-val">
+        <button class="adj" onclick="adj('fat',-1)">−</button>
+        <span id="val-fat">16</span>
+        <button class="adj" onclick="adj('fat',1)">+</button>
+        <span style="font-size:13px;color:var(--text2)">mm</span>
+      </div>
+    </div>
+    <div class="thresh-row">
+      <span style="font-size:14px;color:var(--mid)">中等</span>
+      <span style="font-size:14px;color:var(--text2)" id="mid-range">11–15.9 mm</span>
+    </div>
+    <div class="thresh-row">
+      <span style="font-size:14px;color:var(--thin)">偏瘦 &lt;</span>
+      <div class="thresh-val">
+        <button class="adj" onclick="adj('thin',-1)">−</button>
+        <span id="val-thin">11</span>
+        <button class="adj" onclick="adj('thin',1)">+</button>
+        <span style="font-size:13px;color:var(--text2)">mm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sec-title">豬隻清單（選填）</div>
+    <div style="font-size:13px;color:var(--text2);margin-bottom:8px">貼上耳號清單（格式：耳號,欄位），每行一頭</div>
+    <textarea id="sow-paste" rows="5"
+      placeholder="貼上清單，例如：&#10;4796,配種舍-4-63&#10;6030,配種舍-4-61&#10;1635-5,配種舍-3-65"
+      style="width:100%;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:14px;padding:10px;resize:none;outline:none;line-height:1.6"></textarea>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button onclick="importList()" style="flex:1;padding:10px;background:var(--accent);border:none;border-radius:10px;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">擷取耳號</button>
+      <button onclick="clearList()" style="padding:10px 14px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:14px;font-family:inherit;cursor:pointer">清除</button>
+    </div>
+    <div id="list-preview" style="margin-top:8px;font-size:13px;color:var(--text2)"></div>
+    <div id="sort-section" style="display:none;margin-top:12px">
+      <div style="font-size:12px;color:var(--text2);margin-bottom:6px">排序方式</div>
+      <div style="display:flex;gap:6px">
+        <button class="sort-btn active" id="sort-orig" onclick="sortList('orig')">原始順序</button>
+        <button class="sort-btn" id="sort-asc" onclick="sortList('asc')">小→大</button>
+        <button class="sort-btn" id="sort-desc" onclick="sortList('desc')">大→小</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="primary-btn" onclick="startSession()">開始量測</button>
+</div>
+</div>
+
+<!-- MEASURE -->
+<div class="screen" id="screen-measure">
+<div style="display:flex;flex-direction:column;height:100dvh;padding:0;overflow:hidden">
+
+  <div style="padding:10px 16px 6px;flex-shrink:0">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <button onclick="showScreen('setup')" style="background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:13px;font-family:inherit;padding:6px 12px;cursor:pointer">← 設定</button>
+      <div style="font-size:12px;color:var(--text2);text-align:right">懷孕 <strong id="m-day">29</strong> 天 ｜ 偏肥≥<strong id="m-fat">16</strong> 偏瘦&lt;<strong id="m-thin">11</strong></div>
+    </div>
+    <div class="sync-banner" id="sync-banner" style="margin-top:6px">⏳ <span id="sync-text">0</span> 筆待同步，連網後自動上傳</div>
+  </div>
+
+  <div style="padding:0 16px;flex-shrink:0">
+    <div style="display:flex;gap:8px">
+      <div id="result-panel" class="result-panel" style="flex:1;min-height:64px;margin-bottom:0;padding:10px 14px">
+        <div style="color:var(--text2);font-size:13px;width:100%;text-align:center">上一筆結果</div>
+      </div>
+      <div id="sow-card" style="flex:1;background:var(--surface2);border:1px solid var(--accent);border-radius:var(--radius);padding:10px 14px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:18px;font-weight:700" id="sow-card-id">—</div>
+        <div style="font-size:12px;color:var(--accent);margin-top:2px" id="sow-card-pen">載入清單後顯示</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px">第 <span id="sow-card-idx">—</span> / <span id="sow-card-total">—</span> 頭 ｜ 已記錄 <strong id="session-count">0</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:6px 16px 4px;flex-shrink:0">
+    <div class="step-bar" style="margin-bottom:4px">
+      <div class="step active" id="step1"></div>
+      <div class="step" id="step2"></div>
+    </div>
+    <span class="input-label" id="input-label" style="margin-bottom:4px">耳號</span>
+    <div class="input-display active" id="input-display" style="min-height:52px;padding:10px 14px;font-size:24px;margin-bottom:0">
+      <span class="placeholder">1234-5</span>
+    </div>
+  </div>
+
+  <div style="padding:6px 16px;flex:1;display:flex;flex-direction:column;gap:6px;min-height:0">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;flex:1">
+      <button class="num-btn" onclick="numPress('1')" style="padding:0;font-size:24px">1</button>
+      <button class="num-btn" onclick="numPress('2')" style="padding:0;font-size:24px">2</button>
+      <button class="num-btn" onclick="numPress('3')" style="padding:0;font-size:24px">3</button>
+      <button class="num-btn" onclick="numPress('4')" style="padding:0;font-size:24px">4</button>
+      <button class="num-btn" onclick="numPress('5')" style="padding:0;font-size:24px">5</button>
+      <button class="num-btn" onclick="numPress('6')" style="padding:0;font-size:24px">6</button>
+      <button class="num-btn" onclick="numPress('7')" style="padding:0;font-size:24px">7</button>
+      <button class="num-btn" onclick="numPress('8')" style="padding:0;font-size:24px">8</button>
+      <button class="num-btn" onclick="numPress('9')" style="padding:0;font-size:24px">9</button>
+      <button class="num-btn" id="special-btn" onclick="specialPress()" style="padding:0;font-size:20px;color:var(--text2)">－</button>
+      <button class="num-btn" onclick="numPress('0')" style="padding:0;font-size:24px">0</button>
+      <button class="num-btn" onclick="numDel()" style="padding:0;font-size:20px;color:var(--text2)">⌫</button>
+    </div>
+    <button class="num-btn confirm-btn" onclick="numConfirm()" style="width:100%;padding:14px;font-size:17px;flex-shrink:0">確認記錄</button>
+    <div id="nav-btns" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;flex-shrink:0">
+      <button class="nav-action" onclick="prevSow()" style="color:var(--text2);padding:12px">← 上一頭</button>
+      <button class="nav-action" onclick="skipSow()" style="color:var(--thin);padding:12px">跳過 →</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- RECORDS -->
+<div class="screen" id="screen-records">
+<div style="padding-bottom:20px">
+  <div style="padding:48px 0 16px;display:flex;align-items:center;justify-content:space-between">
+    <h1 style="font-size:22px;font-weight:700">記錄</h1>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" id="tab-batch-btn" onclick="switchTab('batch')">本批</button>
+    <button class="tab-btn" id="tab-history-btn" onclick="switchTab('history')">歷史</button>
+  </div>
+
+  <div id="tab-batch">
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <button onclick="exportCSV(true)" style="flex:1;padding:10px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--accent);font-size:13px;font-family:inherit;cursor:pointer">匯出本批 CSV</button>
+      <button onclick="clearBatch()" style="padding:10px 14px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--thin);font-size:13px;font-family:inherit;cursor:pointer">清除本批</button>
+    </div>
+    <div id="batch-content"></div>
+  </div>
+
+  <div id="tab-history" style="display:none">
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <button onclick="exportCSV(false)" style="flex:1;padding:10px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--accent);font-size:13px;font-family:inherit;cursor:pointer">匯出全部 CSV</button>
+    </div>
+    <input class="search-box" type="text" id="search-input" placeholder="搜尋耳號..." oninput="renderHistory()">
+    <div id="history-content"></div>
+  </div>
+</div>
+</div>
+
+<!-- HISTORY MODAL -->
+<div id="history-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:200;overflow-y:auto;padding:16px">
+  <div style="background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:16px;max-width:398px;margin:60px auto 0">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <div style="font-size:20px;font-weight:700" id="modal-title">歷史記錄</div>
+      <button onclick="closeHistory()" style="background:var(--btn);border:1px solid var(--border);border-radius:8px;color:var(--text2);font-size:14px;padding:6px 12px;cursor:pointer;font-family:inherit">關閉</button>
+    </div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<nav class="bottom-nav" id="bottom-nav" style="display:none">
+  <button class="nav-btn active" id="nav-measure" onclick="showScreen('measure')">
+    <span class="nav-icon">📏</span>量測
+  </button>
+  <button class="nav-btn" id="nav-records" onclick="showScreen('records')">
+    <span class="nav-icon">📋</span>記錄
+  </button>
+</nav>
+
+<script>
+const SHEETS_URL='https://script.google.com/macros/s/AKfycbxI5mQyfoAmnxA5tf5DprM-Alq15Dfyi_dbSfYpnp3dFus9XGnj1fLd6Br5EZLnIAua/exec';
+
+let config={day:29,fat:16,thin:11};
+let inputStep=1,currentInput='',currentSowId='';
+let records=[],queue=[],sessionCount=0,batchIds=new Set();
+let sowList=[],sowListOrig=[],listIndex=0,currentSort='orig';
+
+// --- Storage ---
+function loadAll(){
+  try{records=JSON.parse(localStorage.getItem('bf_records')||'[]')}catch(e){records=[]}
+  try{queue=JSON.parse(localStorage.getItem('bf_queue')||'[]')}catch(e){queue=[]}
+  try{sowList=JSON.parse(localStorage.getItem('bf_sowlist')||'[]')}catch(e){sowList=[]}
+  sowListOrig=[...sowList];
+}
+function saveRec(){try{localStorage.setItem('bf_records',JSON.stringify(records))}catch(e){}}
+function saveQueue(){try{localStorage.setItem('bf_queue',JSON.stringify(queue))}catch(e){}}
+function saveSowList(){try{localStorage.setItem('bf_sowlist',JSON.stringify(sowList))}catch(e){}}
+loadAll();
+
+// --- Config ---
+function adj(key,delta){
+  config[key]=Math.max(1,Math.min(40,config[key]+delta));
+  document.getElementById('val-'+key).textContent=config[key];
+  updateMidRange();
+}
+function updateMidRange(){
+  document.getElementById('mid-range').textContent=config.thin+'–'+(config.fat-0.1).toFixed(1)+' mm';
+}
+
+// --- Sow List ---
+function importList(){
+  const text=document.getElementById('sow-paste').value;
+  if(!text.trim()){alert('請先貼上文字');return;}
+  const lines=text.split(/[\n\r]+/).filter(l=>l.trim());
+  const found=[];
+  lines.forEach(line=>{
+    const parts=line.split(',');
+    if(parts.length>=2){
+      const sowId=parts[0].trim();
+      const pen=parts[1].trim();
+      if(sowId)found.push({sowId,pen});
+    } else {
+      const m=line.trim();
+      if(m)found.push({sowId:m,pen:''});
+    }
+  });
+  if(!found.length){alert('找不到耳號，請確認格式');return;}
+  sowList=found;
+  sowListOrig=[...found];
+  currentSort='orig';
+  listIndex=0;
+  saveSowList();
+  showListPreview();
+  document.getElementById('sort-section').style.display='block';
+  updateSortBtns();
+}
+
+function clearList(){
+  sowList=[];sowListOrig=[];listIndex=0;
+  saveSowList();
+  document.getElementById('sow-paste').value='';
+  document.getElementById('list-preview').innerHTML='';
+  document.getElementById('sort-section').style.display='none';
+}
+
+function parsePen(pen){
+  if(!pen)return[9,9999];
+  const m=pen.match(/(\d+)-(\d+)-(\d+)/);
+  if(m)return[parseInt(m[2]),parseInt(m[3])];
+  const m2=pen.match(/(\d+)-(\d+)/);
+  if(m2)return[parseInt(m2[1]),parseInt(m2[2])];
+  return[9,9999];
+}
+
+function sortList(mode){
+  currentSort=mode;
+  if(mode==='orig'){
+    sowList=[...sowListOrig];
+  } else {
+    sowList=[...sowListOrig].sort((a,b)=>{
+      const pa=parsePen(a.pen),pb=parsePen(b.pen);
+      if(pa[0]!==pb[0])return mode==='asc'?pa[0]-pb[0]:pb[0]-pa[0];
+      return mode==='asc'?pa[1]-pb[1]:pb[1]-pa[1];
+    });
+  }
+  listIndex=0;
+  saveSowList();
+  showListPreview();
+  updateSortBtns();
+}
+
+function updateSortBtns(){
+  ['orig','asc','desc'].forEach(m=>{
+    const btn=document.getElementById('sort-'+m);
+    if(!btn)return;
+    btn.classList.toggle('active',m===currentSort);
+  });
+}
+
+function showListPreview(){
+  const el=document.getElementById('list-preview');
+  if(!sowList.length){el.innerHTML='';return;}
+  el.innerHTML='<span style="color:var(--mid)">✓ 已載入 '+sowList.length+' 頭</span>　'+
+    sowList.slice(0,2).map(s=>s.sowId+(s.pen?' <span style="color:var(--text2);font-size:12px">'+s.pen+'</span>':'')).join('　')+
+    (sowList.length>2?'<span style="color:var(--text2)"> ... 等</span>':'');
+}
+
+// --- Session ---
+function startSession(){
+  config.day=parseInt(document.getElementById('cfg-day').value)||29;
+  sessionCount=0;batchIds=new Set();listIndex=0;
+  document.getElementById('session-count').textContent=0;
+  document.getElementById('m-day').textContent=config.day;
+  document.getElementById('m-fat').textContent=config.fat;
+  document.getElementById('m-thin').textContent=config.thin;
+  showScreen('measure');
+  resetInput();
+  updateSyncBanner();
+}
+
+function showScreen(name){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  const nb=document.getElementById('nav-'+name);
+  if(nb)nb.classList.add('active');
+  document.getElementById('bottom-nav').style.display=name==='setup'?'none':'flex';
+  if(name==='records'){renderBatch();renderHistory();}
+}
+
+// --- Input ---
+function resetInput(){
+  currentInput='';
+  if(sowList.length>0&&listIndex<sowList.length){
+    const cur=sowList[listIndex];
+    currentSowId=cur.sowId;
+    inputStep=2;
+    document.getElementById('input-label').textContent='背脂厚度 (mm)';
+    document.getElementById('step1').classList.remove('active');
+    document.getElementById('step2').classList.add('active');
+    document.getElementById('special-btn').textContent='．';
+    updateSowCard(cur.sowId,cur.pen);
+    document.getElementById('nav-btns').style.display='grid';
+  } else {
+    currentSowId='';
+    inputStep=1;
+    document.getElementById('input-label').textContent='耳號';
+    document.getElementById('step1').classList.add('active');
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('special-btn').textContent='－';
+    document.getElementById('sow-card-id').textContent='—';
+    document.getElementById('sow-card-pen').textContent='無清單';
+    document.getElementById('sow-card-idx').textContent='—';
+    document.getElementById('sow-card-total').textContent='—';
+    document.getElementById('nav-btns').style.display='none';
+  }
+  updateDisplay();
+}
+
+function updateSowCard(sowId,pen){
+  document.getElementById('sow-card-id').textContent=sowId;
+  document.getElementById('sow-card-pen').textContent=pen||'';
+  document.getElementById('sow-card-idx').textContent=listIndex+1;
+  document.getElementById('sow-card-total').textContent=sowList.length;
+}
+
+function updateDisplay(){
+  const el=document.getElementById('input-display');
+  const ph=document.getElementById('input-placeholder');
+  if(!currentInput){
+    el.innerHTML='';
+    const span=document.createElement('span');
+    span.className='placeholder';
+    span.textContent=inputStep===1?'1234-5':'16.5';
+    el.appendChild(span);
+  } else {
+    el.innerHTML=currentInput+'<span class="cursor"></span>';
+  }
+}
+
+function numPress(val){
+  currentInput+=val;
+  updateDisplay();
+}
+function specialPress(){
+  if(inputStep===1){currentInput+='-';}
+  else{if(!currentInput.includes('.'))currentInput+='.';}
+  updateDisplay();
+}
+function numDel(){currentInput=currentInput.slice(0,-1);updateDisplay();}
+
+function numConfirm(){
+  if(!currentInput)return;
+  if(inputStep===1){
+    currentSowId=currentInput.toUpperCase();
+    currentInput='';inputStep=2;
+    document.getElementById('input-label').textContent='背脂厚度 (mm)';
+    document.getElementById('step1').classList.remove('active');
+    document.getElementById('step2').classList.add('active');
+    document.getElementById('special-btn').textContent='．';
+    updateDisplay();
+  } else {
+    const bf=parseFloat(currentInput);
+    if(isNaN(bf)||bf<=0){currentInput='';updateDisplay();return;}
+    addRecord(currentSowId,bf);
+    if(sowList.length>0)listIndex++;
+    resetInput();
+  }
+}
+
+function skipSow(){
+  if(!sowList.length||listIndex>=sowList.length)return;
+  listIndex++;currentInput='';
+  resetInput();
+}
+function prevSow(){
+  if(listIndex<=0)return;
+  listIndex--;currentInput='';
+  resetInput();
+}
+
+// --- Records ---
+function classify(bf){
+  if(bf>=config.fat)return{label:'偏肥',cls:'fat'};
+  if(bf<config.thin)return{label:'偏瘦',cls:'thin'};
+  return{label:'中等',cls:'mid'};
+}
+
+function addRecord(sowId,bf){
+  const c=classify(bf);
+  const now=new Date();
+  const rec={
+    sowId,bf:parseFloat(bf.toFixed(1)),grade:c.label,cls:c.cls,day:config.day,
+    time:now.toLocaleString('zh-TW',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}),
+    ts:now.getTime()
+  };
+  records.unshift(rec);batchIds.add(rec.ts);saveRec();
+  sessionCount++;document.getElementById('session-count').textContent=sessionCount;
+
+  const panel=document.getElementById('result-panel');
+  panel.className='result-panel '+c.cls;
+  panel.innerHTML=`<div><div style="font-size:28px;font-weight:700;letter-spacing:-1px">${sowId}</div><div style="font-size:14px;color:var(--text2);margin-top:4px">懷孕 ${config.day} 天 ｜ ${bf.toFixed(1)} mm</div></div><div class="grade-badge">${c.label}</div>`;
+
+  if(navigator.onLine){syncOne(rec);}
+  else{queue.push(rec);saveQueue();updateSyncBanner();}
+}
+
+// --- Sync ---
+function syncOne(rec){
+  return fetch(SHEETS_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({sowId:rec.sowId,bf:rec.bf,day:rec.day,grade:rec.grade})})
+    .catch(()=>{queue.push(rec);saveQueue();updateSyncBanner();});
+}
+async function flushQueue(){
+  if(!queue.length||!navigator.onLine)return;
+  const toSync=[...queue];queue=[];saveQueue();updateSyncBanner();
+  for(const rec of toSync){try{await syncOne(rec);}catch(e){queue.push(rec);saveQueue();}}
+  updateSyncBanner();
+}
+function updateSyncBanner(){
+  const b=document.getElementById('sync-banner');
+  if(queue.length>0){document.getElementById('sync-text').textContent=queue.length;b.style.display='flex';}
+  else{b.style.display='none';}
+}
+window.addEventListener('online',flushQueue);
+setInterval(()=>{if(navigator.onLine&&queue.length)flushQueue();},30000);
+
+// --- Render Records ---
+function switchTab(tab){
+  document.getElementById('tab-batch').style.display=tab==='batch'?'block':'none';
+  document.getElementById('tab-history').style.display=tab==='history'?'block':'none';
+  document.getElementById('tab-batch-btn').classList.toggle('active',tab==='batch');
+  document.getElementById('tab-history-btn').classList.toggle('active',tab==='history');
+}
+
+function makeRecordRows(list){
+  return list.map(r=>{
+    const idx=records.indexOf(r);
+    return `<div class="record-item ${r.cls}"
+      ontouchstart="startLP(${idx},this)" ontouchend="cancelLP()" ontouchmove="cancelLP()"
+      onclick="showHistory('${r.sowId}')">
+      <div><div style="font-size:17px;font-weight:700">${r.sowId}</div><div style="font-size:12px;color:var(--text2);margin-top:2px">懷孕 ${r.day} 天 ｜ ${r.time}</div></div>
+      <div style="text-align:right"><div style="font-size:17px;font-weight:700">${r.bf} mm</div><div style="font-size:12px;margin-top:2px;font-weight:500" class="rec-grade ${r.cls}">${r.grade}</div></div>
+    </div>`;
+  }).join('');
+}
+
+function makeStats(list){
+  const fat=list.filter(r=>r.cls==='fat').length;
+  const thin=list.filter(r=>r.cls==='thin').length;
+  return `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px">
+    <div class="stat-card"><div class="stat-num">${list.length}</div><div class="stat-label">筆數</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--fat)">${fat}</div><div class="stat-label">偏肥</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--thin)">${thin}</div><div class="stat-label">偏瘦</div></div>
+  </div>`;
+}
+
+function renderBatch(){
+  const el=document.getElementById('batch-content');
+  const list=records.filter(r=>batchIds.has(r.ts));
+  if(!list.length){el.innerHTML='<div class="empty-msg">本批尚無記錄</div>';return;}
+  el.innerHTML=makeStats(list)+'<div style="font-size:12px;color:var(--text2);margin-bottom:8px">點擊查看歷史 ｜ 長按刪除</div>'+makeRecordRows(list);
+}
+
+function renderHistory(){
+  const el=document.getElementById('history-content');
+  const q=(document.getElementById('search-input').value||'').toUpperCase().trim();
+  const list=q?records.filter(r=>r.sowId.includes(q)):records;
+  if(!list.length){el.innerHTML='<div class="empty-msg">'+(q?'找不到「'+q+'」':'尚無歷史記錄')+'</div>';return;}
+  el.innerHTML=makeStats(list)+'<div style="font-size:12px;color:var(--text2);margin-bottom:8px">點擊查看歷史比較 ｜ 長按刪除</div>'+makeRecordRows(list.slice(0,200));
+}
+
+function showHistory(sowId){
+  const hist=records.filter(r=>r.sowId===sowId).sort((a,b)=>b.ts-a.ts);
+  document.getElementById('modal-title').textContent=sowId+' 歷史記錄';
+  const maxBf=Math.max(...hist.map(r=>r.bf),1);
+  document.getElementById('modal-content').innerHTML=hist.map(r=>{
+    const pct=Math.round((r.bf/maxBf)*100);
+    return `<div class="history-row">
+      <div style="font-size:12px;color:var(--text2);min-width:64px;line-height:1.5">第${r.day}天<br>${r.time}</div>
+      <div class="history-bar-wrap"><div class="history-bar ${r.cls}" style="width:${pct}%"></div></div>
+      <div style="font-size:13px;font-weight:700;min-width:54px;text-align:right;color:var(--${r.cls});line-height:1.5">${r.bf}mm<br><span style="font-size:11px">${r.grade}</span></div>
+    </div>`;
+  }).join('')||'<div class="empty-msg">無記錄</div>';
+  document.getElementById('history-modal').style.display='block';
+}
+function closeHistory(){document.getElementById('history-modal').style.display='none';}
+
+// --- Delete ---
+let lpTimer=null;
+function startLP(idx,el){
+  lpTimer=setTimeout(()=>{
+    el.style.opacity='0.5';
+    if(confirm('刪除「'+records[idx].sowId+'」這筆記錄？')){
+      records.splice(idx,1);saveRec();
+      renderBatch();renderHistory();
+    }else{el.style.opacity='1';}
+  },600);
+}
+function cancelLP(){if(lpTimer){clearTimeout(lpTimer);lpTimer=null;}}
+
+function clearBatch(){
+  if(!batchIds.size){alert('本批尚無記錄');return;}
+  if(confirm('清除本批計數？歷史記錄完整保留')){
+    batchIds.clear();sessionCount=0;
+    document.getElementById('session-count').textContent=0;
+    document.getElementById('result-panel').className='result-panel';
+    document.getElementById('result-panel').innerHTML='<div style="color:var(--text2);font-size:14px;width:100%;text-align:center">輸入背脂開始記錄</div>';
+    renderBatch();
+  }
+}
+
+function exportCSV(batchOnly){
+  const data=batchOnly?records.filter(r=>batchIds.has(r.ts)):records;
+  if(!data.length){alert(batchOnly?'本批尚無記錄':'尚無記錄');return;}
+  const header='日期時間,耳號,背脂(mm),懷孕天數,分級\n';
+  const rows=data.map(r=>`${r.time},${r.sowId},${r.bf},${r.day},${r.grade}`).join('\n');
+  const blob=new Blob(['\uFEFF'+header+rows],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=batchOnly?'背脂_本批.csv':'背脂_全部.csv';
+  a.click();URL.revokeObjectURL(url);
+}
+
+// --- Init ---
+updateMidRange();
+updateSyncBanner();
+flushQueue();
+if(sowList.length){
+  showListPreview();
+  document.getElementById('sort-section').style.display='block';
+  updateSortBtns();
+}
+</script>
+</body>
+</html>
