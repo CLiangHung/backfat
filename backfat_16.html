@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="母豬背脂">
+<title>母豬背脂記錄</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzFhMWQyNyIvPgogIDwhLS0gQm9keSAtLT4KICA8ZWxsaXBzZSBjeD0iMjU2IiBjeT0iMzAwIiByeD0iMTYwIiByeT0iMTMwIiBmaWxsPSIjZjRhNGI4Ii8+CiAgPCEtLSBIZWFkIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjE5MCIgcj0iMTEwIiBmaWxsPSIjZjRhNGI4Ii8+CiAgPCEtLSBFYXJzIC0tPgogIDxlbGxpcHNlIGN4PSIxNzAiIGN5PSIxMTAiIHJ4PSI0NSIgcnk9IjU1IiBmaWxsPSIjZjRhNGI4Ii8+CiAgPGVsbGlwc2UgY3g9IjM0MiIgY3k9IjExMCIgcng9IjQ1IiByeT0iNTUiIGZpbGw9IiNmNGE0YjgiLz4KICA8ZWxsaXBzZSBjeD0iMTcwIiBjeT0iMTEyIiByeD0iMjgiIHJ5PSIzNiIgZmlsbD0iI2U4ODQ5YyIvPgogIDxlbGxpcHNlIGN4PSIzNDIiIGN5PSIxMTIiIHJ4PSIyOCIgcnk9IjM2IiBmaWxsPSIjZTg4NDljIi8+CiAgPCEtLSBTbm91dCAtLT4KICA8ZWxsaXBzZSBjeD0iMjU2IiBjeT0iMjIwIiByeD0iNTgiIHJ5PSI0NCIgZmlsbD0iI2U4ODQ5YyIvPgogIDwhLS0gTm9zdHJpbHMgLS0+CiAgPGVsbGlwc2UgY3g9IjIzNiIgY3k9IjIyNCIgcng9IjEyIiByeT0iMTQiIGZpbGw9IiNjNDVlN2EiLz4KICA8ZWxsaXBzZSBjeD0iMjc2IiBjeT0iMjI0IiByeD0iMTIiIHJ5PSIxNCIgZmlsbD0iI2M0NWU3YSIvPgogIDwhLS0gRXllcyAtLT4KICA8Y2lyY2xlIGN4PSIyMTYiIGN5PSIxNzAiIHI9IjE2IiBmaWxsPSIjMmMxYTFhIi8+CiAgPGNpcmNsZSBjeD0iMjk2IiBjeT0iMTcwIiByPSIxNiIgZmlsbD0iIzJjMWExYSIvPgogIDxjaXJjbGUgY3g9IjIyMSIgY3k9IjE2NSIgcj0iNSIgZmlsbD0iI2ZmZiIvPgogIDxjaXJjbGUgY3g9IjMwMSIgY3k9IjE2NSIgcj0iNSIgZmlsbD0iI2ZmZiIvPgogIDwhLS0gVGFpbCAtLT4KICA8cGF0aCBkPSJNNDE2IDI5MCBRNDYwIDI2MCA0NTAgMzAwIFE0NDAgMzQwIDQxNiAzMjAiIHN0cm9rZT0iI2U4ODQ5YyIgc3Ryb2tlLXdpZHRoPSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPCEtLSBMZWdzIC0tPgogIDxyZWN0IHg9IjE2MCIgeT0iMzkwIiB3aWR0aD0iNTAiIGhlaWdodD0iNzAiIHJ4PSIyMCIgZmlsbD0iI2Y0YTRiOCIvPgogIDxyZWN0IHg9IjIzMCIgeT0iMzkwIiB3aWR0aD0iNTAiIGhlaWdodD0iNzAiIHJ4PSIyMCIgZmlsbD0iI2Y0YTRiOCIvPgogIDxyZWN0IHg9IjMwMCIgeT0iMzkwIiB3aWR0aD0iNTAiIGhlaWdodD0iNzAiIHJ4PSIyMCIgZmlsbD0iI2Y0YTRiOCIvPgo8L3N2Zz4=">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzFhMWQyNyIvPgogIDwhLS0gQm9keSAtLT4KICA8ZWxsaXBzZSBjeD0iMjU2IiBjeT0iMzAwIiByeD0iMTYwIiByeT0iMTMwIiBmaWxsPSIjZjRhNGI4Ii8+CiAgPCEtLSBIZWFkIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjE5MCIgcj0iMTEwIiBmaWxsPSIjZjRhNGI4Ii8+CiAgPCEtLSBFYXJzIC0tPgogIDxlbGxpcHNlIGN4PSIxNzAiIGN5PSIxMTAiIHJ4PSI0NSIgcnk9IjU1IiBmaWxsPSIjZjRhNGI4Ii8+CiAgPGVsbGlwc2UgY3g9IjM0MiIgY3k9IjExMCIgcng9IjQ1IiByeT0iNTUiIGZpbGw9IiNmNGE0YjgiLz4KICA8ZWxsaXBzZSBjeD0iMTcwIiBjeT0iMTEyIiByeD0iMjgiIHJ5PSIzNiIgZmlsbD0iI2U4ODQ5YyIvPgogIDxlbGxpcHNlIGN4PSIzNDIiIGN5PSIxMTIiIHJ4PSIyOCIgcnk9IjM2IiBmaWxsPSIjZTg4NDljIi8+CiAgPCEtLSBTbm91dCAtLT4KICA8ZWxsaXBzZSBjeD0iMjU2IiBjeT0iMjIwIiByeD0iNTgiIHJ5PSI0NCIgZmlsbD0iI2U4ODQ5YyIvPgogIDwhLS0gTm9zdHJpbHMgLS0+CiAgPGVsbGlwc2UgY3g9IjIzNiIgY3k9IjIyNCIgcng9IjEyIiByeT0iMTQiIGZpbGw9IiNjNDVlN2EiLz4KICA8ZWxsaXBzZSBjeD0iMjc2IiBjeT0iMjI0IiByeD0iMTIiIHJ5PSIxNCIgZmlsbD0iI2M0NWU3YSIvPgogIDwhLS0gRXllcyAtLT4KICA8Y2lyY2xlIGN4PSIyMTYiIGN5PSIxNzAiIHI9IjE2IiBmaWxsPSIjMmMxYTFhIi8+CiAgPGNpcmNsZSBjeD0iMjk2IiBjeT0iMTcwIiByPSIxNiIgZmlsbD0iIzJjMWExYSIvPgogIDxjaXJjbGUgY3g9IjIyMSIgY3k9IjE2NSIgcj0iNSIgZmlsbD0iI2ZmZiIvPgogIDxjaXJjbGUgY3g9IjMwMSIgY3k9IjE2NSIgcj0iNSIgZmlsbD0iI2ZmZiIvPgogIDwhLS0gVGFpbCAtLT4KICA8cGF0aCBkPSJNNDE2IDI5MCBRNDYwIDI2MCA0NTAgMzAwIFE0NDAgMzQwIDQxNiAzMjAiIHN0cm9rZT0iI2U4ODQ5YyIgc3Ryb2tlLXdpZHRoPSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPCEtLSBMZWdzIC0tPgogIDxyZWN0IHg9IjE2MCIgeT0iMzkwIiB3aWR0aD0iNTAiIGhlaWdodD0iNzAiIHJ4PSIyMCIgZmlsbD0iI2Y0YTRiOCIvPgogIDxyZWN0IHg9IjIzMCIgeT0iMzkwIiB3aWR0aD0iNTAiIGhlaWdodD0iNzAiIHJ4PSIyMCIgZmlsbD0iI2Y0YTRiOCIvPgogIDxyZWN0IHg9IjMwMCIgeT0iMzkwIiB3aWR0aD0iNTAiIGhlaWdodD0iNzAiIHJ4PSIyMCIgZmlsbD0iI2Y0YTRiOCIvPgo8L3N2Zz4=">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+:root{
+  --bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3350;
+  --text:#e8eaf6;--text2:#8b90b8;--accent:#4f8ef7;
+  --fat:#e05c5c;--fat-bg:#2a1a1a;--mid:#4caf7d;--mid-bg:#1a2a20;
+  --thin:#e0a040;--thin-bg:#2a2010;--btn:#252942;--btn-active:#3a3f6e;--radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;max-width:430px;margin:0 auto;user-select:none}
+.screen{display:none;padding:0 16px}.screen.active{display:block}
+.card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:16px;margin-bottom:12px}
+.sec-title{font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.thresh-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}
+.thresh-row:last-child{border-bottom:none}
+.thresh-val{display:flex;align-items:center;gap:8px}
+.thresh-val span{font-size:16px;font-weight:700;min-width:32px;text-align:right}
+.adj{width:32px;height:32px;background:var(--btn);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit}
+.adj:active{background:var(--btn-active)}
+.primary-btn{width:100%;padding:18px;background:var(--accent);border:none;border-radius:var(--radius);color:#fff;font-size:18px;font-weight:700;font-family:inherit;cursor:pointer;transition:opacity .15s;margin-top:4px}
+.primary-btn:active{opacity:.85}
+.sort-btn{flex:1;padding:10px 0;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:13px;font-family:inherit;cursor:pointer}
+.sort-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.num-btn{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:24px;font-weight:500;font-family:inherit;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center}
+.num-btn:active{background:var(--btn-active)}
+.confirm-btn{background:var(--accent);border-color:var(--accent);color:#fff;font-size:17px;font-weight:700;width:100%;padding:14px;border-radius:var(--radius)}
+.confirm-btn:active{opacity:.85}
+.nav-action{padding:18px;background:var(--btn);border:1px solid var(--border);border-radius:var(--radius);font-size:18px;font-weight:500;font-family:inherit;cursor:pointer;text-align:center}
+.nav-action:active{background:var(--btn-active)}
+.result-panel{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;transition:all .2s}
+.result-panel.fat{border-color:var(--fat);background:var(--fat-bg)}
+.result-panel.mid{border-color:var(--mid);background:var(--mid-bg)}
+.result-panel.thin{border-color:var(--thin);background:var(--thin-bg)}
+.grade-badge{font-size:16px;font-weight:700;padding:6px 12px;border-radius:10px}
+.fat .grade-badge{color:var(--fat);background:rgba(224,92,92,.15)}
+.mid .grade-badge{color:var(--mid);background:rgba(76,175,125,.15)}
+.thin .grade-badge{color:var(--thin);background:rgba(224,160,64,.15)}
+.input-display{background:var(--surface);border:2px solid var(--accent);border-radius:var(--radius);padding:10px 14px;font-size:24px;font-weight:700;letter-spacing:2px;min-height:52px;display:flex;align-items:center}
+.cursor{display:inline-block;width:2px;height:28px;background:var(--accent);margin-left:2px;animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.placeholder{color:var(--text2);font-size:16px;font-weight:400;letter-spacing:0}
+.step-bar{display:flex;gap:6px;margin-bottom:6px}
+.step{flex:1;height:4px;border-radius:2px;background:var(--border);transition:background .2s}
+.step.active{background:var(--accent)}
+.input-label{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;display:block}
+.sync-banner{background:var(--surface2);border:1px solid var(--thin);border-radius:10px;padding:6px 10px;font-size:12px;color:var(--thin);margin-bottom:6px;display:none;align-items:center;gap:6px}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:var(--surface);border-top:1px solid var(--border);display:flex;z-index:100}
+.nav-btn{flex:1;padding:6px 0 8px;background:none;border:none;color:var(--text2);font-size:11px;font-family:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav-btn.active{color:var(--accent)}
+.nav-icon{font-size:18px}
+.tab-bar{display:flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
+.tab-btn{flex:1;height:40px;border:none;background:var(--surface2);color:var(--text2);font-size:14px;font-family:inherit;cursor:pointer}
+.tab-btn.active{background:var(--surface);color:var(--text);font-weight:500}
+.record-item{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:8px}
+.record-item.fat{border-left:3px solid var(--fat)}
+.record-item.mid{border-left:3px solid var(--mid)}
+.record-item.thin{border-left:3px solid var(--thin)}
+.rec-grade.fat{color:var(--fat)}.rec-grade.mid{color:var(--mid)}.rec-grade.thin{color:var(--thin)}
+.stat-card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:12px;text-align:center}
+.stat-num{font-size:28px;font-weight:700}
+.stat-label{font-size:11px;color:var(--text2);margin-top:2px}
+.search-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:15px;color:var(--text);font-family:inherit;width:100%;margin-bottom:12px;outline:none}
+.search-box:focus{border-color:var(--accent)}
+.history-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border)}
+.history-row:last-child{border-bottom:none}
+.history-bar-wrap{flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.history-bar{height:100%;border-radius:4px}
+.history-bar.fat{background:var(--fat)}.history-bar.mid{background:var(--mid)}.history-bar.thin{background:var(--thin)}
+.empty-msg{text-align:center;padding:48px 0;color:var(--text2);font-size:15px}
+.rec-wrap{position:relative;overflow:hidden;border-radius:var(--radius);margin-bottom:8px}
+.rec-wrap .del-slide{position:absolute;right:0;top:0;height:100%;width:80px;background:var(--fat);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;cursor:pointer;border-radius:0 var(--radius) var(--radius) 0;transform:translateX(100%);transition:transform .2s}
+.rec-wrap .record-item{transition:transform .2s;margin-bottom:0;border-radius:var(--radius)}
+.sow-card-perf{font-size:12px;color:var(--text2);margin-top:6px;line-height:1.5;border-top:1px solid var(--border);padding-top:6px}
+</style>
+</head>
+<body>
+
+<!-- SETUP -->
+<div class="screen active" id="screen-setup">
+  <div style="padding:0 0 80px">
+    <div style="padding:40px 0 20px;text-align:center">
+      <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.5px">母豬背脂記錄</h1>
+      <p style="font-size:14px;color:var(--text2);margin-top:6px">開始前設定量測參數</p>
+    </div>
+
+    <div class="card">
+      <div class="sec-title">檢測階段</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <input type="text" id="cfg-day" value="29" placeholder="例如：配種29天"
+          style="flex:1;min-width:0;width:100%;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:18px;font-weight:700;font-family:inherit;padding:14px 16px;text-align:center;-webkit-appearance:none;box-sizing:border-box"
+          oninput="config.day=this.value">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-title">分級閾值（mm）</div>
+      <div class="thresh-row">
+        <span style="font-size:14px;color:var(--fat)">偏肥 ≥</span>
+        <div class="thresh-val">
+          <button class="adj" onclick="adj('fat',-1)">−</button>
+          <span id="val-fat">18</span>
+          <button class="adj" onclick="adj('fat',1)">+</button>
+          <span style="font-size:13px;color:var(--text2)">mm</span>
+        </div>
+      </div>
+      <div class="thresh-row">
+        <span style="font-size:14px;color:var(--mid)">中等</span>
+        <span style="font-size:14px;color:var(--text2)" id="mid-range">12–17.9 mm</span>
+      </div>
+      <div class="thresh-row">
+        <span style="font-size:14px;color:var(--thin)">偏瘦 &lt;</span>
+        <div class="thresh-val">
+          <button class="adj" onclick="adj('thin',-1)">−</button>
+          <span id="val-thin">12</span>
+          <button class="adj" onclick="adj('thin',1)">+</button>
+          <span style="font-size:13px;color:var(--text2)">mm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-title">豬隻清單（選填）</div>
+      <div style="font-size:13px;color:var(--text2);margin-bottom:8px">貼上耳號清單，每行一頭（「耳號,欄位」或「欄位,耳號」順序都可以，會自動判斷）</div>
+      <textarea id="sow-paste" rows="4"
+        placeholder="貼上清單，例如：&#10;4796,配種舍-4-63&#10;6030,配種舍-4-61&#10;1635-5,配種舍-3-65"
+        style="width:100%;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:14px;padding:10px;resize:none;outline:none;line-height:1.6"></textarea>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button onclick="importList()" style="flex:1;padding:10px;background:var(--accent);border:none;border-radius:10px;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">擷取耳號</button>
+        <button onclick="clearList()" style="padding:10px 14px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:14px;font-family:inherit;cursor:pointer">清除</button>
+      </div>
+      <div id="list-preview" style="margin-top:8px;font-size:13px;color:var(--text2)"></div>
+      <div id="sort-section" style="display:none;margin-top:12px">
+        <div style="font-size:12px;color:var(--text2);margin-bottom:6px">排序方式</div>
+        <div style="display:flex;gap:6px">
+          <button class="sort-btn active" id="sort-orig" onclick="sortList('orig')">原始順序</button>
+          <button class="sort-btn" id="sort-asc" onclick="sortList('asc')">小→大</button>
+          <button class="sort-btn" id="sort-desc" onclick="sortList('desc')">大→小</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-title">匯入歷史記錄（選填）</div>
+      <div style="font-size:13px;color:var(--text2);margin-bottom:8px">支援匯出的 CSV 或 Excel（.xlsx）格式</div>
+      <label style="display:block;width:100%;padding:12px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--accent);font-size:14px;font-family:inherit;cursor:pointer;text-align:center">
+        選擇檔案匯入
+        <input type="file" id="import-file" accept=".xlsx,.csv" style="display:none" onchange="importFile(this)">
+      </label>
+      <div id="import-preview" style="margin-top:8px;font-size:13px;color:var(--text2)"></div>
+    </div>
+
+    <button class="primary-btn" onclick="startSession()">開始量測</button>
+  </div>
+</div>
+
+<!-- MEASURE -->
+<div class="screen" id="screen-measure">
+  <div style="display:flex;flex-direction:column;height:calc(100dvh - 46px);padding:0;overflow-y:auto">
+
+    <div style="padding:10px 16px 6px;flex-shrink:0">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <button onclick="showScreen('setup')" style="background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:13px;font-family:inherit;padding:6px 12px;cursor:pointer">← 設定</button>
+        <div style="font-size:12px;color:var(--text2);text-align:right">階段：<strong id="m-day">29</strong> ｜ 偏肥≥<strong id="m-fat">18</strong> 偏瘦&lt;<strong id="m-thin">12</strong></div>
+      </div>
+      <div class="sync-banner" id="sync-banner" style="margin-top:6px">⏳ <span id="sync-text">0</span> 筆待同步，連網後自動上傳</div>
+    </div>
+
+    <div style="padding:0 16px;flex-shrink:0">
+      <div style="display:flex;gap:8px">
+        <div id="result-panel" class="result-panel" style="flex:1;min-height:72px">
+          <div style="color:var(--text2);font-size:13px;width:100%;text-align:center">上一筆結果</div>
+        </div>
+        <div id="sow-card" style="flex:1;background:var(--surface2);border:1px solid var(--accent);border-radius:var(--radius);padding:10px 14px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:26px;font-weight:700;letter-spacing:-0.5px" id="sow-card-id">—</div>
+          <div style="font-size:15px;color:var(--accent);margin-top:3px;font-weight:500" id="sow-card-pen">無清單</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:3px">第 <span id="sow-card-idx">—</span>/<span id="sow-card-total">—</span> ｜ 已記錄 <strong id="session-count">0</strong></div>
+          <div class="sow-card-perf" id="sow-card-perf" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:6px 16px 4px;flex-shrink:0">
+      <div class="step-bar">
+        <div class="step active" id="step1"></div>
+        <div class="step" id="step2"></div>
+      </div>
+      <span class="input-label" id="input-label">耳號</span>
+      <div class="input-display" id="input-display">
+        <span class="placeholder">1234-5</span>
+      </div>
+    </div>
+
+    <div style="padding:6px 16px 6px;flex:1;display:flex;flex-direction:column;gap:6px;min-height:0">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;flex:1;min-height:180px">
+        <button class="num-btn" onclick="numPress('1')">1</button>
+        <button class="num-btn" onclick="numPress('2')">2</button>
+        <button class="num-btn" onclick="numPress('3')">3</button>
+        <button class="num-btn" onclick="numPress('4')">4</button>
+        <button class="num-btn" onclick="numPress('5')">5</button>
+        <button class="num-btn" onclick="numPress('6')">6</button>
+        <button class="num-btn" onclick="numPress('7')">7</button>
+        <button class="num-btn" onclick="numPress('8')">8</button>
+        <button class="num-btn" onclick="numPress('9')">9</button>
+        <button class="num-btn" id="special-btn" onclick="specialPress()" style="font-size:20px;color:var(--text2)">－</button>
+        <button class="num-btn" onclick="numPress('0')">0</button>
+        <button class="num-btn" onclick="numDel()" style="font-size:20px;color:var(--text2)">⌫</button>
+      </div>
+      <button class="confirm-btn" onclick="numConfirm()">確認記錄</button>
+      <div id="nav-btns" style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <button class="nav-action" onclick="prevSow()" style="color:var(--text2)">← 上一頭</button>
+        <button class="nav-action" onclick="skipSow()" style="color:var(--thin)">跳過 →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RECORDS -->
+<div class="screen" id="screen-records">
+  <div style="padding-bottom:80px">
+    <div style="padding:40px 0 16px;display:flex;align-items:center;justify-content:space-between">
+      <h1 style="font-size:22px;font-weight:700">記錄</h1>
+    </div>
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-batch-btn" onclick="switchTab('batch')">本批</button>
+      <button class="tab-btn" id="tab-history-btn" onclick="switchTab('history')">歷史</button>
+    </div>
+    <div id="tab-batch">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="exportCSV(true)" style="flex:1;padding:10px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--accent);font-size:13px;font-family:inherit;cursor:pointer">匯出本批 CSV</button>
+        <button onclick="clearBatch()" style="padding:10px 14px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--thin);font-size:13px;font-family:inherit;cursor:pointer">清除本批</button>
+      </div>
+      <div id="batch-content"></div>
+    </div>
+    <div id="tab-history" style="display:none">
+      <div style="display:flex;gap:8px;margin-bottom:8px">
+        <button onclick="exportCSV(false)" style="flex:1;padding:10px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--accent);font-size:13px;font-family:inherit;cursor:pointer">匯出全部 CSV</button>
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="exportWideBySow()" style="flex:1;padding:10px;background:var(--btn);border:1px solid var(--border);border-radius:10px;color:var(--accent);font-size:13px;font-family:inherit;cursor:pointer">輸出完整檢測紀錄（依母豬）</button>
+      </div>
+      <input class="search-box" type="text" id="search-input" placeholder="搜尋耳號..." oninput="renderHistory()">
+      <div id="history-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- HISTORY MODAL -->
+<div id="history-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:200;overflow-y:auto;padding:16px">
+  <div style="background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:16px;max-width:398px;margin:60px auto 0">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <div style="font-size:20px;font-weight:700" id="modal-title">歷史記錄</div>
+      <button onclick="closeHistory()" style="background:var(--btn);border:1px solid var(--border);border-radius:8px;color:var(--text2);font-size:14px;padding:6px 12px;cursor:pointer;font-family:inherit">關閉</button>
+    </div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<nav class="bottom-nav" id="bottom-nav" style="display:none">
+  <button class="nav-btn active" id="nav-measure" onclick="showScreen('measure')">
+    <span class="nav-icon">📏</span>量測
+  </button>
+  <button class="nav-btn" id="nav-records" onclick="showScreen('records')">
+    <span class="nav-icon">📋</span>記錄
+  </button>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>
+const SHEETS_URL='https://script.google.com/macros/s/AKfycbxI5mQyfoAmnxA5tf5DprM-Alq15Dfyi_dbSfYpnp3dFus9XGnj1fLd6Br5EZLnIAua/exec';
+let config={day:'29',fat:18,thin:12};
+let inputStep=1,currentInput='',currentSowId='';
+let records=[],queue=[],sessionCount=0,batchIds=new Set();
+let sowList=[],sowListOrig=[],listIndex=0,currentSort='orig';
+let currentPen='';
+let lpTimer=null;
+
+/* ===== 母豬績效資料（由 PigCHAMP 匯出解析產生，2026-08-30 快照） ===== */
+/* p=已完成胎次 f=[分娩日期,活仔,死胎,黑仔,寄養] w=[離乳日期,離乳頭數] s=狀態 sd=狀態日期 */
+const SOW_PERF = {"2096-1":{"p":8,"f":["2026-05-12",12.0,0.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1421-3":{"p":0,"s":"已配種","sd":"2020-11-10"},"1440-3":{"p":0,"s":"已配種","sd":"2020-11-10"},"1471-1":{"p":0,"s":"已配種","sd":"2020-11-10"},"1472-5":{"p":0,"s":"已配種","sd":"2020-11-10"},"2709-5":{"p":12,"f":["2026-03-30",13.0,4.0,2.0,0.0],"w":["2026-04-26",12.0],"s":"測孕:懷孕","sd":"2026-05-28"},"3455-8":{"p":10,"f":["2026-04-19",9.0,6.0,2.0,0.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"2316-7":{"p":10,"f":["2026-05-12",15.0,1.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"2922-4":{"p":9,"f":["2026-08-22",14.0,1.0,0.0,3.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-22"},"2909-3":{"p":9,"f":["2026-06-23",12.0,2.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"D0000":{"p":0,"s":"已配種","sd":"2022-03-30"},"3051-3":{"p":8,"f":["2026-08-24",9.0,1.0,0.0,0.0],"w":["2026-02-22",11.0],"s":"分娩","sd":"2026-08-24"},"3055-4":{"p":9,"f":["2026-05-31",11.0,1.0,0.0,2.0],"w":["2026-06-28",8.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2262-1":{"p":11,"f":["2026-08-22",5.0,10.0,0.0,1.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-22"},"2205-6":{"p":10,"f":["2026-06-22",15.0,2.0,2.0,2.0],"w":["2026-07-19",9.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2281-3":{"p":9,"f":["2026-08-04",12.0,2.0,0.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"1464-1":{"p":0,"s":"已配種","sd":"2022-11-10"},"2130-4":{"p":7,"f":["2026-08-04",15.0,0.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"2120-11":{"p":8,"f":["2026-07-11",13.0,5.0,0.0,6.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"2103-4":{"p":8,"f":["2026-04-19",15.0,1.0,0.0,1.0],"w":["2026-05-17",10.0],"s":"測孕:懷孕","sd":"2026-06-18"},"2114-5":{"p":8,"f":["2026-06-02",14.0,2.0,0.0,3.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2168-31":{"p":7,"f":["2026-04-18",12.0,3.0,0.0,3.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"2132-1":{"p":7,"f":["2026-03-09",3.0,8.0,8.0,0.0],"w":["2026-04-05",8.0],"s":"測孕:懷孕","sd":"2026-07-08"},"2113-5":{"p":8,"f":["2026-08-04",10.0,6.0,1.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"2207-7":{"p":8,"f":["2026-08-04",8.0,0.0,0.0,1.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"2162-31":{"p":8,"f":["2026-06-02",8.0,0.0,0.0,0.0],"w":["2026-06-28",8.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2161-9":{"p":7,"f":["2026-05-12",15.0,2.0,1.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"2177-5":{"p":8,"f":["2026-08-02",9.0,1.0,0.0,0.0],"w":["2026-08-30",9.0],"s":"離乳","sd":"2026-08-30"},"2113-4":{"p":6,"f":["2026-04-18",14.0,6.0,0.0,5.0],"w":["2026-05-17",8.0],"s":"測孕:懷孕","sd":"2026-06-18"},"2169-2":{"p":8,"f":["2026-06-20",18.0,2.0,1.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2180-3":{"p":8,"f":["2026-06-22",14.0,4.0,2.0,2.0],"w":["2026-07-19",8.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"2180-51":{"p":8,"f":["2026-06-02",13.0,0.0,0.0,1.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2139-3":{"p":8,"f":["2026-06-02",10.0,1.0,1.0,5.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2211-8":{"p":8,"f":["2026-06-02",11.0,0.0,0.0,1.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2108-3":{"p":8,"f":["2026-06-01",16.0,1.0,1.0,4.0],"w":["2026-06-28",9.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2177-2":{"p":8,"f":["2026-06-02",10.0,4.0,1.0,3.0],"w":["2026-06-28",9.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2168-5":{"p":8,"f":["2026-06-21",13.0,6.0,4.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2121-4":{"p":7,"f":["2026-05-31",14.0,5.0,0.0,4.0],"w":["2026-06-28",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2117-1":{"p":8,"f":["2026-08-02",8.0,0.0,0.0,1.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"2164-5":{"p":8,"f":["2026-05-31",7.0,5.0,1.0,0.0],"w":["2026-06-28",8.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2164-31":{"p":6,"f":["2026-03-10",10.0,9.0,0.0,1.0],"w":["2026-04-05",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"2891-4":{"p":6,"f":["2026-04-21",8.0,1.0,0.0,0.0],"w":["2026-05-17",10.0],"s":"測孕:懷孕","sd":"2026-06-18"},"2927-2":{"p":7,"f":["2026-07-14",13.0,4.0,0.0,4.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-14"},"2652-2":{"p":6,"f":["2026-07-11",15.0,7.0,3.0,3.0],"w":["2026-08-09",10.0],"s":"移動:不穩","sd":"2026-08-14"},"0387-3":{"p":7,"f":["2026-06-23",14.0,2.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2599-2":{"p":7,"f":["2026-06-23",11.0,1.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2621-7":{"p":7,"f":["2026-05-12",14.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"2605-3":{"p":7,"f":["2026-04-21",13.0,0.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"2644-3":{"p":7,"f":["2026-04-21",12.0,1.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"3262-6":{"p":6,"f":["2026-05-11",13.0,4.0,3.0,0.0],"w":["2026-06-07",12.0],"s":"移動:正常","sd":"2026-08-12"},"3304-4":{"p":6,"f":["2026-07-15",14.0,3.0,1.0,4.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"3287-2":{"p":6,"f":["2026-05-11",13.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3283-3":{"p":6,"f":["2026-05-11",9.0,10.0,0.0,1.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3278-2":{"p":5,"f":["2026-06-22",15.0,1.0,1.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"3279-2":{"p":6,"f":["2026-07-13",9.0,6.0,2.0,1.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"3280-2":{"p":6,"f":["2026-05-11",14.0,6.0,3.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3301-6":{"p":6,"f":["2026-05-12",18.0,1.0,0.0,3.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3273-3":{"p":6,"f":["2026-05-12",12.0,3.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1488":{"p":6,"f":["2026-06-21",12.0,1.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1390":{"p":6,"f":["2026-06-01",11.0,4.0,2.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1472":{"p":6,"f":["2026-08-02",13.0,2.0,1.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1353":{"p":6,"f":["2026-08-02",10.0,5.0,0.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"1348":{"p":6,"f":["2026-05-31",9.0,6.0,1.0,1.0],"w":["2026-06-28",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1796":{"p":6,"f":["2026-07-14",13.0,1.0,0.0,0.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"1777":{"p":5,"f":["2026-08-23",9.0,6.0,0.0,4.0],"w":["2025-12-21",11.0],"s":"分娩","sd":"2026-08-23"},"1421":{"p":5,"f":["2026-04-19",8.0,0.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1730":{"p":5,"f":["2026-04-18",12.0,4.0,0.0,2.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1355":{"p":6,"f":["2026-05-31",17.0,2.0,0.0,4.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1667":{"p":6,"f":["2026-06-01",15.0,0.0,0.0,3.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1362":{"p":6,"f":["2026-06-02",11.0,2.0,0.0,1.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1647":{"p":5,"f":["2026-07-13",5.0,10.0,2.0,2.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"1431":{"p":5,"f":["2026-06-18",11.0,9.0,2.0,0.0],"w":["2026-07-19",9.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1463":{"p":6,"f":["2026-06-01",11.0,3.0,2.0,4.0],"w":["2026-06-28",10.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1620":{"p":5,"f":["2026-05-10",14.0,0.0,0.0,1.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1486":{"p":6,"f":["2026-08-04",5.0,0.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1755":{"p":5,"f":["2026-02-16",16.0,4.0,2.0,0.0],"w":["2026-03-15",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1642":{"p":6,"f":["2026-06-20",18.0,2.0,2.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1371":{"p":6,"f":["2026-05-31",16.0,3.0,0.0,2.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1746":{"p":6,"f":["2026-07-11",15.0,1.0,0.0,3.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"1349":{"p":6,"f":["2026-07-12",14.0,5.0,1.0,1.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"16091":{"p":6,"f":["2026-08-25",3.0,2.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-25"},"1377":{"p":6,"f":["2026-07-12",16.0,2.0,0.0,3.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"1608":{"p":6,"f":["2026-08-25",3.0,0.0,0.0,0.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"1410":{"p":6,"f":["2026-07-12",16.0,1.0,0.0,2.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"1633":{"p":6,"f":["2026-05-29",13.0,2.0,0.0,2.0],"w":["2026-06-05",0.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1627":{"p":6,"f":["2026-06-02",15.0,2.0,0.0,3.0],"w":["2026-06-28",10.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1456":{"p":6,"f":["2026-08-02",17.0,4.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1658":{"p":6,"f":["2026-05-28",15.0,3.0,0.0,2.0],"w":["2026-06-28",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1499":{"p":6,"f":["2026-06-01",10.0,2.0,0.0,1.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1478":{"p":6,"f":["2026-08-02",13.0,1.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1495":{"p":6,"f":["2026-08-20",9.0,9.0,2.0,3.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-20"},"1475":{"p":6,"f":["2026-07-29",11.0,4.0,1.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1621":{"p":6,"f":["2026-05-30",11.0,4.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2892-5":{"p":7,"f":["2026-07-14",18.0,2.0,2.0,2.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"2970-1":{"p":6,"f":["2026-03-29",19.0,0.0,0.0,2.0],"w":["2026-04-26",9.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2894-3":{"p":6,"f":["2026-06-22",15.0,4.0,0.0,1.0],"w":["2026-07-19",10.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2906-3":{"p":7,"f":["2026-08-04",13.0,0.0,0.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"2908-4":{"p":7,"f":["2026-08-25",17.0,0.0,0.0,4.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-25"},"2889-1":{"p":5,"f":["2026-07-12",17.0,4.0,3.0,5.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"2967-7":{"p":6,"f":["2026-05-31",15.0,2.0,0.0,5.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"2898-2":{"p":6,"f":["2026-04-20",13.0,5.0,2.0,0.0],"w":["2026-05-17",9.0],"s":"測孕:懷孕","sd":"2026-06-18"},"3433":{"p":5,"f":["2026-07-11",17.0,0.0,0.0,2.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"3425":{"p":5,"f":["2026-07-12",13.0,2.0,0.0,1.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"3407":{"p":5,"f":["2026-07-13",18.0,0.0,0.0,4.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"3403":{"p":5,"f":["2026-06-02",17.0,3.0,0.0,6.0],"w":["2026-06-28",8.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3446":{"p":5,"f":["2026-05-28",12.0,1.0,0.0,1.0],"w":["2026-06-28",9.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3370":{"p":4,"f":["2026-06-01",14.0,0.0,0.0,3.0],"w":["2026-06-11",0.0],"s":"測孕:懷孕","sd":"2026-08-20"},"3339":{"p":5,"f":["2026-05-31",10.0,7.0,2.0,1.0],"w":["2026-06-28",6.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3376":{"p":5,"f":["2026-05-30",16.0,0.0,0.0,3.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3371":{"p":5,"f":["2026-08-23",8.0,0.0,0.0,0.0],"w":["2026-02-01",5.0],"s":"分娩","sd":"2026-08-23"},"3391":{"p":5,"f":["2026-08-01",15.0,1.0,0.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"3426":{"p":5,"f":["2026-05-31",9.0,2.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3421":{"p":5,"f":["2026-05-31",17.0,1.0,0.0,4.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3404":{"p":5,"f":["2026-06-21",17.0,2.0,0.0,0.0],"w":["2026-07-19",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"3427":{"p":5,"f":["2026-06-20",13.0,4.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"3386":{"p":5,"f":["2026-06-19",8.0,7.0,0.0,0.0],"w":["2026-07-19",10.0],"s":"測孕:懷孕","sd":"2026-08-20"},"3423":{"p":5,"f":["2026-06-23",10.0,1.0,0.0,2.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"3418":{"p":4,"f":["2026-08-24",11.0,1.0,0.0,2.0],"w":["2025-12-21",9.0],"s":"分娩","sd":"2026-08-24"},"2902-41":{"p":5,"f":["2026-05-10",13.0,2.0,0.0,0.0],"w":["2026-06-07",13.0],"s":"移動:正常","sd":"2026-08-13"},"2905-2":{"p":6,"f":["2026-06-21",16.0,4.0,1.0,0.0],"w":["2026-07-19",9.0],"s":"測孕陰性/未孕:未發情 不配種","sd":"2026-07-24"},"0993-2":{"p":6,"f":["2026-06-01",16.0,1.0,0.0,4.0],"w":["2026-06-28",9.0],"s":"測孕:懷孕","sd":"2026-08-03"},"0901-6":{"p":6,"f":["2026-05-31",17.0,6.0,0.0,3.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"2089-2":{"p":7,"f":["2026-08-23",11.0,1.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-23"},"0901-2":{"p":5,"f":["2026-03-08",20.0,2.0,0.0,3.0],"w":["2026-04-05",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"0906-2":{"p":7,"f":["2026-08-22",13.0,1.0,0.0,1.0],"w":["2026-04-26",13.0],"s":"分娩","sd":"2026-08-22"},"0906-4":{"p":7,"f":["2026-08-20",14.0,9.0,0.0,2.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-20"},"0996-4":{"p":6,"f":["2026-06-22",10.0,2.0,0.0,0.0],"w":["2026-07-19",9.0],"s":"測孕:懷孕","sd":"2026-08-20"},"0096-4":{"p":5,"f":["2026-04-21",17.0,2.0,0.0,5.0],"w":["2026-05-17",9.0],"s":"測孕:懷孕","sd":"2026-06-18"},"0906-6":{"p":6,"f":["2026-06-02",14.0,5.0,0.0,3.0],"w":["2026-06-28",7.0],"s":"測孕:懷孕","sd":"2026-08-03"},"0992-8":{"p":6,"f":["2026-08-04",6.0,0.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"2091-8":{"p":6,"f":["2026-05-31",14.0,1.0,1.0,4.0],"w":["2026-06-28",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"0995-4":{"p":6,"f":["2026-08-01",10.0,5.0,3.0,0.0],"w":["2026-08-30",8.0],"s":"離乳","sd":"2026-08-30"},"1071-1":{"p":5,"f":["2026-05-12",15.0,3.0,1.0,2.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1076-4":{"p":5,"f":["2026-04-20",14.0,3.0,0.0,3.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1086-3":{"p":5,"f":["2026-04-20",14.0,2.0,0.0,3.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1080-3":{"p":5,"f":["2026-05-12",14.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"移動:正常","sd":"2026-08-13"},"1069-2":{"p":5,"f":["2026-04-21",15.0,0.0,0.0,3.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1083-7":{"p":5,"f":["2026-04-21",17.0,1.0,0.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1070-4":{"p":5,"f":["2026-04-19",16.0,2.0,0.0,2.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1081-4":{"p":5,"f":["2026-04-20",14.0,0.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1068-5":{"p":5,"f":["2026-04-20",11.0,5.0,0.0,1.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1082-5":{"p":5,"f":["2026-04-20",15.0,0.0,0.0,2.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1068-7":{"p":5,"f":["2026-04-19",18.0,1.0,1.0,6.0],"w":["2026-05-17",8.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1072-5":{"p":5,"f":["2026-04-21",16.0,3.0,0.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1079-8":{"p":5,"f":["2026-06-21",16.0,1.0,0.0,2.0],"w":["2026-07-19",12.0],"s":"移動:正常","sd":"2026-08-14"},"1071-4":{"p":5,"f":["2026-06-02",6.0,1.0,0.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1077-8":{"p":5,"f":["2026-05-11",16.0,3.0,0.0,1.0],"w":["2026-06-07",9.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1077-4":{"p":5,"f":["2026-07-14",7.0,5.0,2.0,0.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"1071-5":{"p":4,"f":["2026-03-10",17.0,1.0,1.0,4.0],"w":["2026-04-05",10.0],"s":"移動:正常","sd":"2026-08-14"},"1086-7":{"p":5,"f":["2026-05-11",19.0,0.0,0.0,5.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1071-2":{"p":5,"f":["2026-07-10",13.0,4.0,2.0,1.0],"w":["2026-08-09",9.0],"s":"移動:正常","sd":"2026-08-12"},"1068-2":{"p":5,"f":["2026-07-14",17.0,7.0,1.0,8.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"1078-5":{"p":5,"f":["2026-05-10",5.0,0.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"移動:正常","sd":"2026-08-14"},"1072-6":{"p":5,"f":["2026-05-10",17.0,3.0,2.0,2.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3267-1":{"p":6,"f":["2026-08-22",20.0,2.0,0.0,4.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-22"},"3267-6":{"p":6,"f":["2026-05-11",14.0,0.0,0.0,0.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4064":{"p":4,"f":["2026-04-20",19.0,2.0,1.0,8.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"4034":{"p":4,"f":["2026-06-02",10.0,10.0,3.0,1.0],"w":["2026-06-28",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"4187":{"p":5,"f":["2026-07-11",9.0,0.0,0.0,2.0],"w":["2026-08-09",11.0],"s":"移動:不穩","sd":"2026-08-14"},"4027":{"p":4,"f":["2026-06-22",11.0,3.0,0.0,1.0],"w":["2026-07-19",10.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4311":{"p":5,"f":["2026-07-10",15.0,10.0,1.0,3.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"4042":{"p":4,"f":["2026-02-16",16.0,3.0,0.0,0.0],"w":["2026-03-15",10.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4025":{"p":4,"f":["2026-02-17",10.0,0.0,0.0,0.0],"w":["2026-03-15",10.0],"s":"測孕:懷孕","sd":"2026-06-18"},"4094":{"p":5,"f":["2026-07-12",10.0,1.0,0.0,0.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"4036":{"p":4,"f":["2026-05-10",5.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4193":{"p":3,"f":["2026-02-14",13.0,4.0,0.0,2.0],"w":["2026-03-15",10.0],"s":"測孕:懷孕","sd":"2026-06-18"},"4309":{"p":4,"f":["2026-04-19",1.0,1.0,0.0,0.0],"w":["2026-04-24",0.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4142":{"p":5,"f":["2026-07-14",10.0,3.0,0.0,0.0],"w":["2026-08-09",10.0],"s":"移動:不穩","sd":"2026-08-14"},"4103":{"p":4,"f":["2026-04-20",17.0,1.0,0.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"4056":{"p":5,"f":["2026-07-12",14.0,0.0,0.0,1.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"4336":{"p":4,"f":["2026-04-21",13.0,1.0,0.0,0.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"4086":{"p":5,"f":["2026-07-11",12.0,11.0,1.0,2.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"4065":{"p":4,"f":["2026-04-19",16.0,3.0,0.0,2.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"4089":{"p":5,"f":["2026-07-14",6.0,3.0,0.0,1.0],"w":["2026-08-09",10.0],"s":"測孕陰性/未孕:未發情 不配種","sd":"2026-08-14"},"4046":{"p":5,"f":["2026-07-31",12.0,7.0,1.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"4130":{"p":4,"f":["2026-06-15",7.0,10.0,0.0,0.0],"w":["2026-07-19",9.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4038":{"p":5,"f":["2026-08-01",12.0,0.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"4069":{"p":5,"f":["2026-07-12",13.0,0.0,0.0,2.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"4105":{"p":5,"f":["2026-07-10",16.0,1.0,0.0,4.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"4320":{"p":5,"f":["2026-07-14",10.0,0.0,0.0,1.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"4172":{"p":5,"f":["2026-07-10",10.0,6.0,0.0,1.0],"w":["2026-08-09",9.0],"s":"移動:正常","sd":"2026-08-12"},"4326":{"p":4,"f":["2026-05-06",13.0,4.0,1.0,0.0],"w":["2026-06-07",8.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4317":{"p":5,"f":["2026-08-03",15.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"4123":{"p":3,"f":["2025-10-11",15.0,2.0,0.0,0.0],"w":["2025-11-09",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"4078":{"p":5,"f":["2026-08-03",10.0,10.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"4059":{"p":5,"f":["2026-08-03",9.0,9.0,2.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"4005":{"p":4,"f":["2026-05-31",16.0,2.0,0.0,3.0],"w":["2026-06-28",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"4161":{"p":5,"f":["2026-08-02",11.0,6.0,2.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"4146":{"p":5,"f":["2026-07-31",16.0,3.0,2.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"4185":{"p":5,"f":["2026-08-02",12.0,0.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"4091":{"p":4,"f":["2026-03-09",12.0,6.0,1.0,4.0],"w":["2026-04-05",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4151":{"p":5,"f":["2026-08-25",10.0,4.0,1.0,0.0],"w":["2026-04-05",12.0],"s":"分娩","sd":"2026-08-25"},"4143":{"p":4,"f":["2026-07-14",11.0,0.0,0.0,1.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"4138":{"p":4,"f":["2026-05-12",12.0,5.0,1.0,0.0],"w":["2026-06-07",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4152":{"p":4,"f":["2026-05-10",9.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"移動:正常","sd":"2026-08-12"},"4131":{"p":4,"f":["2026-05-06",16.0,3.0,2.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4126":{"p":4,"f":["2026-03-29",13.0,5.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"4017":{"p":5,"f":["2026-07-31",15.0,4.0,0.0,1.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"4135":{"p":4,"f":["2026-05-31",16.0,1.0,0.0,2.0],"w":["2026-06-28",11.0],"s":"移動:正常","sd":"2026-08-12"},"1103-2":{"p":5,"f":["2026-06-23",19.0,1.0,0.0,2.0],"w":["2026-07-19",9.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1097-2":{"p":4,"f":["2026-07-13",9.0,14.0,4.0,2.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"1101-6":{"p":5,"f":["2026-07-14",8.0,10.0,2.0,0.0],"w":["2026-08-09",9.0],"s":"測孕陰性/未孕:跛腳","sd":"2026-08-14"},"1134-11":{"p":5,"f":["2026-06-23",9.0,2.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1094-6":{"p":5,"f":["2026-06-23",13.0,2.0,0.0,1.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1004-0":{"p":5,"f":["2026-06-23",12.0,4.0,2.0,0.0],"w":["2026-07-19",10.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1090-3":{"p":5,"f":["2026-06-22",15.0,2.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"移動:正常","sd":"2026-08-13"},"1131-6":{"p":5,"f":["2026-06-23",18.0,4.0,2.0,0.0],"w":["2026-07-19",9.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1094-1":{"p":5,"f":["2026-08-03",16.0,1.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1088-4":{"p":4,"f":["2026-08-24",17.0,2.0,0.0,1.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-24"},"1098-7":{"p":5,"f":["2026-06-23",16.0,0.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1088-6":{"p":5,"f":["2026-06-23",15.0,0.0,0.0,1.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1126-1":{"p":5,"f":["2026-08-25",8.0,4.0,1.0,0.0],"w":["2026-02-22",12.0],"s":"分娩","sd":"2026-08-25"},"1098-2":{"p":5,"f":["2026-08-24",16.0,1.0,0.0,1.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-24"},"1036-8":{"p":5,"f":["2026-08-24",17.0,4.0,0.0,4.0],"w":["2026-04-26",9.0],"s":"分娩","sd":"2026-08-24"},"1130-5":{"p":5,"f":["2026-07-11",18.0,0.0,0.0,3.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"1109-1":{"p":5,"f":["2026-06-23",18.0,0.0,0.0,4.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1106-3":{"p":4,"f":["2026-04-21",17.0,5.0,3.0,5.0],"w":["2026-05-17",10.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1103-3":{"p":5,"f":["2026-08-22",2.0,15.0,0.0,0.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"3018":{"p":5,"f":["2026-07-14",13.0,4.0,1.0,0.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"3029":{"p":5,"f":["2026-05-29",13.0,1.0,0.0,0.0],"w":["2026-06-28",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3048":{"p":5,"f":["2026-06-01",10.0,0.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3099":{"p":5,"f":["2026-07-14",10.0,4.0,2.0,1.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"3097":{"p":5,"f":["2026-05-09",11.0,5.0,1.0,0.0],"w":["2026-06-07",9.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3301":{"p":6,"f":["2026-08-02",15.0,3.0,1.0,1.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"3071":{"p":5,"f":["2026-05-12",12.0,5.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3002":{"p":5,"f":["2026-05-10",15.0,4.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3323":{"p":6,"f":["2026-08-03",13.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"3075":{"p":6,"f":["2026-08-25",8.0,6.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-25"},"3069":{"p":6,"f":["2026-08-04",10.0,1.0,0.0,0.0],"w":["2026-08-30",8.0],"s":"離乳","sd":"2026-08-30"},"3169":{"p":5,"f":["2026-05-31",14.0,3.0,0.0,3.0],"w":["2026-06-28",8.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3166":{"p":6,"f":["2026-08-24",12.0,7.0,1.0,1.0],"w":["2026-04-26",10.0],"s":"分娩","sd":"2026-08-24"},"3187":{"p":5,"f":["2026-06-01",14.0,2.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"3178":{"p":6,"f":["2026-08-22",14.0,4.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-22"},"3149":{"p":5,"f":["2026-06-20",20.0,2.0,0.0,1.0],"w":["2026-06-25",0.0],"s":"測孕:懷孕","sd":"2026-08-20"},"3322":{"p":6,"f":["2026-08-25",15.0,4.0,1.0,2.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-25"},"4733":{"p":4,"f":["2026-05-10",16.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4738":{"p":4,"f":["2026-05-12",15.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4689":{"p":4,"f":["2026-05-11",6.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4698":{"p":4,"f":["2026-05-09",17.0,0.0,0.0,2.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4678":{"p":4,"f":["2026-05-10",12.0,5.0,0.0,0.0],"w":["2026-06-07",8.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4749":{"p":4,"f":["2026-05-12",19.0,0.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4741":{"p":4,"f":["2026-05-09",13.0,2.0,0.0,0.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4687":{"p":4,"f":["2026-05-12",14.0,5.0,0.0,1.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4675":{"p":4,"f":["2026-06-02",3.0,0.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6993":{"p":4,"f":["2026-05-10",14.0,1.0,0.0,0.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"6031":{"p":4,"f":["2026-07-10",14.0,4.0,0.0,3.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"6003":{"p":4,"f":["2026-08-02",11.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"6995":{"p":4,"f":["2026-07-09",14.0,5.0,0.0,3.0],"w":["2026-07-16",0.0],"s":"移動:正常","sd":"2026-08-13"},"6099":{"p":4,"f":["2026-07-10",16.0,5.0,1.0,3.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"6040":{"p":4,"f":["2026-07-11",11.0,3.0,0.0,1.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"6027":{"p":3,"f":["2026-08-24",10.0,4.0,2.0,1.0],"w":["2026-02-22",12.0],"s":"分娩","sd":"2026-08-24"},"6008":{"p":3,"f":["2026-06-02",11.0,2.0,0.0,1.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6033":{"p":4,"f":["2026-08-03",16.0,8.0,1.0,3.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"6097":{"p":3,"f":["2026-04-21",17.0,5.0,0.0,3.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"6076":{"p":4,"f":["2026-06-02",16.0,0.0,0.0,4.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6026":{"p":4,"f":["2026-07-13",13.0,3.0,0.0,2.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"6070":{"p":4,"f":["2026-05-30",17.0,1.0,1.0,4.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6056":{"p":4,"f":["2026-06-02",9.0,2.0,0.0,1.0],"w":["2026-06-28",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6025":{"p":4,"f":["2026-08-25",11.0,3.0,1.0,2.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-25"},"6061":{"p":4,"f":["2026-06-01",13.0,4.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6050":{"p":4,"f":["2026-06-21",15.0,2.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"6036":{"p":4,"f":["2026-05-31",17.0,4.0,0.0,5.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6048":{"p":4,"f":["2026-06-01",12.0,0.0,0.0,2.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6092":{"p":4,"f":["2026-07-31",9.0,9.0,1.0,0.0],"w":["2026-08-30",8.0],"s":"離乳","sd":"2026-08-30"},"6053":{"p":3,"f":["2026-03-27",17.0,1.0,1.0,0.0],"w":["2026-04-26",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6078":{"p":4,"f":["2026-06-22",5.0,0.0,0.0,0.0],"w":["2026-07-19",10.0],"s":"測孕:懷孕","sd":"2026-08-20"},"6028":{"p":3,"f":["2026-01-27",8.0,3.0,0.0,0.0],"w":["2026-02-22",9.0],"s":"測孕:懷孕","sd":"2026-08-20"},"6077":{"p":4,"f":["2026-07-13",14.0,2.0,1.0,2.0],"w":["2026-08-09",8.0],"s":"移動:正常","sd":"2026-08-12"},"4796":{"p":4,"f":["2026-07-09",9.0,1.0,0.0,0.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"6075":{"p":4,"f":["2026-08-25",12.0,1.0,0.0,0.0],"w":["2026-04-26",13.0],"s":"分娩","sd":"2026-08-25"},"6055":{"p":4,"f":["2026-07-11",14.0,2.0,0.0,2.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"6060":{"p":3,"f":["2026-03-31",10.0,0.0,0.0,1.0],"w":["2026-04-26",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6071":{"p":3,"f":["2026-05-11",8.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"6067":{"p":4,"f":["2026-06-21",16.0,0.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"6073":{"p":4,"f":["2026-06-23",15.0,3.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"6045":{"p":4,"f":["2026-06-20",13.0,2.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"6001":{"p":4,"f":["2026-06-22",19.0,0.0,0.0,0.0],"w":["2026-07-19",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"6064":{"p":3,"f":["2026-06-01",17.0,3.0,0.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"6062":{"p":3,"f":["2026-04-16",14.0,2.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"6794":{"p":3,"f":["2026-04-17",11.0,2.0,0.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"6020":{"p":3,"f":["2026-02-15",15.0,0.0,0.0,0.0],"w":["2026-03-15",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"6909":{"p":3,"f":["2026-04-21",15.0,2.0,0.0,1.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"6908":{"p":3,"f":["2026-04-21",19.0,1.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"6068":{"p":4,"f":["2026-07-13",13.0,0.0,0.0,0.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"6002":{"p":4,"f":["2026-07-14",15.0,4.0,1.0,2.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"6063":{"p":4,"f":["2026-08-03",13.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"6066":{"p":4,"f":["2026-08-04",10.0,1.0,1.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"6029":{"p":4,"f":["2026-08-01",16.0,6.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"6024":{"p":4,"f":["2026-08-01",10.0,4.0,1.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"6021":{"p":4,"f":["2026-08-04",13.0,2.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"6039":{"p":3,"f":["2026-05-11",15.0,5.0,0.0,1.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3167":{"p":5,"f":["2026-08-25",11.0,5.0,0.0,1.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"3161":{"p":5,"f":["2026-04-20",13.0,1.0,0.0,1.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"3317":{"p":5,"f":["2026-04-19",13.0,4.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"3163":{"p":5,"f":["2026-04-17",9.0,6.0,2.0,2.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"3143":{"p":4,"f":["2026-04-19",16.0,1.0,1.0,3.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"3181":{"p":5,"f":["2026-07-12",11.0,4.0,0.0,2.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"3307":{"p":5,"f":["2026-04-21",13.0,1.0,0.0,3.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1906-3":{"p":4,"f":["2026-08-25",14.0,0.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-25"},"1905-3":{"p":3,"f":["2026-04-21",13.0,2.0,0.0,1.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1906-2":{"p":4,"f":["2026-08-25",13.0,1.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-25"},"1905-8":{"p":2,"f":["2026-01-27",14.0,1.0,0.0,1.0],"w":["2026-02-22",10.0],"s":"移動:正常","sd":"2026-08-13"},"1906-4":{"p":3,"f":["2026-08-25",13.0,2.0,0.0,0.0],"w":["2026-02-22",12.0],"s":"分娩","sd":"2026-08-25"},"1906-6":{"p":4,"f":["2026-08-25",10.0,1.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-25"},"1915-3":{"p":4,"f":["2026-08-20",16.0,3.0,0.0,4.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-20"},"1905-7":{"p":3,"f":["2026-04-21",9.0,0.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1915-1":{"p":3,"f":["2026-03-31",12.0,1.0,0.0,1.0],"w":["2026-04-26",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1911-4":{"p":4,"f":["2026-08-25",14.0,0.0,0.0,1.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-25"},"1925-7":{"p":3,"f":["2026-08-25",10.0,3.0,3.0,0.0],"w":["2025-11-30",11.0],"s":"分娩","sd":"2026-08-25"},"1909-2":{"p":4,"f":["2026-08-24",16.0,0.0,0.0,1.0],"w":["2026-04-26",13.0],"s":"分娩","sd":"2026-08-24"},"1913-3":{"p":4,"f":["2026-08-23",13.0,2.0,0.0,1.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"1907-1":{"p":3,"f":["2026-06-02",10.0,0.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1919-3":{"p":3,"f":["2026-07-14",12.0,4.0,0.0,1.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"1925-2":{"p":3,"f":["2026-06-23",13.0,1.0,0.0,0.0],"w":["2026-07-19",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1917-2":{"p":3,"f":["2026-04-18",14.0,2.0,0.0,1.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1920-5":{"p":2,"f":["2026-02-17",14.0,3.0,1.0,0.0],"w":["2026-03-15",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1925-4":{"p":3,"f":["2026-04-21",15.0,0.0,0.0,1.0],"w":["2026-05-02",0.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1911-2":{"p":3,"f":["2026-04-21",15.0,1.0,0.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1925-5":{"p":3,"f":["2026-04-20",14.0,3.0,1.0,0.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1923-8":{"p":3,"f":["2026-04-20",13.0,1.0,1.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1926-5":{"p":3,"f":["2026-04-20",17.0,0.0,0.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1905-6":{"p":3,"f":["2026-04-21",16.0,2.0,0.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1918-9":{"p":3,"f":["2026-04-21",10.0,1.0,0.0,0.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1922-1":{"p":3,"f":["2026-04-17",20.0,0.0,0.0,5.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1923-7":{"p":2,"f":["2026-02-15",12.0,4.0,0.0,0.0],"w":["2026-03-15",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1924-4":{"p":3,"f":["2026-07-13",17.0,4.0,1.0,4.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"1921-3":{"p":3,"f":["2026-05-12",12.0,3.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3908-2":{"p":3,"f":["2026-07-15",11.0,5.0,0.0,3.0],"w":["2026-07-17",0.0],"s":"移動:不穩","sd":"2026-08-14"},"1923-6":{"p":3,"f":["2026-05-11",15.0,1.0,1.0,0.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1907-2":{"p":3,"f":["2026-07-14",18.0,1.0,0.0,3.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1923-1":{"p":2,"f":["2026-02-16",14.0,1.0,0.0,0.0],"w":["2026-03-15",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1920-7":{"p":3,"f":["2026-05-11",14.0,2.0,2.0,0.0],"w":["2026-06-07",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1903-4":{"p":3,"f":["2026-07-14",10.0,1.0,0.0,0.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1917-7":{"p":3,"f":["2026-05-10",14.0,1.0,0.0,1.0],"w":["2026-06-07",11.0],"s":"流產","sd":"2026-08-26"},"1903-7":{"p":3,"f":["2026-05-08",16.0,0.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1910-2":{"p":2,"f":["2026-05-12",14.0,5.0,1.0,0.0],"w":["2026-06-07",11.0],"s":"移動:正常","sd":"2026-08-13"},"1903-6":{"p":3,"f":["2026-05-10",19.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1907-5":{"p":3,"f":["2026-07-16",6.0,0.0,0.0,0.0],"w":["2026-08-09",9.0],"s":"移動:正常","sd":"2026-08-13"},"1918-4":{"p":3,"f":["2026-07-13",12.0,0.0,0.0,0.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1917-1":{"p":3,"f":["2026-06-22",6.0,0.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1917-5":{"p":3,"f":["2026-06-02",11.0,1.0,1.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1917-4":{"p":3,"f":["2026-08-01",15.0,0.0,0.0,0.0],"w":["2026-08-30",13.0],"s":"離乳","sd":"2026-08-30"},"1916-3":{"p":2,"f":["2026-01-05",12.0,1.0,0.0,0.0],"w":["2026-02-01",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1918-6":{"p":3,"f":["2026-06-01",17.0,1.0,0.0,3.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1917-6":{"p":2,"f":["2026-02-14",13.0,3.0,0.0,0.0],"w":["2026-03-15",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"3908-1":{"p":3,"f":["2026-06-01",23.0,1.0,1.0,3.0],"w":["2026-06-28",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1918-7":{"p":3,"f":["2026-04-20",18.0,1.0,1.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"41311":{"p":5,"f":["2026-08-22",8.0,13.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-22"},"4136":{"p":5,"f":["2026-08-25",0.0,16.0,16.0,0.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"4165":{"p":5,"f":["2026-08-22",16.0,3.0,0.0,1.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-22"},"4176":{"p":4,"f":["2026-04-19",13.0,0.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"4197":{"p":4,"f":["2026-08-25",5.0,1.0,1.0,0.0],"w":["2026-02-01",7.0],"s":"分娩","sd":"2026-08-25"},"4319":{"p":4,"f":["2026-06-01",15.0,0.0,0.0,4.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"4493":{"p":4,"f":["2026-06-20",17.0,4.0,0.0,2.0],"w":["2026-07-19",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"4498":{"p":4,"f":["2026-03-31",15.0,1.0,0.0,0.0],"w":["2026-04-26",11.0],"s":"測孕:懷孕","sd":"2026-05-28"},"4605":{"p":4,"f":["2026-06-22",13.0,4.0,0.0,0.0],"w":["2026-07-19",9.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4610":{"p":4,"f":["2026-06-23",8.0,1.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4640":{"p":4,"f":["2026-06-21",11.0,3.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4660":{"p":5,"f":["2026-08-21",9.0,3.0,0.0,0.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-21"},"4669":{"p":5,"f":["2026-08-25",6.0,0.0,0.0,0.0],"w":["2026-04-26",13.0],"s":"分娩","sd":"2026-08-25"},"4302":{"p":4,"f":["2026-05-31",15.0,2.0,2.0,2.0],"w":["2026-06-28",11.0],"s":"測孕陰性/未孕:卵巢囊腫","sd":"2026-08-14"},"4118":{"p":4,"f":["2026-07-11",14.0,0.0,0.0,1.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"4169":{"p":5,"f":["2026-08-22",12.0,8.0,0.0,2.0],"w":["2026-04-26",13.0],"s":"分娩","sd":"2026-08-22"},"4609":{"p":4,"f":["2026-08-02",13.0,0.0,0.0,1.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"4618":{"p":4,"f":["2026-06-02",12.0,2.0,1.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"4657":{"p":4,"f":["2026-05-30",18.0,2.0,1.0,3.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"4644":{"p":4,"f":["2026-06-22",13.0,3.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4622":{"p":4,"f":["2026-06-22",16.0,1.0,0.0,2.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"4765":{"p":4,"f":["2026-07-14",9.0,7.0,0.0,3.0],"w":["2026-08-09",9.0],"s":"移動:正常","sd":"2026-08-12"},"4654":{"p":4,"f":["2026-04-21",13.0,5.0,1.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"4779":{"p":4,"f":["2026-05-09",11.0,3.0,1.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"4650":{"p":4,"f":["2026-08-25",9.0,3.0,1.0,0.0],"w":["2026-04-26",10.0],"s":"分娩","sd":"2026-08-25"},"1332-6":{"p":3,"f":["2026-06-21",13.0,3.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1340-3":{"p":3,"f":["2026-06-18",14.0,1.0,1.0,1.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1333-2":{"p":3,"f":["2026-06-21",16.0,0.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1339-6":{"p":3,"f":["2026-07-14",11.0,0.0,0.0,4.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"1334-6":{"p":2,"f":["2026-01-27",14.0,2.0,0.0,0.0],"w":["2026-02-22",10.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1338-3":{"p":3,"f":["2026-06-22",17.0,1.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1326-4":{"p":3,"f":["2026-07-14",16.0,6.0,0.0,3.0],"w":["2026-08-09",9.0],"s":"移動:不穩","sd":"2026-08-14"},"1330-6":{"p":3,"f":["2026-07-13",20.0,3.0,2.0,4.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1341-9":{"p":3,"f":["2026-08-24",10.0,0.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-24"},"1330-1":{"p":3,"f":["2026-06-23",14.0,1.0,1.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1340-4":{"p":3,"f":["2026-06-20",11.0,1.0,1.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"3336-2":{"p":3,"f":["2026-06-24",15.0,1.0,0.0,1.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"3341-3":{"p":2,"f":["2026-06-23",16.0,3.0,0.0,0.0],"w":["2026-07-19",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1330-2":{"p":2,"f":["2026-07-13",14.0,0.0,0.0,0.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1340-6":{"p":2,"f":["2026-06-20",13.0,5.0,2.0,0.0],"w":["2026-07-19",10.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1326-1":{"p":3,"f":["2026-06-20",17.0,1.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1333-4":{"p":3,"f":["2026-06-19",19.0,0.0,0.0,2.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1337-5":{"p":3,"f":["2026-06-21",17.0,2.0,1.0,0.0],"w":["2026-07-19",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1332-4":{"p":3,"f":["2026-07-12",18.0,4.0,0.0,0.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1342-1":{"p":2,"f":["2026-08-17",3.0,13.0,1.0,3.0],"w":["2026-04-05",10.0],"s":"分娩","sd":"2026-08-17"},"1332-5":{"p":3,"f":["2026-06-18",18.0,0.0,0.0,0.0],"w":["2026-07-19",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1339-5":{"p":3,"f":["2026-07-14",10.0,0.0,0.0,0.0],"w":["2026-08-09",8.0],"s":"移動:正常","sd":"2026-08-12"},"1335-3":{"p":2,"f":["2026-04-21",10.0,0.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1326-2":{"p":3,"f":["2026-07-10",15.0,1.0,0.0,2.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"1339-7":{"p":3,"f":["2026-07-14",21.0,2.0,0.0,6.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1336-5":{"p":2,"f":["2026-04-20",16.0,3.0,1.0,2.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1336-2":{"p":2,"f":["2026-06-23",3.0,0.0,0.0,0.0],"w":["2026-06-25",0.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1337-4":{"p":2,"f":["2026-08-24",15.0,1.0,0.0,3.0],"w":["2025-12-21",13.0],"s":"分娩","sd":"2026-08-24"},"1342-3":{"p":3,"f":["2026-08-23",17.0,1.0,0.0,2.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-23"},"1326-6":{"p":3,"f":["2026-07-31",16.0,4.0,1.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"3341-0":{"p":2,"f":["2026-02-16",8.0,3.0,0.0,0.0],"w":["2026-03-15",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1341-4":{"p":3,"f":["2026-07-14",11.0,1.0,0.0,0.0],"w":["2026-08-09",11.0],"s":"移動:不穩","sd":"2026-08-14"},"3341-2":{"p":2,"f":["2026-02-17",13.0,0.0,0.0,0.0],"w":["2026-03-15",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"3334-0":{"p":3,"f":["2026-07-14",11.0,9.0,5.0,1.0],"w":["2026-08-09",8.0],"s":"移動:正常","sd":"2026-08-12"},"1341-7":{"p":3,"f":["2026-07-12",14.0,1.0,0.0,1.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1334-5":{"p":3,"f":["2026-07-09",19.0,0.0,0.0,8.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1333-5":{"p":3,"f":["2026-08-24",19.0,0.0,0.0,3.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-24"},"1332-2":{"p":2,"f":["2026-05-12",15.0,3.0,2.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1334-4":{"p":3,"f":["2026-08-01",14.0,3.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1338-2":{"p":2,"f":["2026-07-13",4.0,0.0,0.0,0.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"3334-1":{"p":2,"f":["2026-05-12",5.0,0.0,0.0,0.0],"w":["2026-06-07",10.0],"s":"流產","sd":"2026-08-28"},"1341-6":{"p":2,"f":["2026-08-25",18.0,1.0,0.0,2.0],"w":["2026-04-26",13.0],"s":"分娩","sd":"2026-08-25"},"3341-4":{"p":3,"f":["2026-08-04",8.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1335-5":{"p":3,"f":["2026-08-04",18.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1340-2":{"p":2,"f":["2026-05-10",12.0,1.0,1.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"3336-1":{"p":3,"f":["2026-08-03",16.0,8.0,4.0,2.0],"w":["2026-08-30",9.0],"s":"離乳","sd":"2026-08-30"},"1022-3":{"p":2,"f":["2026-06-02",13.0,3.0,2.0,1.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1022-2":{"p":2,"f":["2026-08-04",13.0,0.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1026-4":{"p":2,"f":["2026-05-12",0.0,4.0,0.0,0.0],"w":["2026-05-14",0.0],"s":"移動:正常","sd":"2026-08-13"},"1022-4":{"p":2,"f":["2026-05-11",16.0,3.0,0.0,0.0],"w":["2026-06-07",13.0],"s":"流產","sd":"2026-08-30"},"1021-2":{"p":2,"f":["2026-08-04",12.0,5.0,0.0,4.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1024-4":{"p":2,"f":["2026-06-01",16.0,0.0,0.0,2.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1024-3":{"p":2,"f":["2026-06-02",7.0,2.0,0.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1022-6":{"p":2,"f":["2026-06-01",14.0,3.0,0.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1022-8":{"p":2,"f":["2026-06-02",12.0,1.0,0.0,3.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1021-6":{"p":1,"f":["2026-01-06",11.0,1.0,1.0,0.0],"w":["2026-02-01",11.0],"s":"流產","sd":"2026-07-30"},"1022-5":{"p":2,"f":["2026-06-02",5.0,0.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1022-1":{"p":2,"f":["2026-05-12",10.0,0.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1025-2":{"p":2,"f":["2026-08-03",20.0,3.0,1.0,4.0],"w":["2026-08-06",0.0],"s":"離乳","sd":"2026-08-06"},"1019-7":{"p":2,"f":["2026-05-12",13.0,2.0,0.0,1.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1022-7":{"p":2,"f":["2026-08-02",13.0,0.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1019-8":{"p":2,"f":["2026-08-04",7.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1517-3":{"p":2,"f":["2026-04-20",15.0,3.0,0.0,1.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1520-4":{"p":2,"f":["2026-06-22",12.0,2.0,0.0,0.0],"w":["2026-07-19",10.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1521-7":{"p":2,"f":["2026-04-23",10.0,1.0,0.0,1.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1516-3":{"p":2,"f":["2026-07-13",17.0,0.0,0.0,3.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1524-3":{"p":2,"f":["2026-04-20",14.0,2.0,0.0,0.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1515-2":{"p":2,"f":["2026-04-19",13.0,1.0,1.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1524-2":{"p":2,"f":["2026-04-20",14.0,3.0,0.0,1.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1518-2":{"p":2,"f":["2026-04-21",9.0,0.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1518-6":{"p":2,"f":["2026-08-23",11.0,4.0,1.0,3.0],"w":["2025-11-28",0.0],"s":"分娩","sd":"2026-08-23"},"3521-0":{"p":2,"f":["2026-07-13",9.0,1.0,0.0,1.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1520-6":{"p":2,"f":["2026-05-12",3.0,2.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1521-9":{"p":2,"f":["2026-05-12",11.0,2.0,0.0,0.0],"w":["2026-06-07",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1525-7":{"p":2,"f":["2026-07-09",15.0,0.0,0.0,2.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1522-4":{"p":2,"f":["2026-07-14",1.0,4.0,0.0,1.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"1521-5":{"p":2,"f":["2026-07-14",14.0,1.0,0.0,2.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-12"},"1507-1":{"p":2,"f":["2026-07-13",13.0,2.0,0.0,0.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-13"},"1515-3":{"p":2,"f":["2026-08-02",15.0,1.0,1.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1516-5":{"p":2,"f":["2026-06-01",19.0,3.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1518-7":{"p":2,"f":["2026-06-02",10.0,1.0,0.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1519-6":{"p":2,"f":["2026-06-02",12.0,0.0,0.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1520-8":{"p":2,"f":["2026-06-02",4.0,7.0,0.0,0.0],"w":["2026-06-28",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1523-5":{"p":2,"f":["2026-06-02",17.0,1.0,0.0,5.0],"w":["2026-06-28",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1523-4":{"p":2,"f":["2026-06-21",11.0,5.0,1.0,0.0],"w":["2026-07-19",10.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1515-8":{"p":2,"f":["2026-08-26",8.0,5.0,2.0,0.0],"w":["2026-01-30",0.0],"s":"分娩","sd":"2026-08-26"},"1523-9":{"p":2,"f":["2026-06-21",14.0,4.0,2.0,0.0],"w":["2026-07-19",9.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1519-3":{"p":2,"f":["2026-07-11",15.0,0.0,0.0,1.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"1525-2":{"p":2,"f":["2026-06-20",14.0,2.0,1.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1519-7":{"p":2,"f":["2026-07-13",7.0,0.0,0.0,0.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"3634-1":{"p":1,"f":["2026-02-15",17.0,1.0,0.0,0.0],"w":["2026-03-15",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1633-5":{"p":2,"f":["2026-07-12",10.0,1.0,0.0,0.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1633-2":{"p":2,"f":["2026-07-14",5.0,0.0,0.0,1.0],"w":["2026-08-09",9.0],"s":"移動:正常","sd":"2026-08-13"},"1634-9":{"p":2,"f":["2026-07-11",15.0,0.0,0.0,1.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"3634-0":{"p":2,"f":["2026-07-11",16.0,1.0,0.0,1.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1633-9":{"p":2,"f":["2026-07-12",13.0,3.0,2.0,3.0],"w":["2026-08-09",7.0],"s":"移動:正常","sd":"2026-08-13"},"1635-5":{"p":2,"f":["2026-07-12",12.0,2.0,0.0,0.0],"w":["2026-08-09",9.0],"s":"移動:正常","sd":"2026-08-13"},"1635-1":{"p":1,"f":["2026-02-17",11.0,0.0,0.0,0.0],"w":["2026-03-15",11.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1595-1":{"p":1,"f":["2026-03-10",5.0,0.0,0.0,1.0],"w":["2026-04-05",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1630-5":{"p":2,"f":["2026-08-04",12.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1633-3":{"p":2,"f":["2026-08-04",12.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1633-8":{"p":1,"f":["2026-05-10",13.0,8.0,0.0,0.0],"w":["2026-06-07",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1633-6":{"p":1,"f":["2026-03-10",15.0,1.0,0.0,5.0],"w":["2026-04-05",10.0],"s":"移動:正常","sd":"2026-08-13"},"1630-2":{"p":1,"f":["2026-05-26",3.0,10.0,0.0,3.0],"w":["2026-06-05",0.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1630-4":{"p":1,"f":["2026-03-09",8.0,0.0,0.0,0.0],"w":["2026-04-05",10.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1633-4":{"p":2,"f":["2026-08-02",14.0,1.0,0.0,1.0],"w":["2026-08-06",0.0],"s":"離乳","sd":"2026-08-06"},"1629-3":{"p":2,"f":["2026-08-25",12.0,2.0,0.0,1.0],"w":["2026-04-26",13.0],"s":"分娩","sd":"2026-08-25"},"1629-7":{"p":2,"f":["2026-08-01",15.0,6.0,0.0,2.0],"w":["2026-08-30",7.0],"s":"離乳","sd":"2026-08-30"},"1627-6":{"p":2,"f":["2026-08-25",18.0,1.0,1.0,4.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-25"},"1627-5":{"p":1,"f":["2026-06-02",14.0,1.0,0.0,2.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1631-8":{"p":2,"f":["2026-08-24",17.0,2.0,1.0,2.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-24"},"1623-7":{"p":1,"f":["2026-04-01",9.0,3.0,1.0,0.0],"w":["2026-04-26",13.0],"s":"移動:正常","sd":"2026-08-13"},"1636-3":{"p":1,"f":["2026-03-31",10.0,1.0,0.0,0.0],"w":["2026-04-26",13.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1627-8":{"p":2,"f":["2026-08-24",15.0,2.0,1.0,3.0],"w":["2026-04-26",13.0],"s":"分娩","sd":"2026-08-24"},"1635-6":{"p":2,"f":["2026-08-24",16.0,1.0,0.0,1.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-24"},"1627-4":{"p":1,"f":["2026-08-25",10.0,2.0,1.0,1.0],"s":"分娩","sd":"2026-08-25"},"1632-7":{"p":1,"f":["2026-03-31",11.0,0.0,0.0,0.0],"w":["2026-04-26",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1632-6":{"p":2,"f":["2026-08-23",12.0,1.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"分娩","sd":"2026-08-23"},"1623-1":{"p":1,"f":["2026-03-30",10.0,6.0,0.0,1.0],"w":["2026-04-26",10.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1108-11":{"p":1,"f":["2026-03-31",16.0,1.0,1.0,0.0],"w":["2026-04-26",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1105-2":{"p":1,"f":["2026-03-29",13.0,2.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1105-8":{"p":1,"f":["2026-03-31",17.0,2.0,0.0,0.0],"w":["2026-04-26",10.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1108-2":{"p":2,"f":["2026-08-24",1.0,10.0,0.0,0.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"1109-3":{"p":1,"f":["2026-03-29",7.0,1.0,0.0,0.0],"w":["2026-04-26",10.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1109-4":{"p":1,"f":["2026-05-31",12.0,0.0,0.0,2.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1109-6":{"p":2,"f":["2026-08-25",11.0,0.0,0.0,0.0],"w":["2026-04-26",11.0],"s":"分娩","sd":"2026-08-25"},"1110-4":{"p":1,"f":["2026-08-04",15.0,2.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1110-6":{"p":1,"f":["2026-03-28",8.0,6.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1716-6":{"p":2,"f":["2026-08-24",12.0,1.0,0.0,0.0],"w":["2026-04-26",14.0],"s":"分娩","sd":"2026-08-24"},"1722-4":{"p":1,"f":["2026-03-29",12.0,1.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1725-1":{"p":1,"f":["2026-04-21",13.0,0.0,0.0,1.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1731-3":{"p":2,"f":["2026-08-25",16.0,1.0,0.0,1.0],"w":["2026-04-26",14.0],"s":"分娩","sd":"2026-08-25"},"1732-4":{"p":1,"f":["2026-03-31",13.0,7.0,4.0,4.0],"w":["2026-04-26",13.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1733-3":{"p":1,"f":["2026-03-30",11.0,0.0,0.0,0.0],"w":["2026-04-26",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1739-4":{"p":1,"f":["2026-05-10",8.0,2.0,1.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1747-5":{"p":1,"f":["2026-04-20",15.0,0.0,0.0,0.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1743-5":{"p":1,"f":["2026-04-18",14.0,2.0,0.0,2.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1739-3":{"p":1,"f":["2026-04-20",12.0,4.0,0.0,2.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1739-1":{"p":1,"f":["2026-04-21",13.0,2.0,0.0,3.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1740-5":{"p":1,"f":["2026-04-19",13.0,0.0,0.0,1.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1737-1":{"p":1,"f":["2026-04-18",17.0,0.0,0.0,5.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1741-2":{"p":1,"f":["2026-04-20",12.0,1.0,0.0,0.0],"w":["2026-05-17",13.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1750-4":{"p":1,"f":["2026-04-22",8.0,2.0,0.0,3.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1743-6":{"p":1,"f":["2026-04-20",10.0,0.0,0.0,0.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1749-1":{"p":1,"f":["2026-04-21",16.0,0.0,0.0,6.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1743-2":{"p":1,"f":["2026-04-20",16.0,0.0,0.0,2.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1748-5":{"p":1,"f":["2026-04-20",9.0,3.0,0.0,0.0],"w":["2026-05-17",12.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1748-1":{"p":1,"f":["2026-04-21",5.0,0.0,0.0,0.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-06-18"},"1748-3":{"p":1,"f":["2026-04-19",16.0,2.0,0.0,5.0],"w":["2026-05-17",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1748-2":{"p":1,"f":["2026-04-21",13.0,0.0,0.0,2.0],"w":["2026-05-17",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1743-4":{"p":1,"f":["2026-07-11",18.0,3.0,0.0,4.0],"w":["2026-08-09",11.0],"s":"移動:不穩","sd":"2026-08-13"},"1745-4":{"p":1,"f":["2026-05-12",7.0,0.0,0.0,0.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1113-1":{"p":1,"f":["2026-05-09",13.0,2.0,1.0,0.0],"w":["2026-06-07",13.0],"s":"移動:不穩","sd":"2026-08-14"},"1745-3":{"p":1,"f":["2026-05-10",18.0,0.0,0.0,2.0],"w":["2026-05-19",0.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1114-4":{"p":1,"f":["2026-05-11",13.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1745-2":{"p":1,"f":["2026-05-11",5.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1740-6":{"p":1,"f":["2026-05-10",12.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1743-8":{"p":1,"f":["2026-05-11",14.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1115-3":{"p":1,"f":["2026-05-09",13.0,5.0,0.0,2.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1748-4":{"p":1,"f":["2026-05-10",9.0,1.0,0.0,0.0],"w":["2026-06-07",9.0],"s":"移動:正常","sd":"2026-08-13"},"1116-6":{"p":1,"f":["2026-05-11",15.0,0.0,0.0,1.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1743-7":{"p":1,"f":["2026-05-11",18.0,0.0,0.0,0.0],"w":["2026-06-07",13.0],"s":"移動:正常","sd":"2026-08-13"},"1116-2":{"p":1,"f":["2026-05-11",22.0,1.0,0.0,2.0],"w":["2026-06-07",13.0],"s":"移動:正常","sd":"2026-08-12"},"1745-6":{"p":1,"f":["2026-05-12",18.0,1.0,0.0,0.0],"w":["2026-06-07",13.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1740-4":{"p":1,"f":["2026-05-12",15.0,0.0,0.0,1.0],"w":["2026-06-07",11.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1747-7":{"p":1,"f":["2026-05-11",16.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1114-1":{"p":1,"f":["2026-05-12",14.0,1.0,1.0,0.0],"w":["2026-06-07",13.0],"s":"移動:正常","sd":"2026-08-13"},"1745-7":{"p":1,"f":["2026-05-12",15.0,2.0,1.0,2.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1113-3":{"p":1,"f":["2026-05-09",18.0,1.0,0.0,0.0],"w":["2026-05-14",0.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1750-3":{"p":1,"f":["2026-05-12",7.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"移動:正常","sd":"2026-08-13"},"1745-5":{"p":1,"f":["2026-05-11",11.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1739-2":{"p":1,"f":["2026-05-11",12.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"移動:正常","sd":"2026-08-13"},"1745-8":{"p":1,"f":["2026-05-11",18.0,0.0,0.0,2.0],"w":["2026-06-07",12.0],"s":"流產","sd":"2026-08-02"},"1116-3":{"p":1,"f":["2026-05-10",17.0,0.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-07-08"},"1743-3":{"p":1,"f":["2026-05-10",12.0,1.0,0.0,0.0],"w":["2026-06-07",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"0389-1":{"p":1,"f":["2026-05-30",16.0,0.0,0.0,2.0],"w":["2026-06-28",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"0409-2":{"p":1,"f":["2026-06-01",14.0,0.0,0.0,1.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"0393-8":{"p":1,"f":["2026-06-02",14.0,3.0,0.0,1.0],"w":["2026-06-28",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1824-1":{"p":1,"f":["2026-06-01",12.0,3.0,0.0,2.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"0392-4":{"p":1,"f":["2026-06-02",15.0,2.0,0.0,4.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1824-6":{"p":1,"f":["2026-06-01",15.0,1.0,1.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1823-5":{"p":1,"f":["2026-06-01",10.0,2.0,2.0,0.0],"w":["2026-06-28",11.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1824-5":{"p":1,"f":["2026-06-01",11.0,2.0,1.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1824-2":{"p":1,"f":["2026-06-03",7.0,10.0,0.0,7.0],"w":["2026-06-05",0.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"0408-3":{"p":1,"f":["2026-05-31",15.0,3.0,0.0,3.0],"w":["2026-06-05",0.0],"s":"測孕:懷孕","sd":"2026-08-03"},"0396-2":{"p":1,"f":["2026-05-30",5.0,10.0,8.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"1824-3":{"p":1,"f":["2026-06-01",14.0,0.0,0.0,2.0],"w":["2026-06-28",12.0],"s":"測孕:懷孕","sd":"2026-08-03"},"0394-1":{"p":1,"f":["2026-06-02",8.0,3.0,3.0,0.0],"w":["2026-06-28",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1830-1":{"p":1,"f":["2026-06-19",11.0,1.0,0.0,0.0],"w":["2026-07-19",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"0419-3":{"p":1,"f":["2026-06-23",6.0,0.0,0.0,0.0],"w":["2026-07-19",9.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1829-4":{"p":1,"f":["2026-06-23",7.0,3.0,2.0,0.0],"w":["2026-07-19",13.0],"s":"測孕:懷孕","sd":"2026-08-20"},"0414-4":{"p":1,"f":["2026-06-22",10.0,5.0,3.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1829-3":{"p":1,"f":["2026-06-21",13.0,3.0,2.0,1.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"0412-4":{"p":1,"f":["2026-06-23",5.0,2.0,0.0,0.0],"w":["2026-06-25",0.0],"s":"測孕:懷孕","sd":"2026-08-20"},"0416-3":{"p":1,"f":["2026-06-21",13.0,0.0,0.0,0.0],"w":["2026-07-19",10.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1827-2":{"p":1,"f":["2026-06-23",12.0,0.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:懷孕","sd":"2026-08-20"},"0412-3":{"p":1,"f":["2026-06-23",3.0,2.0,0.0,0.0],"w":["2026-06-25",0.0],"s":"測孕:懷孕","sd":"2026-08-20"},"0416-6":{"p":1,"f":["2026-06-18",18.0,0.0,0.0,1.0],"w":["2026-07-19",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"0419-2":{"p":1,"f":["2026-08-25",11.0,2.0,1.0,0.0],"s":"分娩","sd":"2026-08-25"},"0412-2":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1826-1":{"p":1,"f":["2026-06-23",4.0,0.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"0415-6":{"p":1,"f":["2026-06-20",9.0,4.0,0.0,1.0],"w":["2026-06-25",0.0],"s":"測孕:懷孕","sd":"2026-08-20"},"1831-2":{"p":1,"f":["2026-06-20",12.0,4.0,0.0,0.0],"w":["2026-07-19",12.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"0415-1":{"p":1,"f":["2026-06-22",11.0,5.0,2.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"0416-2":{"p":1,"f":["2026-06-21",5.0,0.0,0.0,0.0],"w":["2026-07-19",11.0],"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1828-2":{"p":1,"f":["2026-07-12",14.0,0.0,0.0,0.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1829-9":{"p":1,"f":["2026-07-11",16.0,1.0,0.0,2.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1829-1":{"p":1,"f":["2026-07-13",12.0,0.0,0.0,1.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1826-3":{"p":1,"f":["2026-07-12",17.0,1.0,1.0,3.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"1830-3":{"p":1,"f":["2026-07-10",18.0,1.0,1.0,2.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1829-7":{"p":1,"f":["2026-07-14",11.0,0.0,0.0,1.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1826-7":{"p":1,"f":["2026-07-11",14.0,0.0,0.0,1.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"1830-5":{"p":1,"f":["2026-07-09",11.0,2.0,0.0,0.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1831-1":{"p":1,"f":["2026-07-14",15.0,3.0,0.0,2.0],"w":["2026-08-09",8.0],"s":"移動:正常","sd":"2026-08-13"},"1831-4":{"p":1,"f":["2026-08-04",16.0,2.0,0.0,3.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1827-1":{"p":1,"f":["2026-07-11",17.0,0.0,0.0,3.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-12"},"1829-8":{"p":1,"f":["2026-07-13",12.0,2.0,0.0,0.0],"w":["2026-08-09",11.0],"s":"移動:正常","sd":"2026-08-13"},"1825-4":{"p":1,"f":["2026-07-12",13.0,4.0,0.0,1.0],"w":["2026-07-16",0.0],"s":"移動:不穩","sd":"2026-08-14"},"1831-3":{"p":1,"f":["2026-08-04",13.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1830-6":{"p":1,"f":["2026-07-31",14.0,2.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1831-6":{"p":1,"f":["2026-08-04",16.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1830-2":{"p":1,"f":["2026-08-04",10.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1829-5":{"p":1,"f":["2026-08-04",12.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1828-4":{"p":1,"f":["2026-08-02",15.0,1.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1831-5":{"p":1,"f":["2026-08-03",18.0,3.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1828-3":{"p":1,"f":["2026-08-03",13.0,2.0,0.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1826-4":{"p":1,"f":["2026-08-03",7.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1831-7":{"p":1,"f":["2026-07-31",10.0,2.0,1.0,0.0],"w":["2026-08-30",11.0],"s":"離乳","sd":"2026-08-30"},"1825-5":{"p":1,"f":["2026-08-02",14.0,0.0,0.0,1.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1156-5":{"p":1,"f":["2026-08-03",10.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1156-2":{"p":1,"f":["2026-08-01",11.0,1.0,0.0,0.0],"w":["2026-08-06",0.0],"s":"離乳","sd":"2026-08-06"},"1894-4":{"p":0,"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1172-4":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1155-8":{"p":1,"f":["2026-07-29",0.0,12.0,0.0,5.0],"w":["2026-08-06",0.0],"s":"離乳","sd":"2026-08-06"},"1155-6":{"p":1,"f":["2026-08-04",16.0,2.0,1.0,2.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1168-3":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1155-2":{"p":0,"s":"測孕:懷孕","sd":"2026-05-06"},"1157-2":{"p":1,"f":["2026-08-01",19.0,0.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1152-3":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1157-5":{"p":1,"f":["2026-08-24",15.0,0.0,0.0,1.0],"s":"分娩","sd":"2026-08-24"},"1902-3":{"p":1,"f":["2026-08-03",6.0,2.0,0.0,0.0],"w":["2026-08-30",10.0],"s":"離乳","sd":"2026-08-30"},"1161-6":{"p":1,"f":["2026-08-01",13.0,1.0,1.0,0.0],"w":["2026-08-06",0.0],"s":"離乳","sd":"2026-08-06"},"1899-9":{"p":1,"f":["2026-08-01",12.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1156-3":{"p":1,"f":["2026-07-31",5.0,8.0,0.0,2.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1156-6":{"p":1,"f":["2026-08-03",14.0,2.0,0.0,1.0],"w":["2026-08-30",9.0],"s":"離乳","sd":"2026-08-30"},"1899-5":{"p":1,"f":["2026-08-01",15.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1155-7":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"3894-0":{"p":1,"f":["2026-07-31",12.0,1.0,0.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1155-4":{"p":1,"f":["2026-08-04",10.0,6.0,1.0,0.0],"w":["2026-08-06",0.0],"s":"離乳","sd":"2026-08-06"},"1155-9":{"p":1,"f":["2026-08-01",15.0,1.0,1.0,0.0],"w":["2026-08-30",12.0],"s":"離乳","sd":"2026-08-30"},"1903-41":{"p":1,"f":["2026-08-20",16.0,1.0,0.0,4.0],"s":"分娩","sd":"2026-08-20"},"1906-31":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1160-7":{"p":1,"f":["2026-08-22",15.0,1.0,0.0,1.0],"s":"分娩","sd":"2026-08-22"},"1160-9":{"p":1,"f":["2026-08-24",13.0,1.0,0.0,0.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"1161-2":{"p":1,"f":["2026-08-22",17.0,2.0,1.0,3.0],"s":"分娩","sd":"2026-08-22"},"1161-5":{"p":1,"f":["2026-08-20",13.0,4.0,2.0,5.0],"s":"分娩","sd":"2026-08-20"},"1161-9":{"p":1,"f":["2026-08-23",13.0,3.0,1.0,0.0],"s":"分娩","sd":"2026-08-23"},"1894-1":{"p":1,"f":["2026-08-22",10.0,0.0,0.0,1.0],"s":"分娩","sd":"2026-08-22"},"1894-2":{"p":1,"f":["2026-08-25",1.0,3.0,0.0,0.0],"s":"分娩","sd":"2026-08-25"},"1894-5":{"p":1,"f":["2026-08-18",14.0,2.0,2.0,4.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"1894-7":{"p":1,"f":["2026-08-20",12.0,0.0,0.0,0.0],"s":"分娩","sd":"2026-08-20"},"1894-9":{"p":1,"f":["2026-08-22",12.0,2.0,1.0,0.0],"s":"分娩","sd":"2026-08-22"},"1896-1":{"p":1,"f":["2026-08-23",14.0,0.0,0.0,0.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"1896-2":{"p":1,"f":["2026-08-21",14.0,4.0,2.0,3.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"1899-2":{"p":1,"f":["2026-08-25",13.0,0.0,0.0,1.0],"s":"分娩","sd":"2026-08-25"},"1899-3":{"p":1,"f":["2026-08-21",13.0,4.0,1.0,3.0],"s":"分娩","sd":"2026-08-21"},"1900-5":{"p":1,"f":["2026-08-24",13.0,0.0,0.0,0.0],"s":"分娩","sd":"2026-08-24"},"1901-3":{"p":1,"f":["2026-08-24",15.0,0.0,0.0,2.0],"s":"分娩","sd":"2026-08-24"},"1903-2":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1903-3":{"p":1,"f":["2026-08-22",14.0,0.0,0.0,4.0],"w":["2026-08-27",0.0],"s":"離乳","sd":"2026-08-27"},"1903-5":{"p":1,"f":["2026-08-24",5.0,1.0,0.0,0.0],"s":"分娩","sd":"2026-08-24"},"1904-5":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1904-6":{"p":1,"f":["2026-08-25",8.0,6.0,0.0,0.0],"s":"分娩","sd":"2026-08-25"},"1906-9":{"p":1,"f":["2026-08-23",17.0,2.0,1.0,1.0],"s":"分娩","sd":"2026-08-23"},"3155-1":{"p":1,"f":["2026-08-24",13.0,2.0,0.0,3.0],"s":"分娩","sd":"2026-08-24"},"3894-1":{"p":1,"f":["2026-08-22",18.0,1.0,1.0,3.0],"s":"分娩","sd":"2026-08-22"},"1904-31":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1906-21":{"p":0,"s":"流產","sd":"2026-08-20"},"1906-41":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1906-61":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1163-3":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1166-6":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1170-4":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1171-7":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1894-3":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1894-6":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1900-3":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1900-4":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1901-2":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1902-1":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1902-2":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1902-4":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1902-5":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1903-1":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1906-7":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1906-8":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"3164-0":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"3166-1":{"p":0,"s":"測孕:懷孕","sd":"2026-06-18"},"1168-7":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1898-5":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"3899-0":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1164-9":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1164-5":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1163-4":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1171-1":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1169-3":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1172-3":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1163-2":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1170-1":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1171-3":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1170-3":{"p":0,"s":"測孕:懷孕","sd":"2026-07-08"},"1174-5":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1174-4":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1167-7":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1164-2":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"3152-0":{"p":0,"s":"測孕:未懷孕(NG)","sd":"2026-08-03"},"1902-6":{"p":0,"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1171-6":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1174-1":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1164-1":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"3174-0":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1172-1":{"p":0,"s":"測孕:懷孕","sd":"2026-08-03"},"1008-2":{"p":1,"f":["2026-07-14",10.0,1.0,1.0,1.0],"w":["2026-08-09",12.0],"s":"移動:正常","sd":"2026-08-13"},"1303-4":{"p":1,"f":["2026-07-13",4.0,6.0,0.0,1.0],"w":["2026-07-20",0.0],"s":"移動:正常","sd":"2026-08-13"},"0808-3":{"p":1,"f":["2026-07-10",11.0,7.0,1.0,3.0],"w":["2026-08-09",10.0],"s":"移動:正常","sd":"2026-08-12"},"1354-2":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1230-7":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1232-2":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"3359-0":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1352-5":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1359-3":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1232-3":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1359-7":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1347-1":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1356-1":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1350-6":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1359-4":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1350-5":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1359-2":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1350-2":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1347-7":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1354-3":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1350-7":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1359-9":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1347-6":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-02"},"1359-8":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1220-1":{"p":0,"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1354-6":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1356-3":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1354-4":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1219-4":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1226-4":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1237-5":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1220-6":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1217-1":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1222-3":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1223-6":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1352-3":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1226-1":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1359-5":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1230-2":{"p":0,"s":"測孕:未懷孕(NG)","sd":"2026-08-20"},"1228-2":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1217-5":{"p":0,"s":"測孕:懷孕","sd":"2026-08-20"},"1230-3":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1232-6":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1232-5":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1223-3":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1218-1":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1218-2":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1230-5":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1233-4":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1230-6":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1233-3":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1347-2":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1219-1":{"p":0,"s":"移動:正常","sd":"2026-08-13"},"1232-4":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-03"},"1228-3":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-03"},"1222-4":{"p":0,"s":"新母豬/後補豬到場","sd":"2026-02-03"}};
+function getPerf(sowId){return SOW_PERF[sowId]||null;}
+/* ===== 背脂歷史資料（由歷史匯出檔解析，含分娩後26天/懷孕29天/懷孕115天等檢測階段） ===== */
+/* 每頭 sowId 對應 [[ts毫秒, 背脂mm, 檢測階段], ...] 依時間升冪排列 */
+const BF_HIST = {"3071":[[1778457600000,20.7,"懷孕115天"],[1780617600000,16.5,"分娩後26天"],[1783468800000,21.3,"懷孕28天"]],"4036":[[1778457600000,20.0,"懷孕115天"],[1780617600000,18.5,"分娩後26天"],[1783468800000,21.3,"懷孕28天"]],"4131":[[1778457600000,12.0,"懷孕115天"],[1780617600000,10.0,"分娩後26天"],[1783468800000,10.7,"懷孕28天"]],"4138":[[1778457600000,14.7,"懷孕115天"],[1780617600000,14.0,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"4733":[[1778457600000,18.7,"懷孕115天"],[1780617600000,13.5,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"4749":[[1778457600000,18.0,"懷孕115天"],[1780617600000,15.5,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"4779":[[1778457600000,14.0,"懷孕115天"],[1780617600000,14.5,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"1019-7":[[1778457600000,16.7,"懷孕115天"],[1780617600000,12.0,"分娩後26天"],[1783468800000,14.0,"懷孕28天"]],"1022-1":[[1778457600000,16.7,"懷孕115天"],[1780617600000,16.5,"分娩後26天"],[1783468800000,17.3,"懷孕28天"]],"1071-1":[[1778457600000,13.3,"懷孕115天"],[1780617600000,13.0,"分娩後26天"],[1783468800000,13.3,"懷孕28天"]],"1077-8":[[1778457600000,15.3,"懷孕115天"],[1780617600000,17.5,"分娩後26天"],[1783468800000,15.3,"懷孕28天"]],"1078-5":[[1778457600000,23.3,"懷孕115天"],[1780617600000,22.0,"分娩後26天"],[1783468800000,17.3,"懷孕28天"]],"1116-3":[[1778457600000,16.0,"懷孕115天"],[1780617600000,14.0,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"1116-6":[[1778457600000,20.7,"懷孕115天"],[1780617600000,18.0,"分娩後26天"],[1783468800000,18.7,"懷孕28天"]],"1332-2":[[1778457600000,19.3,"懷孕115天"],[1780617600000,17.0,"分娩後26天"],[1783468800000,17.3,"懷孕28天"]],"1340-2":[[1778457600000,13.3,"懷孕115天"],[1780617600000,12.0,"分娩後26天"],[1783468800000,12.7,"懷孕28天"]],"1520-6":[[1778457600000,13.3,"懷孕115天"],[1780617600000,9.0,"分娩後26天"],[1783468800000,13.3,"懷孕28天"]],"1740-4":[[1778457600000,20.7,"懷孕115天"],[1780617600000,17.5,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"1903-6":[[1778457600000,14.0,"懷孕115天"],[1780617600000,12.0,"分娩後26天"],[1783468800000,14.0,"懷孕28天"]],"1921-3":[[1778457600000,18.7,"懷孕115天"],[1780617600000,15.0,"分娩後26天"],[1783468800000,16.0,"懷孕28天"]],"1923-6":[[1778457600000,16.0,"懷孕115天"],[1780617600000,11.0,"分娩後26天"],[1783468800000,12.0,"懷孕28天"]],"2096-1":[[1778457600000,14.7,"懷孕115天"],[1780617600000,16.5,"分娩後26天"],[1783468800000,15.0,"懷孕28天"]],"2104-1":[[1778457600000,11.3,"懷孕115天"],[1780617600000,12.0,"分娩後26天"],[1783468800000,10.0,"懷孕28天"]],"2316-7":[[1778457600000,15.3,"懷孕115天"],[1780617600000,14.5,"分娩後26天"],[1783468800000,15.3,"懷孕28天"]],"3273-3":[[1778457600000,12.0,"懷孕115天"],[1780617600000,10.5,"分娩後26天"],[1783468800000,11.3,"懷孕28天"]],"3283-3":[[1778457600000,12.7,"懷孕115天"],[1780617600000,14.0,"分娩後26天"],[1783468800000,12.0,"懷孕28天"]],"3334-1":[[1778457600000,20.7,"懷孕115天"],[1780617600000,14.0,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"4152":[[1778457600000,21.3,"懷孕115天"],[1780617600000,15.0,"分娩後26天"],[1788998400000,18.0,"懷孕29天"]],"1021-5":[[1778457600000,17.3,"懷孕115天"],[1780617600000,15.5,"分娩後26天"]],"1113-1":[[1778457600000,14.7,"懷孕115天"],[1780617600000,12.0,"分娩後26天"],[1788998400000,15.3,"懷孕29天"]],"1114-1":[[1778457600000,12.7,"懷孕115天"],[1780617600000,10.5,"分娩後26天"],[1788998400000,10.7,"懷孕29天"]],"1116-2":[[1778457600000,14.7,"懷孕115天"],[1780617600000,10.5,"分娩後26天"],[1788998400000,14.7,"懷孕29天"]],"1743-3":[[1778457600000,12.7,"懷孕115天"],[1780617600000,12.0,"分娩後26天"],[1785715200000,14.0,"懷孕33天"]],"1750-3":[[1778457600000,14.0,"懷孕115天"],[1780617600000,12.0,"分娩後26天"],[1788998400000,16.3,"懷孕29天"]],"1910-2":[[1778457600000,14.0,"懷孕115天"],[1780617600000,11.0,"分娩後26天"],[1788998400000,18.7,"懷孕29天"]],"2113-8":[[1778457600000,16.7,"懷孕115天"],[1780617600000,16.0,"分娩後26天"]],"2153-5":[[1778457600000,10.7,"懷孕115天"],[1780617600000,7.5,"分娩後26天"]],"2161-9":[[1778457600000,16.0,"懷孕115天"],[1780617600000,14.5,"分娩後26天"]],"2902-41":[[1778457600000,16.0,"懷孕115天"],[1780617600000,12.5,"分娩後26天"],[1788998400000,15.0,"懷孕29天"]],"3047-4":[[1778457600000,12.0,"懷孕115天"],[1780617600000,11.0,"分娩後26天"]],"2108-4":[[1778457600000,19.3,"懷孕115天"]],"1025-4":[[1778457600000,12.0,"懷孕115天"]],"1114-2":[[1778457600000,16.0,"懷孕115天"]],"1113-3":[[1778457600000,16.7,"懷孕115天"],[1783468800000,16.7,"懷孕28天"]],"1620":[[1780617600000,8.0,"分娩後26天"],[1783468800000,10.7,"懷孕28天"]],"3002":[[1780617600000,10.0,"分娩後26天"],[1783468800000,10.7,"懷孕28天"]],"3097":[[1783468800000,14.0,"懷孕28天"]],"4326":[[1780617600000,16.5,"分娩後26天"],[1783468800000,22.7,"懷孕28天"]],"4678":[[1780617600000,17.0,"分娩後26天"],[1783468800000,14.0,"懷孕28天"]],"4687":[[1780617600000,13.5,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"4689":[[1780617600000,16.5,"分娩後26天"],[1783468800000,17.3,"懷孕28天"]],"4698":[[1780617600000,17.0,"分娩後26天"],[1783468800000,20.7,"懷孕28天"]],"4738":[[1780617600000,15.5,"分娩後26天"],[1783468800000,15.5,"懷孕28天"]],"4741":[[1780617600000,12.0,"分娩後26天"],[1783468800000,12.0,"懷孕28天"]],"6039":[[1780617600000,14.0,"分娩後26天"],[1783468800000,14.7,"懷孕28天"]],"6071":[[1780617600000,19.0,"分娩後26天"],[1783468800000,17.3,"懷孕28天"]],"6993":[[1780617600000,12.0,"分娩後26天"],[1783468800000,12.7,"懷孕28天"]],"0901-2":[[1783468800000,13.3,"懷孕28天"]],"1021-6":[[1783468800000,21.3,"懷孕28天"]],"1022-4":[[1780617600000,11.5,"分娩後26天"],[1783468800000,11.3,"懷孕28天"]],"1072-6":[[1780617600000,9.5,"分娩後26天"],[1783468800000,12.7,"懷孕28天"]],"1086-7":[[1780617600000,20.0,"分娩後26天"],[1783468800000,21.3,"懷孕28天"]],"1115-3":[[1780617600000,10.5,"分娩後26天"],[1783468800000,12.7,"懷孕28天"]],"1152-3":[[1783468800000,10.0,"懷孕28天"]],"1163-2":[[1783468800000,14.0,"懷孕28天"]],"1164-5":[[1783468800000,17.3,"懷孕28天"]],"1169-3":[[1783468800000,15.3,"懷孕28天"]],"1170-3":[[1783468800000,15.3,"懷孕28天"]],"1171-3":[[1783468800000,14.7,"懷孕28天"]],"1172-3":[[1783468800000,13.3,"懷孕28天"]],"1172-4":[[1783468800000,13.3,"懷孕28天"]],"1521-9":[[1780617600000,15.5,"分娩後26天"],[1783468800000,22.3,"懷孕28天"]],"1633-8":[[1780617600000,18.5,"分娩後26天"],[1783468800000,18.7,"懷孕28天"]],"1595-1":[[1783468800000,21.3,"懷孕28天"]],"1630-4":[[1783468800000,15.3,"懷孕28天"]],"1739-4":[[1780617600000,15.5,"分娩後26天"],[1783468800000,16.7,"懷孕28天"]],"1740-6":[[1780617600000,16.0,"分娩後26天"],[1783468800000,17.3,"懷孕28天"]],"1743-8":[[1780617600000,17.5,"分娩後26天"],[1783468800000,16.7,"懷孕28天"]],"1745-2":[[1780617600000,16.5,"分娩後26天"],[1783468800000,18.7,"懷孕28天"]],"1745-3":[[1783468800000,14.7,"懷孕28天"]],"1745-4":[[1780617600000,18.0,"分娩後26天"],[1783468800000,16.7,"懷孕28天"]],"1745-5":[[1780617600000,18.0,"分娩後26天"],[1783468800000,20.7,"懷孕28天"]],"1745-6":[[1780617600000,17.5,"分娩後26天"],[1783468800000,18.0,"懷孕28天"]],"1745-8":[[1780617600000,14.0,"分娩後26天"],[1783468800000,14.0,"懷孕28天"]],"1747-7":[[1780617600000,15.0,"分娩後26天"],[1783468800000,13.3,"懷孕28天"]],"1898-5":[[1783468800000,13.3,"懷孕28天"]],"1903-7":[[1780617600000,13.0,"分娩後26天"],[1783468800000,13.3,"懷孕28天"]],"1916-3":[[1783468800000,24.0,"懷孕28天"]],"1917-7":[[1780617600000,15.0,"分娩後26天"],[1783468800000,16.0,"懷孕28天"]],"1920-7":[[1780617600000,17.5,"分娩後26天"],[1783468800000,17.3,"懷孕28天"]],"1925-4":[[1776384000000,14.7,"懷孕112天"],[1783468800000,12.7,"懷孕28天"]],"2132-1":[[1783468800000,24.0,"懷孕28天"]],"2164-31":[[1783468800000,12.0,"懷孕28天"]],"2621-7":[[1780617600000,12.5,"分娩後26天"],[1783468800000,13.3,"懷孕28天"]],"3267-6":[[1780617600000,15.0,"分娩後26天"],[1783468800000,12.0,"懷孕28天"]],"3280-2":[[1780617600000,18.5,"分娩後26天"],[1783468800000,19.3,"懷孕28天"]],"3287-2":[[1780617600000,12.0,"分娩後26天"],[1783468800000,11.3,"懷孕28天"]],"3301-6":[[1780617600000,19.0,"分娩後26天"],[1783468800000,18.0,"懷孕28天"]],"3899-0":[[1783468800000,17.3,"懷孕28天"]],"1080-3":[[1780617600000,12.0,"分娩後26天"],[1788998400000,12.0,"懷孕29天"]],"1114-4":[[1780617600000,10.0,"分娩後26天"],[1785715200000,12.0,"懷孕33天"]],"1739-2":[[1780617600000,13.5,"分娩後26天"],[1788998400000,15.3,"懷孕29天"]],"1743-7":[[1780617600000,13.0,"分娩後26天"],[1788998400000,14.7,"懷孕29天"]],"1745-7":[[1780617600000,16.5,"分娩後26天"],[1785715200000,17.3,"懷孕33天"]],"1748-4":[[1780617600000,10.0,"分娩後26天"],[1788998400000,10.7,"懷孕29天"]],"2128-4":[[1780617600000,10.5,"分娩後26天"]],"2161-5":[[1780617600000,10.5,"分娩後26天"]],"3262-6":[[1780617600000,9.0,"分娩後26天"],[1788998400000,9.3,"懷孕29天"]],"1348":[[1782432000000,13.3,"分娩後26天"],[1785715200000,16.7,"懷孕33天"]],"1355":[[1782432000000,14.7,"分娩後26天"],[1785715200000,16.0,"懷孕33天"]],"1362":[[1782432000000,18.0,"分娩後26天"],[1785715200000,18.7,"懷孕33天"]],"1371":[[1782432000000,12.0,"分娩後26天"],[1785715200000,12.0,"懷孕33天"]],"1390":[[1782432000000,9.3,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"1499":[[1782432000000,12.7,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"1658":[[1782432000000,14.0,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"1667":[[1782432000000,16.0,"分娩後26天"],[1785715200000,16.7,"懷孕33天"]],"3029":[[1782432000000,12.7,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"3048":[[1782432000000,14.7,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"3169":[[1782432000000,16.0,"分娩後26天"],[1785715200000,14.0,"懷孕33天"]],"3187":[[1782432000000,18.0,"分娩後26天"],[1785715200000,24.0,"懷孕33天"]],"3339":[[1782432000000,24.0,"分娩後26天"],[1785715200000,22.7,"懷孕33天"]],"3376":[[1782432000000,20.0,"分娩後26天"],[1785715200000,24.0,"懷孕33天"]],"3403":[[1782432000000,22.0,"分娩後26天"],[1785715200000,24.0,"懷孕33天"]],"3421":[[1782432000000,14.0,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"3426":[[1782432000000,13.3,"分娩後26天"],[1785715200000,15.3,"懷孕33天"]],"3435":[[1782432000000,12.0,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"3446":[[1782432000000,19.3,"分娩後26天"],[1785715200000,17.3,"懷孕33天"]],"4123":[[1785715200000,18.7,"懷孕33天"]],"4126":[[1776902400000,10.0,"分娩後25天"],[1785715200000,12.7,"懷孕33天"]],"4319":[[1782432000000,14.7,"分娩後26天"],[1785715200000,17.3,"懷孕33天"]],"4618":[[1782432000000,14.7,"分娩後26天"],[1785715200000,16.7,"懷孕33天"]],"4657":[[1782432000000,12.0,"分娩後26天"],[1785715200000,12.7,"懷孕33天"]],"4675":[[1782432000000,16.0,"分娩後26天"],[1785715200000,20.0,"懷孕33天"]],"6008":[[1782432000000,12.7,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"6036":[[1782432000000,15.3,"分娩後26天"],[1785715200000,14.0,"懷孕33天"]],"6048":[[1782432000000,13.3,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"6053":[[1776902400000,16.0,"分娩後25天"],[1785715200000,23.3,"懷孕33天"]],"6056":[[1782432000000,18.7,"分娩後26天"],[1785715200000,17.3,"懷孕33天"]],"6060":[[1776902400000,17.3,"分娩後25天"],[1785715200000,18.0,"懷孕33天"]],"6061":[[1782432000000,16.0,"分娩後26天"],[1785715200000,17.3,"懷孕33天"]],"6064":[[1782432000000,14.7,"分娩後26天"],[1785715200000,16.0,"懷孕33天"]],"6070":[[1782432000000,12.0,"分娩後26天"],[1785715200000,12.7,"懷孕33天"]],"6076":[[1782432000000,15.3,"分娩後26天"],[1785715200000,16.7,"懷孕33天"]],"0392-4":[[1782432000000,12.7,"分娩後26天"],[1785715200000,14.0,"懷孕33天"]],"0396-2":[[1782432000000,12.0,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"0408-3":[[1785715200000,16.7,"懷孕33天"]],"0409-2":[[1782432000000,14.7,"分娩後26天"],[1785715200000,16.7,"懷孕33天"]],"0412-2":[[1785715200000,21.3,"懷孕33天"]],"0906-6":[[1782432000000,11.3,"分娩後26天"],[1785715200000,12.0,"懷孕33天"]],"0993-2":[[1782432000000,16.7,"分娩後26天"],[1785715200000,17.3,"懷孕33天"]],"1022-3":[[1782432000000,13.3,"分娩後26天"],[1785715200000,15.3,"懷孕33天"]],"1022-6":[[1782432000000,16.7,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"1022-8":[[1782432000000,13.3,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"1024-4":[[1782432000000,12.0,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"1071-4":[[1782432000000,18.7,"分娩後26天"],[1785715200000,18.7,"懷孕33天"]],"1108-11":[[1776902400000,12.0,"分娩後25天"],[1785715200000,15.3,"懷孕33天"]],"1109-4":[[1782432000000,13.3,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"1110-6":[[1776902400000,11.0,"分娩後25天"],[1785715200000,13.3,"懷孕33天"]],"1164-1":[[1785715200000,13.3,"懷孕33天"]],"1164-2":[[1785715200000,12.7,"懷孕33天"]],"1164-9":[[1785715200000,13.3,"懷孕33天"]],"1167-7":[[1785715200000,12.0,"懷孕33天"]],"1170-1":[[1785715200000,14.7,"懷孕33天"]],"1171-1":[[1785715200000,14.7,"懷孕33天"]],"1171-6":[[1785715200000,12.7,"懷孕33天"]],"1172-1":[[1785715200000,12.0,"懷孕33天"]],"1174-4":[[1785715200000,11.0,"懷孕33天"]],"1174-5":[[1785715200000,13.3,"懷孕33天"]],"1518-7":[[1782432000000,18.7,"分娩後26天"],[1785715200000,18.0,"懷孕33天"]],"1519-6":[[1782432000000,14.7,"分娩後26天"],[1785715200000,14.0,"懷孕33天"]],"1520-8":[[1782432000000,11.3,"分娩後26天"],[1785715200000,12.0,"懷孕33天"]],"1523-5":[[1782432000000,9.3,"分娩後26天"],[1785715200000,8.0,"懷孕33天"]],"1623-1":[[1776902400000,15.0,"分娩後25天"],[1785715200000,16.0,"懷孕33天"]],"1627-5":[[1782432000000,13.3,"分娩後26天"],[1785715200000,12.0,"懷孕33天"]],"1636-3":[[1776902400000,12.0,"分娩後25天"],[1785715200000,13.3,"懷孕33天"]],"1732-4":[[1776902400000,17.0,"分娩後25天"],[1785715200000,22.0,"懷孕33天"]],"1823-5":[[1782432000000,19.3,"分娩後26天"],[1785715200000,21.3,"懷孕33天"]],"1824-1":[[1782432000000,12.0,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"1824-3":[[1782432000000,14.7,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"1824-5":[[1782432000000,10.0,"分娩後26天"],[1785715200000,9.3,"懷孕33天"]],"1824-6":[[1782432000000,12.7,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"1903-2":[[1785715200000,17.0,"懷孕33天"]],"1904-5":[[1785715200000,16.7,"懷孕33天"]],"1907-1":[[1782432000000,14.7,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"1915-1":[[1776902400000,15.5,"分娩後25天"],[1785715200000,19.3,"懷孕33天"]],"1917-5":[[1782432000000,14.7,"分娩後26天"],[1785715200000,16.0,"懷孕33天"]],"1918-6":[[1782432000000,16.0,"分娩後26天"],[1785715200000,16.0,"懷孕33天"]],"2091-8":[[1782432000000,14.7,"分娩後26天"],[1785715200000,12.0,"懷孕33天"]],"2108-3":[[1782432000000,18.0,"分娩後26天"],[1785715200000,17.3,"懷孕33天"]],"2114-5":[[1782432000000,11.3,"分娩後26天"],[1785715200000,11.3,"懷孕33天"]],"2121-4":[[1782432000000,12.7,"分娩後26天"],[1785715200000,13.3,"懷孕33天"]],"2139-3":[[1782432000000,14.0,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"2162-31":[[1782432000000,10.7,"分娩後26天"],[1785715200000,12.0,"懷孕33天"]],"2164-5":[[1782432000000,14.0,"分娩後26天"],[1785715200000,18.0,"懷孕33天"]],"2177-2":[[1782432000000,14.0,"分娩後26天"],[1785715200000,14.7,"懷孕33天"]],"2178-5":[[1782432000000,12.0,"分娩後26天"]],"2180-51":[[1782432000000,16.7,"分娩後26天"],[1785715200000,16.0,"懷孕33天"]],"2967-7":[[1782432000000,18.7,"分娩後26天"],[1785715200000,20.0,"懷孕33天"]],"3055-4":[[1782432000000,14.7,"分娩後26天"],[1785715200000,14.0,"懷孕33天"]],"3174-0":[[1785715200000,18.0,"懷孕33天"]],"3908-1":[[1782432000000,14.0,"分娩後26天"],[1785715200000,16.0,"懷孕33天"]],"1463":[[1782432000000,14.0,"分娩後26天"]],"1621":[[1782432000000,11.3,"分娩後26天"]],"1627":[[1782432000000,10.0,"分娩後26天"]],"3370":[[1782432000000,22.0,"分娩後26天"]],"4005":[[1782432000000,16.0,"分娩後26天"]],"4034":[[1782432000000,20.0,"分娩後26天"]],"4135":[[1782432000000,16.7,"分娩後26天"],[1788998400000,16.7,"懷孕29天"]],"4302":[[1782432000000,16.0,"分娩後26天"],[1788998400000,13.3,"懷孕29天"]],"0008-2":[[1782432000000,14.7,"分娩後26天"]],"0389-1":[[1782432000000,9.3,"分娩後26天"]],"0393-8":[[1782432000000,8.0,"分娩後26天"]],"0394-1":[[1782432000000,17.3,"分娩後26天"]],"0901-6":[[1782432000000,17.3,"分娩後26天"],[1787184000000,20.0,"懷孕29天"]],"1022-5":[[1782432000000,12.0,"分娩後26天"]],"1024-3":[[1782432000000,15.3,"分娩後26天"]],"1516-5":[[1782432000000,12.7,"分娩後26天"]],"2140-5":[[1782432000000,16.0,"分娩後26天"]],"2211-8":[[1782432000000,10.0,"分娩後26天"],[1787184000000,10.0,"懷孕29天"]],"3015-3":[[1782432000000,11.3,"分娩後26天"]],"1431":[[1784246400000,15.5,"分娩後26天"],[1787184000000,12.0,"懷孕29天"]],"1488":[[1784246400000,15.5,"分娩後26天"],[1787184000000,16.0,"懷孕29天"]],"1642":[[1784246400000,10.5,"分娩後26天"],[1787184000000,9.3,"懷孕29天"]],"3404":[[1784246400000,12.5,"分娩後26天"],[1787184000000,13.3,"懷孕29天"]],"3423":[[1784246400000,19.5,"分娩後26天"],[1787184000000,20.7,"懷孕29天"]],"3427":[[1784246400000,17.5,"分娩後26天"],[1787184000000,16.0,"懷孕29天"]],"4027":[[1784246400000,19.5,"分娩後26天"],[1787184000000,22.0,"懷孕29天"]],"4042":[[1787184000000,23.3,"懷孕29天"]],"4130":[[1784246400000,16.0,"分娩後26天"],[1787184000000,18.7,"懷孕29天"]],"4309":[[1776384000000,20.0,"懷孕112天"],[1787184000000,21.3,"懷孕29天"]],"4605":[[1784246400000,15.5,"分娩後26天"],[1787184000000,17.3,"懷孕29天"]],"4610":[[1784246400000,14.0,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"4622":[[1784246400000,23.0,"分娩後26天"],[1787184000000,22.7,"懷孕29天"]],"4640":[[1784246400000,13.5,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"4644":[[1784246400000,20.5,"分娩後26天"],[1787184000000,22.0,"懷孕29天"]],"6001":[[1784246400000,12.0,"分娩後26天"],[1787184000000,13.3,"懷孕29天"]],"6028":[[1787184000000,17.3,"懷孕29天"]],"6045":[[1784246400000,17.0,"分娩後26天"],[1787184000000,16.0,"懷孕29天"]],"6050":[[1784246400000,25.0,"分娩後26天"],[1787184000000,22.7,"懷孕29天"]],"6067":[[1784246400000,15.5,"分娩後26天"],[1787184000000,16.0,"懷孕29天"]],"6073":[[1784246400000,9.5,"分娩後26天"],[1787184000000,9.3,"懷孕29天"]],"6078":[[1784246400000,17.0,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"0387-2":[[1784246400000,14.0,"分娩後26天"]],"0387-3":[[1784246400000,22.0,"分娩後26天"],[1787184000000,24.0,"懷孕29天"]],"0412-3":[[1787184000000,12.0,"懷孕29天"]],"0412-4":[[1787184000000,10.0,"懷孕29天"]],"0415-6":[[1787184000000,20.0,"懷孕29天"]],"0996-4":[[1784246400000,24.0,"分娩後26天"],[1787184000000,22.7,"懷孕29天"]],"1004-0":[[1784246400000,13.0,"分娩後26天"],[1787184000000,13.3,"懷孕29天"]],"1088-6":[[1784246400000,18.0,"分娩後26天"],[1787184000000,17.3,"懷孕29天"]],"1090-3":[[1784246400000,21.0,"分娩後26天"]],"1094-6":[[1784246400000,16.5,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"1098-7":[[1784246400000,17.5,"分娩後26天"],[1787184000000,22.0,"懷孕29天"]],"1103-2":[[1784246400000,15.0,"分娩後26天"],[1787184000000,14.0,"懷孕29天"]],"1109-1":[[1784246400000,14.0,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"1134-11":[[1784246400000,22.0,"分娩後26天"],[1787184000000,22.0,"懷孕29天"]],"1163-4":[[1787184000000,14.7,"懷孕29天"]],"1168-7":[[1787184000000,20.0,"懷孕29天"]],"1217-1":[[1787184000000,16.7,"懷孕29天"]],"1217-5":[[1787184000000,12.7,"懷孕29天"]],"1219-4":[[1787184000000,14.0,"懷孕29天"]],"1220-6":[[1787184000000,16.7,"懷孕29天"]],"1222-3":[[1787184000000,14.7,"懷孕29天"]],"1223-6":[[1787184000000,20.0,"懷孕29天"]],"1226-1":[[1787184000000,18.0,"懷孕29天"]],"1226-4":[[1787184000000,22.0,"懷孕29天"]],"1228-2":[[1787184000000,13.3,"懷孕29天"]],"1237-5":[[1787184000000,13.3,"懷孕29天"]],"1326-1":[[1784246400000,17.5,"分娩後26天"],[1787184000000,17.0,"懷孕29天"]],"1330-1":[[1784246400000,12.5,"分娩後26天"],[1787184000000,12.0,"懷孕29天"]],"1332-5":[[1784246400000,12.0,"分娩後26天"],[1787184000000,12.0,"懷孕29天"]],"1332-6":[[1784246400000,21.0,"分娩後26天"],[1787184000000,24.0,"懷孕29天"]],"1333-2":[[1784246400000,13.0,"分娩後26天"],[1787184000000,12.0,"懷孕29天"]],"1333-4":[[1784246400000,16.5,"分娩後26天"],[1787184000000,20.7,"懷孕29天"]],"1337-5":[[1784246400000,11.5,"分娩後26天"],[1787184000000,12.0,"懷孕29天"]],"1338-3":[[1784246400000,14.5,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"1340-3":[[1784246400000,18.0,"分娩後26天"],[1787184000000,21.3,"懷孕29天"]],"1340-4":[[1784246400000,14.0,"分娩後26天"],[1787184000000,20.0,"懷孕29天"]],"1352-3":[[1787184000000,21.3,"懷孕29天"]],"1354-4":[[1787184000000,16.0,"懷孕29天"]],"1354-6":[[1787184000000,14.7,"懷孕29天"]],"1356-3":[[1787184000000,11.3,"懷孕29天"]],"1359-5":[[1787184000000,14.7,"懷孕29天"]],"1359-8":[[1787184000000,14.0,"懷孕29天"]],"1520-4":[[1784246400000,14.5,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"1523-4":[[1784246400000,10.0,"分娩後26天"],[1787184000000,12.0,"懷孕29天"]],"1523-9":[[1784246400000,10.5,"分娩後26天"],[1787184000000,13.3,"懷孕29天"]],"1525-2":[[1784246400000,17.5,"分娩後26天"],[1787184000000,16.7,"懷孕29天"]],"1632-7":[[1776902400000,13.0,"分娩後25天"],[1779926400000,13.3,"懷孕29天"],[1787184000000,13.3,"懷孕29天"]],"1722-4":[[1776902400000,18.7,"分娩後25天"],[1779926400000,20.0,"懷孕29天"],[1787184000000,24.0,"懷孕29天"]],"1737-1":[[1776384000000,14.0,"懷孕112天"],[1778803200000,16.0,"分娩後26天"],[1787184000000,17.3,"懷孕29天"]],"1740-5":[[1776384000000,14.7,"懷孕112天"],[1778803200000,10.5,"分娩後26天"],[1787184000000,12.3,"懷孕29天"]],"1743-5":[[1776384000000,18.7,"懷孕112天"],[1778803200000,18.5,"分娩後26天"],[1787184000000,22.0,"懷孕29天"]],"1747-5":[[1776384000000,16.0,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1787184000000,20.0,"懷孕29天"]],"1748-2":[[1776384000000,18.7,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1787184000000,16.0,"懷孕29天"]],"1748-3":[[1776384000000,16.0,"懷孕112天"],[1778803200000,14.0,"分娩後26天"],[1787184000000,16.0,"懷孕29天"]],"1750-4":[[1776384000000,18.0,"懷孕112天"],[1778803200000,20.5,"分娩後26天"],[1787184000000,19.3,"懷孕29天"]],"1827-2":[[1784246400000,15.5,"分娩後26天"],[1787184000000,15.3,"懷孕29天"]],"1829-3":[[1784246400000,14.0,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"1829-4":[[1784246400000,20.5,"分娩後26天"],[1787184000000,20.0,"懷孕29天"]],"1830-1":[[1784246400000,13.0,"分娩後26天"],[1787184000000,15.3,"懷孕29天"]],"1831-2":[[1784246400000,17.0,"分娩後26天"],[1787184000000,20.7,"懷孕29天"]],"1904-31":[[1787184000000,17.3,"懷孕29天"]],"1911-2":[[1776384000000,13.3,"懷孕112天"],[1778803200000,11.0,"分娩後26天"],[1787184000000,13.3,"懷孕29天"]],"1917-1":[[1784246400000,19.5,"分娩後26天"],[1787184000000,16.7,"懷孕29天"]],"1925-2":[[1784246400000,16.0,"分娩後26天"],[1787184000000,18.0,"懷孕29天"]],"2168-5":[[1784246400000,11.0,"分娩後26天"],[1787184000000,11.3,"懷孕29天"]],"2169-2":[[1784246400000,14.5,"分娩後26天"],[1787184000000,14.7,"懷孕29天"]],"2205-6":[[1784246400000,18.5,"分娩後26天"],[1787184000000,18.0,"懷孕29天"]],"2599-2":[[1784246400000,14.0,"分娩後26天"],[1787184000000,13.3,"懷孕29天"]],"2894-3":[[1784246400000,18.5,"分娩後26天"],[1787184000000,16.0,"懷孕29天"]],"2909-3":[[1784246400000,14.5,"分娩後26天"],[1787184000000,16.0,"懷孕29天"]],"2970-1":[[1776902400000,17.3,"分娩後25天"],[1787184000000,18.7,"懷孕29天"]],"3336-2":[[1784246400000,12.0,"分娩後26天"],[1787184000000,14.0,"懷孕29天"]],"3341-3":[[1784246400000,15.5,"分娩後26天"],[1787184000000,17.3,"懷孕29天"]],"4493":[[1784246400000,13.5,"分娩後26天"]],"0416-2":[[1784246400000,11.0,"分娩後26天"]],"0416-3":[[1784246400000,13.5,"分娩後26天"]],"0419-3":[[1784246400000,11.0,"分娩後26天"]],"1079-8":[[1784246400000,14.5,"分娩後26天"]],"1131-6":[[1784246400000,14.5,"分娩後26天"]],"1340-6":[[1784246400000,14.5,"分娩後26天"]],"2137-8":[[1784246400000,13.5,"分娩後26天"]],"2180-3":[[1784246400000,14.0,"分娩後26天"]],"2905-2":[[1784246400000,15.0,"分娩後26天"]],"3386":[[1784246400000,16.0,"分娩後26天"]],"0414-4":[[1784246400000,17.0,"分娩後26天"]],"0415-1":[[1784246400000,17.0,"分娩後26天"]],"1826-1":[[1784246400000,17.5,"分娩後26天"]],"3278-2":[[1784246400000,19.0,"分娩後26天"]],"3446-1":[[1784246400000,16.0,"分娩後26天"]],"0416-6":[[1784246400000,8.0,"分娩後26天"]],"1349":[[1776297600000,9.3,"懷孕29天"],[1783641600000,10.0,"懷孕112天"],[1786060800000,10.0,"分娩後26天"],[1788998400000,9.3,"懷孕29天"]],"1377":[[1776297600000,14.0,"懷孕29天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,15.3,"懷孕29天"]],"1410":[[1776297600000,15.3,"懷孕29天"],[1783641600000,21.3,"懷孕112天"],[1786060800000,20.0,"分娩後26天"],[1788998400000,18.0,"懷孕29天"]],"1647":[[1776297600000,17.0,"懷孕29天"],[1783641600000,20.0,"懷孕112天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,13.3,"懷孕29天"]],"1746":[[1776297600000,15.3,"懷孕29天"],[1783641600000,18.7,"懷孕112天"],[1786060800000,16.0,"分娩後26天"],[1788998400000,16.0,"懷孕29天"]],"1796":[[1776297600000,10.7,"懷孕29天"],[1786060800000,11.3,"分娩後26天"],[1788998400000,10.7,"懷孕29天"]],"3018":[[1776297600000,15.3,"懷孕29天"],[1783641600000,20.7,"懷孕112天"],[1786060800000,16.7,"分娩後26天"],[1788998400000,13.3,"懷孕29天"]],"3099":[[1776297600000,12.0,"懷孕29天"],[1783641600000,14.7,"懷孕112天"],[1786060800000,13.3,"分娩後26天"],[1788998400000,13.0,"懷孕29天"]],"3181":[[1776297600000,15.3,"懷孕29天"],[1783641600000,20.0,"懷孕112天"],[1786060800000,17.3,"分娩後26天"]],"3407":[[1776297600000,14.0,"懷孕29天"],[1786060800000,14.0,"分娩後26天"],[1788998400000,18.5,"懷孕29天"]],"3425":[[1776297600000,11.3,"懷孕29天"],[1783641600000,10.7,"懷孕112天"],[1786060800000,8.0,"分娩後26天"]],"3433":[[1776297600000,12.0,"懷孕29天"],[1786060800000,12.7,"分娩後26天"],[1788998400000,13.3,"懷孕29天"]],"4056":[[1776297600000,13.3,"懷孕29天"],[1783641600000,15.3,"懷孕112天"],[1786060800000,10.7,"分娩後26天"],[1788998400000,12.3,"懷孕29天"]],"4069":[[1776297600000,10.7,"懷孕29天"],[1783641600000,12.0,"懷孕112天"],[1786060800000,11.3,"分娩後26天"],[1788998400000,12.0,"懷孕29天"]],"4086":[[1776297600000,6.7,"懷孕29天"],[1783641600000,7.3,"懷孕112天"],[1786060800000,6.7,"分娩後26天"]],"4089":[[1776297600000,10.7,"懷孕29天"],[1783641600000,18.0,"懷孕112天"],[1786060800000,14.7,"分娩後26天"]],"4094":[[1776297600000,13.3,"懷孕29天"],[1786060800000,12.0,"分娩後26天"],[1788998400000,10.0,"懷孕29天"]],"4105":[[1776297600000,12.0,"懷孕29天"],[1783641600000,14.7,"懷孕112天"],[1786060800000,11.3,"分娩後26天"],[1788998400000,13.3,"懷孕29天"]],"4118":[[1776297600000,16.0,"懷孕29天"],[1783641600000,16.7,"懷孕112天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,14.7,"懷孕29天"]],"4142":[[1776297600000,14.7,"懷孕29天"],[1783641600000,17.3,"懷孕112天"],[1786060800000,14.7,"分娩後26天"]],"4143":[[1776297600000,24.0,"懷孕29天"],[1783641600000,22.0,"懷孕112天"],[1786060800000,19.3,"分娩後26天"],[1788998400000,18.7,"懷孕29天"]],"4172":[[1776297600000,16.7,"懷孕29天"],[1783641600000,17.3,"懷孕112天"],[1786060800000,12.0,"分娩後26天"],[1788998400000,15.3,"懷孕29天"]],"4187":[[1776297600000,14.7,"懷孕29天"],[1783641600000,18.7,"懷孕112天"],[1786060800000,14.7,"分娩後26天"]],"4311":[[1776297600000,9.3,"懷孕29天"],[1786060800000,12.0,"分娩後26天"],[1788998400000,11.3,"懷孕29天"]],"4320":[[1776297600000,12.7,"懷孕29天"],[1783641600000,17.3,"懷孕112天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,14.0,"懷孕29天"]],"4765":[[1776297600000,22.4,"懷孕29天"],[1783641600000,22.7,"懷孕112天"],[1786060800000,18.7,"分娩後26天"]],"4769":[[1776297600000,12.0,"懷孕29天"]],"4796":[[1776297600000,22.0,"懷孕29天"],[1786060800000,18.7,"分娩後26天"],[1788998400000,21.3,"懷孕29天"]],"6002":[[1776297600000,17.2,"懷孕29天"],[1783641600000,18.0,"懷孕112天"],[1786060800000,16.7,"分娩後26天"],[1788998400000,17.3,"懷孕29天"]],"6026":[[1776297600000,13.3,"懷孕29天"],[1783641600000,14.7,"懷孕112天"],[1786060800000,12.7,"分娩後26天"],[1788998400000,12.0,"懷孕29天"]],"6031":[[1776297600000,9.3,"懷孕29天"],[1786060800000,10.7,"分娩後26天"],[1788998400000,9.3,"懷孕29天"]],"6040":[[1776297600000,14.7,"懷孕29天"],[1783641600000,20.7,"懷孕112天"],[1786060800000,17.3,"分娩後26天"],[1788998400000,16.0,"懷孕29天"]],"6049":[[1776297600000,16.0,"懷孕29天"]],"6055":[[1776297600000,17.3,"懷孕29天"],[1786060800000,18.0,"分娩後26天"],[1788998400000,17.3,"懷孕29天"]],"6068":[[1776297600000,18.7,"懷孕29天"],[1786060800000,19.3,"分娩後26天"],[1788998400000,18.7,"懷孕29天"]],"6077":[[1776297600000,20.7,"懷孕29天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,18.7,"懷孕29天"]],"6099":[[1776297600000,16.7,"懷孕29天"],[1783641600000,16.7,"懷孕112天"],[1786060800000,14.0,"分娩後26天"],[1788998400000,12.0,"懷孕29天"]],"6995":[[1776297600000,13.3,"懷孕29天"]],"0808-3":[[1776297600000,17.3,"懷孕29天"],[1786060800000,16.0,"分娩後26天"],[1788998400000,15.3,"懷孕29天"]],"1001-3":[[1776297600000,14.0,"懷孕29天"]],"1008-2":[[1776297600000,14.7,"懷孕29天"],[1783641600000,19.3,"懷孕112天"],[1786060800000,16.7,"分娩後26天"],[1788998400000,18.7,"懷孕29天"]],"1068-2":[[1776297600000,11.3,"懷孕29天"],[1783641600000,13.3,"懷孕112天"],[1786060800000,11.3,"分娩後26天"],[1788998400000,11.3,"懷孕29天"]],"1071-2":[[1776297600000,20.7,"懷孕29天"],[1786060800000,19.3,"分娩後26天"],[1788998400000,18.7,"懷孕29天"]],"1077-4":[[1776297600000,12.0,"懷孕29天"],[1783641600000,16.7,"懷孕112天"],[1786060800000,14.0,"分娩後26天"],[1788998400000,14.7,"懷孕29天"]],"1097-2":[[1776297600000,22.0,"懷孕29天"],[1786060800000,19.3,"分娩後26天"],[1788998400000,20.0,"懷孕29天"]],"1101-6":[[1776297600000,10.7,"懷孕29天"],[1783641600000,10.7,"懷孕112天"],[1786060800000,9.3,"分娩後26天"]],"1130-5":[[1776297600000,19.3,"懷孕29天"],[1786060800000,21.3,"分娩後26天"],[1788998400000,22.0,"懷孕29天"]],"1303-4":[[1776297600000,16.0,"懷孕29天"],[1783641600000,20.7,"懷孕112天"],[1788998400000,20.0,"懷孕29天"]],"1326-2":[[1776297600000,14.0,"懷孕29天"],[1783641600000,15.3,"懷孕112天"],[1786060800000,14.0,"分娩後26天"]],"1326-4":[[1776297600000,20.0,"懷孕29天"],[1786060800000,17.3,"分娩後26天"],[1788998400000,22.0,"懷孕29天"]],"1330-2":[[1776297600000,13.3,"懷孕29天"],[1786060800000,12.7,"分娩後26天"],[1788998400000,12.3,"懷孕29天"]],"1330-6":[[1776297600000,12.0,"懷孕29天"],[1783641600000,16.0,"懷孕112天"],[1786060800000,10.7,"分娩後26天"],[1788998400000,12.7,"懷孕29天"]],"1332-4":[[1776297600000,11.0,"懷孕29天"],[1786060800000,13.3,"分娩後26天"],[1788998400000,14.7,"懷孕29天"]],"1334-5":[[1776297600000,13.3,"懷孕29天"],[1786060800000,10.7,"分娩後26天"],[1788998400000,9.3,"懷孕29天"]],"1338-2":[[1776297600000,21.3,"懷孕29天"],[1783641600000,22.7,"懷孕112天"],[1786060800000,16.7,"分娩後26天"],[1788998400000,18.3,"懷孕29天"]],"1339-5":[[1776297600000,20.0,"懷孕29天"],[1783641600000,23.7,"懷孕112天"],[1786060800000,21.3,"分娩後26天"],[1788998400000,24.0,"懷孕29天"]],"1339-6":[[1776297600000,12.7,"懷孕29天"],[1783641600000,21.3,"懷孕112天"],[1786060800000,16.7,"分娩後26天"],[1788998400000,17.3,"懷孕29天"]],"1339-7":[[1776297600000,16.0,"懷孕29天"],[1783641600000,23.3,"懷孕112天"],[1786060800000,20.7,"分娩後26天"],[1788998400000,17.0,"懷孕29天"]],"1341-4":[[1776297600000,14.7,"懷孕29天"],[1783641600000,14.7,"懷孕112天"],[1786060800000,12.7,"分娩後26天"],[1788998400000,14.0,"懷孕29天"]],"1341-7":[[1776297600000,16.0,"懷孕29天"],[1786060800000,16.0,"分娩後26天"],[1788998400000,16.7,"懷孕29天"]],"1507-1":[[1776297600000,20.0,"懷孕29天"],[1783641600000,22.7,"懷孕112天"],[1786060800000,22.0,"分娩後26天"],[1788998400000,20.0,"懷孕29天"]],"1516-2":[[1776297600000,16.7,"懷孕29天"],[1783641600000,17.3,"懷孕112天"]],"1516-3":[[1776297600000,17.3,"懷孕29天"],[1783641600000,18.0,"懷孕112天"],[1786060800000,14.0,"分娩後26天"],[1788998400000,16.7,"懷孕29天"]],"1519-3":[[1776297600000,14.7,"懷孕29天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,14.0,"懷孕29天"]],"1519-7":[[1776297600000,14.7,"懷孕29天"],[1783641600000,17.3,"懷孕112天"],[1786060800000,14.7,"分娩後26天"]],"1521-5":[[1776297600000,16.0,"懷孕29天"],[1783641600000,17.3,"懷孕112天"],[1786060800000,18.0,"分娩後26天"],[1788998400000,16.7,"懷孕29天"]],"1522-4":[[1783641600000,23.3,"懷孕112天"],[1786060800000,18.0,"分娩後26天"],[1788998400000,18.0,"懷孕29天"]],"1523-3":[[1776297600000,12.0,"懷孕29天"]],"1525-7":[[1776297600000,22.0,"懷孕29天"],[1783641600000,19.3,"懷孕112天"],[1786060800000,18.0,"分娩後26天"],[1788998400000,17.3,"懷孕29天"]],"1633-2":[[1776297600000,16.0,"懷孕29天"],[1783641600000,20.0,"懷孕112天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,16.0,"懷孕29天"]],"1633-5":[[1776297600000,12.0,"懷孕29天"],[1786060800000,13.3,"分娩後26天"],[1788998400000,14.0,"懷孕29天"]],"1633-9":[[1776297600000,21.3,"懷孕29天"],[1783641600000,24.0,"懷孕112天"],[1786060800000,20.0,"分娩後26天"],[1788998400000,18.7,"懷孕29天"]],"1634-9":[[1776297600000,20.7,"懷孕29天"],[1783641600000,22.7,"懷孕112天"],[1786060800000,18.7,"分娩後26天"],[1788998400000,20.7,"懷孕29天"]],"1635-5":[[1776297600000,11.3,"懷孕29天"],[1783641600000,16.0,"懷孕112天"],[1786060800000,14.0,"分娩後26天"],[1788998400000,13.3,"懷孕29天"]],"1743-4":[[1776297600000,18.0,"懷孕29天"],[1783641600000,18.0,"懷孕112天"],[1786060800000,17.3,"分娩後26天"],[1788998400000,20.0,"懷孕29天"]],"1825-4":[[1776297600000,19.3,"懷孕29天"],[1788998400000,20.7,"懷孕29天"]],"1826-3":[[1776297600000,12.0,"懷孕29天"],[1783641600000,16.0,"懷孕112天"],[1786060800000,13.3,"分娩後26天"],[1788998400000,13.3,"懷孕29天"]],"1826-7":[[1776297600000,12.0,"懷孕29天"],[1783641600000,13.3,"懷孕112天"],[1786060800000,10.7,"分娩後26天"]],"1827-1":[[1776297600000,16.0,"懷孕29天"],[1786060800000,14.0,"分娩後26天"],[1788998400000,15.3,"懷孕29天"]],"1828-2":[[1776297600000,19.3,"懷孕29天"],[1783641600000,22.7,"懷孕112天"],[1786060800000,17.3,"分娩後26天"]],"1829-1":[[1776297600000,15.3,"懷孕29天"],[1783641600000,19.3,"懷孕112天"],[1786060800000,16.7,"分娩後26天"],[1788998400000,17.3,"懷孕29天"]],"1829-7":[[1776297600000,22.7,"懷孕29天"],[1783641600000,20.7,"懷孕112天"],[1786060800000,18.0,"分娩後26天"]],"1829-8":[[1776297600000,10.0,"懷孕29天"],[1786060800000,12.7,"分娩後26天"],[1788998400000,10.7,"懷孕29天"]],"1829-9":[[1776297600000,17.3,"懷孕29天"],[1783641600000,20.7,"懷孕112天"],[1786060800000,13.3,"分娩後26天"]],"1830-3":[[1776297600000,13.3,"懷孕29天"],[1783641600000,15.3,"懷孕112天"],[1786060800000,13.3,"分娩後26天"],[1788998400000,14.0,"懷孕29天"]],"1830-5":[[1776297600000,15.3,"懷孕29天"],[1786060800000,11.3,"分娩後26天"],[1788998400000,9.3,"懷孕29天"]],"1831-1":[[1776297600000,13.3,"懷孕29天"],[1783641600000,15.3,"懷孕112天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,14.7,"懷孕29天"]],"1903-4":[[1776297600000,16.7,"懷孕29天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,17.3,"懷孕29天"]],"1907-2":[[1776297600000,13.3,"懷孕29天"],[1783641600000,14.0,"懷孕112天"],[1786060800000,9.3,"分娩後26天"],[1788998400000,9.3,"懷孕29天"]],"1907-5":[[1776297600000,17.0,"懷孕29天"],[1786060800000,14.0,"分娩後26天"],[1788998400000,13.3,"懷孕29天"]],"1918-4":[[1776297600000,18.0,"懷孕29天"],[1783641600000,22.0,"懷孕112天"],[1786060800000,14.7,"分娩後26天"],[1788998400000,14.7,"懷孕29天"]],"1919-3":[[1776297600000,14.0,"懷孕29天"],[1783641600000,12.0,"懷孕112天"],[1786060800000,7.3,"分娩後26天"],[1788998400000,6.7,"懷孕29天"]],"1924-4":[[1776297600000,14.0,"懷孕29天"],[1783641600000,15.3,"懷孕112天"],[1786060800000,14.7,"分娩後26天"]],"2120-11":[[1776297600000,14.0,"懷孕29天"],[1786060800000,10.7,"分娩後26天"]],"2125-2":[[1776297600000,16.7,"懷孕29天"],[1783641600000,15.3,"懷孕112天"]],"2652-2":[[1776297600000,10.7,"懷孕29天"],[1783641600000,14.0,"懷孕112天"],[1786060800000,11.3,"分娩後26天"]],"2806-7":[[1776297600000,14.7,"懷孕29天"],[1786060800000,12.0,"分娩後26天"]],"2889-1":[[1776297600000,21.3,"懷孕29天"],[1786060800000,18.0,"分娩後26天"],[1788998400000,18.0,"懷孕29天"]],"2892-5":[[1776297600000,16.0,"懷孕29天"],[1783641600000,16.7,"懷孕112天"],[1786060800000,16.0,"分娩後26天"],[1788998400000,12.7,"懷孕29天"]],"2927-2":[[1776297600000,9.3,"懷孕29天"],[1786060800000,10.0,"分娩後26天"]],"3279-2":[[1776297600000,12.0,"懷孕29天"],[1783641600000,14.7,"懷孕112天"],[1786060800000,12.0,"分娩後26天"],[1788998400000,14.0,"懷孕29天"]],"3304-4":[[1776297600000,10.7,"懷孕29天"],[1786060800000,10.0,"分娩後26天"],[1788998400000,13.0,"懷孕29天"]],"3334-0":[[1776297600000,12.5,"懷孕29天"],[1783641600000,10.0,"懷孕112天"],[1786060800000,10.5,"分娩後26天"],[1788998400000,10.7,"懷孕29天"]],"3521-0":[[1776297600000,17.3,"懷孕29天"],[1783641600000,14.7,"懷孕112天"],[1786060800000,16.0,"分娩後26天"]],"3634-0":[[1776297600000,20.7,"懷孕29天"],[1783641600000,23.3,"懷孕112天"],[1786060800000,20.7,"分娩後26天"],[1788998400000,20.7,"懷孕29天"]],"3908-2":[[1776297600000,17.3,"懷孕29天"],[1783641600000,24.0,"懷孕112天"]],"1218-1":[[1788998400000,12.7,"懷孕29天"]],"1219-1":[[1788998400000,12.0,"懷孕29天"]],"1230-6":[[1788998400000,15.3,"懷孕29天"]],"1232-5":[[1788998400000,14.0,"懷孕29天"]],"1232-6":[[1788998400000,13.3,"懷孕29天"]],"1233-4":[[1788998400000,14.7,"懷孕29天"]],"1230-3":[[1788998400000,15.3,"懷孕29天"]],"1230-5":[[1788998400000,14.7,"懷孕29天"]],"1218-2":[[1788998400000,15.3,"懷孕29天"]],"1223-3":[[1788998400000,13.3,"懷孕29天"]],"1233-3":[[1788998400000,22.7,"懷孕29天"]],"1347-2":[[1788998400000,20.0,"懷孕29天"]],"1633-6":[[1788998400000,17.3,"懷孕29天"]],"1353":[[1778025600000,12.7,"懷孕29天"]],"1456":[[1778025600000,9.3,"懷孕29天"]],"1472":[[1778025600000,18.7,"懷孕29天"]],"1475":[[1778025600000,20.0,"懷孕29天"]],"1478":[[1778025600000,20.0,"懷孕29天"]],"1486":[[1778025600000,17.3,"懷孕29天"]],"3069":[[1778025600000,20.0,"懷孕29天"]],"3301":[[1778025600000,21.3,"懷孕29天"]],"3323":[[1778025600000,14.7,"懷孕29天"]],"3391":[[1778025600000,15.3,"懷孕29天"]],"4017":[[1778025600000,13.3,"懷孕29天"]],"4035":[[1778025600000,19.3,"懷孕29天"]],"4038":[[1778025600000,20.0,"懷孕29天"]],"4046":[[1778025600000,14.0,"懷孕29天"]],"4059":[[1778025600000,17.3,"懷孕29天"]],"4078":[[1778025600000,21.3,"懷孕29天"]],"4080":[[1778025600000,21.3,"懷孕29天"]],"4106":[[1778025600000,16.0,"懷孕29天"]],"4146":[[1778025600000,20.0,"懷孕29天"]],"4161":[[1778025600000,24.0,"懷孕29天"]],"4185":[[1778025600000,21.3,"懷孕29天"]],"4317":[[1778025600000,17.3,"懷孕29天"]],"4609":[[1778025600000,23.3,"懷孕29天"]],"6003":[[1778025600000,13.3,"懷孕29天"]],"6021":[[1778025600000,12.0,"懷孕29天"]],"6024":[[1778025600000,14.0,"懷孕29天"]],"6029":[[1778025600000,12.0,"懷孕29天"]],"6033":[[1778025600000,12.7,"懷孕29天"]],"6063":[[1778025600000,15.3,"懷孕29天"]],"6066":[[1778025600000,19.3,"懷孕29天"]],"6092":[[1778025600000,14.0,"懷孕29天"]],"0992-8":[[1778025600000,23.3,"懷孕29天"]],"0995-4":[[1778025600000,22.7,"懷孕29天"]],"1019-5":[[1778025600000,14.7,"懷孕29天"]],"1019-8":[[1778025600000,20.0,"懷孕29天"]],"1021-2":[[1778025600000,18.0,"懷孕29天"]],"1022-2":[[1778025600000,14.7,"懷孕29天"]],"1022-7":[[1778025600000,15.3,"懷孕29天"]],"1025-2":[[1778025600000,19.3,"懷孕29天"]],"1071-5":[[1778025600000,24.0,"懷孕29天"]],"1094-1":[[1778025600000,15.3,"懷孕29天"]],"1110-4":[[1778025600000,19.3,"懷孕29天"]],"1155-2":[[1778025600000,10.7,"懷孕29天"]],"1155-4":[[1778025600000,17.3,"懷孕29天"]],"1155-6":[[1778025600000,12.0,"懷孕29天"]],"1155-8":[[1778025600000,13.3,"懷孕29天"]],"1155-9":[[1778025600000,18.7,"懷孕29天"]],"1156-2":[[1778025600000,10.0,"懷孕29天"]],"1156-3":[[1778025600000,10.7,"懷孕29天"]],"1156-5":[[1778025600000,10.7,"懷孕29天"]],"1156-6":[[1778025600000,10.7,"懷孕29天"]],"1157-2":[[1778025600000,12.0,"懷孕29天"]],"1161-6":[[1778025600000,11.3,"懷孕29天"]],"1326-6":[[1778025600000,17.3,"懷孕29天"]],"1334-4":[[1778025600000,12.7,"懷孕29天"]],"1335-5":[[1778025600000,14.7,"懷孕29天"]],"1515-3":[[1778025600000,14.7,"懷孕29天"]],"1623-4":[[1778025600000,15.3,"懷孕29天"]],"1629-7":[[1778025600000,10.7,"懷孕29天"]],"1630-5":[[1778025600000,14.7,"懷孕29天"]],"1633-3":[[1778025600000,9.3,"懷孕29天"]],"1633-4":[[1778025600000,22.7,"懷孕29天"]],"1825-5":[[1778025600000,16.7,"懷孕29天"]],"1826-4":[[1778025600000,19.3,"懷孕29天"]],"1828-3":[[1778025600000,17.3,"懷孕29天"]],"1828-4":[[1778025600000,14.7,"懷孕29天"]],"1829-5":[[1778025600000,15.3,"懷孕29天"]],"1830-2":[[1778025600000,16.3,"懷孕29天"]],"1830-6":[[1778025600000,14.7,"懷孕29天"]],"1831-3":[[1778025600000,12.0,"懷孕29天"]],"1831-4":[[1778025600000,14.7,"懷孕29天"]],"1831-5":[[1778025600000,22.7,"懷孕29天"]],"1831-6":[[1778025600000,16.0,"懷孕29天"]],"1831-7":[[1778025600000,18.0,"懷孕29天"]],"1899-5":[[1778025600000,13.3,"懷孕29天"]],"1899-7":[[1778025600000,12.7,"懷孕29天"]],"1899-9":[[1778025600000,14.7,"懷孕29天"]],"1902-3":[[1778025600000,16.7,"懷孕29天"]],"1917-4":[[1778025600000,14.7,"懷孕29天"]],"2113-5":[[1778025600000,16.7,"懷孕29天"]],"2117-1":[[1778025600000,10.7,"懷孕29天"]],"2130-4":[[1778025600000,17.3,"懷孕29天"]],"2139-6":[[1778025600000,15.3,"懷孕29天"]],"2177-5":[[1778025600000,18.7,"懷孕29天"]],"2207-7":[[1778025600000,16.0,"懷孕29天"]],"2906-3":[[1778025600000,17.3,"懷孕29天"]],"3336-1":[[1778025600000,10.7,"懷孕29天"]],"3341-4":[[1778025600000,17.3,"懷孕29天"]],"3894-0":[[1778025600000,17.3,"懷孕29天"]],"1495":[[1776902400000,14.7,"分娩後25天"],[1779926400000,18.0,"懷孕29天"]],"1608":[[1776902400000,13.3,"分娩後25天"],[1779926400000,15.3,"懷孕29天"]],"1777":[[1779926400000,19.3,"懷孕29天"]],"3075":[[1776902400000,14.0,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"3166":[[1776902400000,18.0,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"3167":[[1779926400000,19.3,"懷孕29天"]],"3178":[[1776902400000,16.0,"分娩後25天"],[1779926400000,16.0,"懷孕29天"]],"3322":[[1776902400000,22.7,"分娩後25天"],[1779926400000,24.0,"懷孕29天"]],"3371":[[1779926400000,21.0,"懷孕29天"]],"3418":[[1779926400000,12.7,"懷孕29天"]],"4136":[[1776902400000,15.3,"分娩後25天"],[1779926400000,16.7,"懷孕29天"]],"4151":[[1779926400000,14.7,"懷孕29天"]],"4165":[[1776902400000,6.7,"分娩後25天"],[1779926400000,8.0,"懷孕29天"]],"4169":[[1776902400000,18.0,"分娩後25天"],[1779926400000,20.0,"懷孕29天"]],"4197":[[1779926400000,19.3,"懷孕29天"]],"4498":[[1776902400000,10.7,"分娩後25天"],[1779926400000,14.0,"懷孕29天"]],"4650":[[1776902400000,14.5,"分娩後25天"],[1779926400000,20.0,"懷孕29天"]],"4660":[[1776902400000,9.3,"分娩後25天"],[1779926400000,11.0,"懷孕29天"]],"4669":[[1776902400000,19.3,"分娩後25天"],[1779926400000,17.3,"懷孕29天"]],"6025":[[1776902400000,12.7,"分娩後25天"],[1779926400000,17.3,"懷孕29天"]],"6027":[[1779926400000,15.3,"懷孕29天"]],"6075":[[1776902400000,14.5,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"16091":[[1776902400000,16.5,"分娩後25天"],[1779926400000,14.0,"懷孕29天"]],"41311":[[1776902400000,14.0,"分娩後25天"],[1779926400000,16.0,"懷孕29天"]],"0419-2":[[1779926400000,11.3,"懷孕29天"]],"0906-2":[[1776902400000,12.0,"分娩後25天"],[1779926400000,12.7,"懷孕29天"]],"0906-4":[[1776902400000,18.0,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"1036-8":[[1776902400000,13.3,"分娩後25天"],[1779926400000,14.0,"懷孕29天"]],"1088-4":[[1776902400000,8.0,"分娩後25天"],[1779926400000,8.0,"懷孕29天"]],"1098-2":[[1776902400000,13.3,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"1103-3":[[1776902400000,17.5,"分娩後25天"],[1779926400000,18.7,"懷孕29天"]],"1105-2":[[1776902400000,16.0,"分娩後25天"],[1779926400000,18.0,"懷孕29天"],[1781740800000,18.0,"懷孕29天"]],"1108-2":[[1776902400000,14.0,"分娩後25天"],[1779926400000,13.3,"懷孕29天"]],"1109-3":[[1776902400000,11.0,"分娩後25天"],[1779926400000,12.0,"懷孕29天"]],"1109-6":[[1776902400000,10.5,"分娩後25天"],[1779926400000,12.0,"懷孕29天"]],"1126-1":[[1779926400000,11.3,"懷孕29天"]],"1157-5":[[1779926400000,14.7,"懷孕29天"]],"1160-7":[[1779926400000,19.3,"懷孕29天"]],"1160-9":[[1779926400000,15.3,"懷孕29天"]],"1161-2":[[1779926400000,12.7,"懷孕29天"]],"1161-5":[[1779926400000,10.7,"懷孕29天"]],"1161-9":[[1779926400000,12.0,"懷孕29天"]],"1333-5":[[1776902400000,18.7,"分娩後25天"],[1779926400000,17.3,"懷孕29天"]],"1337-4":[[1779926400000,19.3,"懷孕29天"]],"1341-6":[[1776902400000,17.3,"分娩後25天"],[1779926400000,23.3,"懷孕29天"]],"1341-9":[[1776902400000,17.3,"分娩後25天"],[1779926400000,18.7,"懷孕29天"]],"1342-1":[[1779926400000,17.3,"懷孕29天"]],"1342-3":[[1776902400000,19.3,"分娩後25天"],[1779926400000,18.7,"懷孕29天"]],"1515-8":[[1779926400000,22.7,"懷孕29天"]],"1518-6":[[1779926400000,17.3,"懷孕29天"]],"1623-7":[[1776902400000,13.5,"分娩後25天"],[1779926400000,12.0,"懷孕29天"]],"1627-2":[[1779926400000,18.7,"懷孕29天"]],"1627-4":[[1779926400000,16.0,"懷孕29天"]],"1627-6":[[1776902400000,18.5,"分娩後25天"],[1779926400000,16.7,"懷孕29天"]],"1627-8":[[1776902400000,16.0,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"1629-3":[[1776902400000,12.0,"分娩後25天"],[1779926400000,12.0,"懷孕29天"]],"1631-8":[[1776902400000,19.5,"分娩後25天"],[1779926400000,18.7,"懷孕29天"]],"1632-6":[[1776902400000,14.0,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"1635-6":[[1776902400000,15.0,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"1716-6":[[1776902400000,10.0,"分娩後25天"],[1779926400000,11.3,"懷孕29天"]],"1731-3":[[1776902400000,7.5,"分娩後25天"],[1779926400000,9.3,"懷孕29天"]],"1894-1":[[1779926400000,18.7,"懷孕29天"]],"1894-2":[[1779926400000,21.3,"懷孕29天"]],"1894-5":[[1779926400000,17.3,"懷孕29天"]],"1894-7":[[1779926400000,19.3,"懷孕29天"]],"1894-9":[[1779926400000,16.7,"懷孕29天"]],"1896-1":[[1779926400000,20.0,"懷孕29天"]],"1896-2":[[1779926400000,18.0,"懷孕29天"]],"1899-2":[[1779926400000,15.3,"懷孕29天"]],"1899-3":[[1779926400000,16.7,"懷孕29天"]],"1900-5":[[1779926400000,18.7,"懷孕29天"]],"1901-3":[[1779926400000,20.0,"懷孕29天"]],"1903-3":[[1779926400000,14.7,"懷孕29天"]],"1903-41":[[1779926400000,23.3,"懷孕29天"]],"1903-5":[[1779926400000,14.0,"懷孕29天"]],"1904-6":[[1779926400000,14.7,"懷孕29天"]],"1905-8":[[1779926400000,15.3,"懷孕29天"]],"1906-3":[[1776902400000,14.0,"分娩後25天"],[1779926400000,18.0,"懷孕29天"]],"1906-2":[[1776902400000,16.0,"分娩後25天"],[1779926400000,17.3,"懷孕29天"]],"1906-6":[[1776902400000,14.4,"分娩後25天"],[1779926400000,16.7,"懷孕29天"]],"1906-4":[[1779926400000,14.7,"懷孕29天"]],"1906-9":[[1779926400000,23.3,"懷孕29天"]],"1909-2":[[1776902400000,17.5,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"1911-4":[[1776902400000,15.3,"分娩後25天"],[1779926400000,16.7,"懷孕29天"]],"1913-3":[[1776902400000,12.7,"分娩後25天"],[1779926400000,17.3,"懷孕29天"]],"1915-3":[[1776902400000,13.3,"分娩後25天"],[1779926400000,14.0,"懷孕29天"]],"1925-7":[[1779926400000,20.0,"懷孕29天"]],"2089-2":[[1776902400000,14.0,"分娩後25天"],[1779926400000,12.0,"懷孕29天"]],"2262-1":[[1776902400000,15.0,"分娩後25天"],[1779926400000,14.0,"懷孕29天"]],"2709-5":[[1776902400000,14.0,"分娩後25天"],[1779926400000,14.7,"懷孕29天"]],"2908-4":[[1776902400000,15.5,"分娩後25天"],[1779926400000,13.3,"懷孕29天"]],"2922-4":[[1776902400000,14.7,"分娩後25天"],[1779926400000,12.7,"懷孕29天"]],"3051-3":[[1779926400000,10.7,"懷孕29天"]],"3155-1":[[1779926400000,16.0,"懷孕29天"]],"3267-1":[[1776902400000,16.0,"分娩後25天"],[1779926400000,15.3,"懷孕29天"]],"3894-1":[[1779926400000,22.7,"懷孕29天"]],"4304":[[1776902400000,10.7,"分娩後25天"]],"4497":[[1776902400000,15.3,"分娩後25天"]],"1105-8":[[1776902400000,10.0,"分娩後25天"]],"1733-3":[[1776902400000,12.7,"分娩後25天"]],"3016-2":[[1776902400000,14.5,"分娩後25天"]],"3047-3":[[1776902400000,9.3,"分娩後25天"]],"1421":[[1776384000000,15.3,"懷孕112天"],[1778803200000,15.5,"分娩後26天"],[1781740800000,14.7,"懷孕29天"]],"1730":[[1776384000000,18.0,"懷孕112天"],[1778803200000,15.5,"分娩後26天"],[1781740800000,14.7,"懷孕29天"]],"3143":[[1776384000000,13.3,"懷孕112天"],[1778803200000,14.5,"分娩後26天"],[1781740800000,12.0,"懷孕29天"]],"3161":[[1776384000000,24.0,"懷孕112天"],[1778803200000,20.0,"分娩後26天"],[1781740800000,20.0,"懷孕29天"]],"3163":[[1776384000000,16.7,"懷孕112天"],[1778803200000,14.0,"分娩後26天"],[1781740800000,13.3,"懷孕29天"]],"3307":[[1776384000000,24.0,"懷孕112天"],[1778803200000,22.5,"分娩後26天"],[1781740800000,20.7,"懷孕29天"]],"3317":[[1776384000000,18.7,"懷孕112天"],[1778803200000,20.0,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"4064":[[1776384000000,19.3,"懷孕112天"],[1778803200000,13.5,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"4065":[[1776384000000,22.0,"懷孕112天"],[1778803200000,15.5,"分娩後26天"],[1781740800000,16.7,"懷孕29天"]],"4103":[[1776384000000,16.0,"懷孕112天"],[1778803200000,14.0,"分娩後26天"],[1781740800000,14.0,"懷孕29天"]],"4176":[[1776384000000,23.3,"懷孕112天"],[1778803200000,19.0,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"4336":[[1776384000000,19.3,"懷孕112天"],[1778803200000,19.0,"分娩後26天"],[1781740800000,21.3,"懷孕29天"]],"4654":[[1776384000000,19.3,"懷孕112天"],[1778803200000,15.5,"分娩後26天"],[1781740800000,18.0,"懷孕29天"]],"6062":[[1776384000000,22.0,"懷孕112天"],[1778803200000,19.0,"分娩後26天"],[1781740800000,21.3,"懷孕29天"]],"6097":[[1776384000000,20.0,"懷孕112天"],[1778803200000,14.0,"分娩後26天"],[1781740800000,14.7,"懷孕29天"]],"6794":[[1776384000000,12.7,"懷孕112天"],[1778803200000,10.0,"分娩後26天"],[1781740800000,10.7,"懷孕29天"]],"6908":[[1776384000000,14.0,"懷孕112天"],[1778803200000,13.5,"分娩後26天"],[1781740800000,14.7,"懷孕29天"]],"6909":[[1776384000000,21.3,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"0096-4":[[1776384000000,22.7,"懷孕112天"],[1778803200000,20.5,"分娩後26天"],[1781740800000,22.0,"懷孕29天"]],"1068-5":[[1776384000000,18.7,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1781740800000,15.3,"懷孕29天"]],"1068-7":[[1776384000000,24.0,"懷孕112天"],[1778803200000,21.0,"分娩後26天"],[1781740800000,20.7,"懷孕29天"]],"1069-2":[[1776384000000,14.0,"懷孕112天"],[1778803200000,10.5,"分娩後26天"],[1781740800000,14.0,"懷孕29天"]],"1070-4":[[1776384000000,13.3,"懷孕112天"],[1778803200000,13.0,"分娩後26天"],[1781740800000,10.7,"懷孕29天"]],"1072-5":[[1776384000000,21.3,"懷孕112天"],[1778803200000,15.5,"分娩後26天"],[1781740800000,16.7,"懷孕29天"]],"1076-4":[[1776384000000,15.3,"懷孕112天"],[1778803200000,17.5,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"1081-4":[[1776384000000,13.3,"懷孕112天"],[1778803200000,11.5,"分娩後26天"],[1781740800000,12.0,"懷孕29天"]],"1082-5":[[1776384000000,10.7,"懷孕112天"],[1778803200000,11.5,"分娩後26天"],[1781740800000,9.3,"懷孕29天"]],"1083-7":[[1776384000000,18.0,"懷孕112天"],[1778803200000,17.5,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"1086-3":[[1776384000000,16.0,"懷孕112天"],[1778803200000,11.0,"分娩後26天"],[1781740800000,12.0,"懷孕29天"]],"1106-3":[[1776384000000,17.3,"懷孕112天"],[1778803200000,16.0,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"1335-3":[[1776384000000,24.0,"懷孕112天"],[1778803200000,20.5,"分娩後26天"],[1781740800000,24.0,"懷孕29天"]],"1336-5":[[1776384000000,13.3,"懷孕112天"],[1778803200000,10.0,"分娩後26天"],[1781740800000,9.3,"懷孕29天"]],"1515-2":[[1776384000000,18.0,"懷孕112天"],[1778803200000,16.0,"分娩後26天"],[1781740800000,18.7,"懷孕29天"]],"1517-3":[[1776384000000,19.3,"懷孕112天"],[1778803200000,16.0,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"1518-2":[[1776384000000,13.3,"懷孕112天"],[1778803200000,12.0,"分娩後26天"],[1781740800000,12.7,"懷孕29天"]],"1521-7":[[1776384000000,18.0,"懷孕112天"],[1778803200000,17.5,"分娩後26天"],[1781740800000,18.0,"懷孕29天"]],"1524-2":[[1776384000000,24.0,"懷孕112天"],[1778803200000,18.0,"分娩後26天"],[1781740800000,21.3,"懷孕29天"]],"1524-3":[[1776384000000,17.3,"懷孕112天"],[1778803200000,14.0,"分娩後26天"],[1781740800000,17.3,"懷孕29天"]],"1725-1":[[1776384000000,16.7,"懷孕112天"],[1778803200000,14.0,"分娩後26天"],[1781740800000,18.0,"懷孕29天"]],"1739-1":[[1776384000000,16.7,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1781740800000,16.0,"懷孕29天"]],"1739-3":[[1776384000000,14.7,"懷孕112天"],[1778803200000,12.0,"分娩後26天"],[1781740800000,14.7,"懷孕29天"]],"1741-2":[[1776384000000,12.7,"懷孕112天"],[1778803200000,11.0,"分娩後26天"]],"1743-2":[[1776384000000,16.7,"懷孕112天"],[1778803200000,18.0,"分娩後26天"],[1781740800000,18.7,"懷孕29天"]],"1743-6":[[1776384000000,17.3,"懷孕112天"],[1778803200000,18.5,"分娩後26天"],[1781740800000,20.0,"懷孕29天"]],"1748-1":[[1776384000000,20.0,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1781740800000,15.7,"懷孕29天"]],"1748-5":[[1776384000000,12.0,"懷孕112天"],[1778803200000,12.0,"分娩後26天"],[1781740800000,10.7,"懷孕29天"]],"1749-1":[[1776384000000,10.7,"懷孕112天"],[1778803200000,12.5,"分娩後26天"],[1781740800000,12.0,"懷孕29天"]],"1905-3":[[1776384000000,18.0,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1781740800000,15.3,"懷孕29天"]],"1905-6":[[1776384000000,19.3,"懷孕112天"],[1778803200000,18.0,"分娩後26天"],[1781740800000,18.7,"懷孕29天"]],"1905-7":[[1776384000000,14.7,"懷孕112天"],[1778803200000,13.0,"分娩後26天"],[1781740800000,14.0,"懷孕29天"]],"1917-2":[[1776384000000,16.7,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1781740800000,16.0,"懷孕29天"]],"1918-7":[[1776384000000,23.3,"懷孕112天"],[1778803200000,21.5,"分娩後26天"],[1781740800000,22.7,"懷孕29天"]],"1918-9":[[1776384000000,14.0,"懷孕112天"],[1778803200000,10.0,"分娩後26天"],[1781740800000,12.0,"懷孕29天"]],"1922-1":[[1776384000000,14.7,"懷孕112天"],[1778803200000,14.0,"分娩後26天"],[1781740800000,13.3,"懷孕29天"]],"1923-8":[[1776384000000,12.7,"懷孕112天"],[1778803200000,10.0,"分娩後26天"],[1781740800000,10.7,"懷孕29天"]],"1925-5":[[1776384000000,19.3,"懷孕112天"],[1778803200000,15.0,"分娩後26天"],[1781740800000,14.7,"懷孕29天"]],"1926-5":[[1776384000000,14.7,"懷孕112天"],[1778803200000,13.0,"分娩後26天"],[1781740800000,12.7,"懷孕29天"]],"2103-4":[[1776384000000,12.0,"懷孕112天"],[1778803200000,13.5,"分娩後26天"],[1781740800000,12.7,"懷孕29天"]],"2113-4":[[1776384000000,13.3,"懷孕112天"],[1778803200000,11.5,"分娩後26天"],[1781740800000,10.7,"懷孕29天"]],"2168-31":[[1776384000000,9.3,"懷孕112天"],[1778803200000,11.5,"分娩後26天"],[1781740800000,10.7,"懷孕29天"]],"2232-4":[[1776384000000,21.3,"懷孕112天"],[1778803200000,18.5,"分娩後26天"]],"2323-9":[[1776384000000,17.3,"懷孕112天"],[1778803200000,13.5,"分娩後26天"]],"2383-2":[[1776384000000,16.0,"懷孕112天"],[1778803200000,14.5,"分娩後26天"]],"2605-3":[[1776384000000,14.7,"懷孕112天"],[1778803200000,11.0,"分娩後26天"],[1781740800000,13.3,"懷孕29天"]],"2644-3":[[1776384000000,18.7,"懷孕112天"],[1778803200000,13.5,"分娩後26天"]],"2784-2":[[1776384000000,12.0,"懷孕112天"],[1778803200000,12.0,"分娩後26天"]],"2891-4":[[1776384000000,13.3,"懷孕112天"],[1778803200000,16.5,"分娩後26天"],[1781740800000,16.0,"懷孕29天"]],"2898-2":[[1776384000000,11.3,"懷孕112天"],[1778803200000,15.5,"分娩後26天"],[1781740800000,14.0,"懷孕29天"]],"2906-6":[[1776384000000,18.7,"懷孕112天"],[1778803200000,14.5,"分娩後26天"]],"2922-3":[[1776384000000,17.3,"懷孕112天"],[1778803200000,14.0,"分娩後26天"]],"2950-5":[[1776384000000,16.0,"懷孕112天"],[1778803200000,13.5,"分娩後26天"]],"2962-3":[[1776384000000,18.7,"懷孕112天"],[1778803200000,14.0,"分娩後26天"]],"2964-1":[[1776384000000,24.0,"懷孕112天"]],"2965-1":[[1776384000000,20.0,"懷孕112天"]],"2983-5":[[1776384000000,13.3,"懷孕112天"],[1778803200000,13.5,"分娩後26天"]],"3455-8":[[1776384000000,12.0,"懷孕112天"],[1778803200000,9.0,"分娩後26天"],[1781740800000,10.7,"懷孕29天"]],"3500-3":[[1776384000000,21.3,"懷孕112天"],[1778803200000,15.0,"分娩後26天"]],"1923-7":[[1781740800000,11.3,"懷孕29天"]],"3341-2":[[1781740800000,14.0,"懷孕29天"]],"1755":[[1781740800000,14.7,"懷孕29天"]],"4025":[[1781740800000,15.3,"懷孕29天"]],"4193":[[1781740800000,12.0,"懷孕29天"]],"6020":[[1781740800000,11.3,"懷孕29天"]],"1155-7":[[1781740800000,12.0,"懷孕29天"]],"1171-7":[[1781740800000,12.7,"懷孕29天"]],"1635-1":[[1781740800000,14.7,"懷孕29天"]],"1902-5":[[1781740800000,15.3,"懷孕29天"]],"1906-41":[[1781740800000,15.3,"懷孕29天"]],"1917-6":[[1781740800000,13.3,"懷孕29天"]],"1920-5":[[1781740800000,15.3,"懷孕29天"]],"2164-0":[[1781740800000,16.0,"懷孕29天"]],"2166-1":[[1781740800000,17.3,"懷孕29天"]],"3634-1":[[1781740800000,17.3,"懷孕29天"]],"1163-3":[[1781740800000,17.3,"懷孕29天"]],"1166-6":[[1781740800000,19.3,"懷孕29天"]],"1168-3":[[1781740800000,18.7,"懷孕29天"]],"1170-4":[[1781740800000,17.3,"懷孕29天"]],"1894-3":[[1781740800000,23.3,"懷孕29天"]],"1894-6":[[1781740800000,18.7,"懷孕29天"]],"1900-3":[[1781740800000,23.0,"懷孕29天"]],"1900-4":[[1781740800000,23.3,"懷孕29天"]],"1901-2":[[1781740800000,18.0,"懷孕29天"]],"1902-1":[[1781740800000,20.0,"懷孕29天"]],"1902-2":[[1781740800000,17.3,"懷孕29天"]],"1902-4":[[1781740800000,16.7,"懷孕29天"]],"1903-1":[[1781740800000,18.0,"懷孕29天"]],"1906-21":[[1781740800000,19.3,"懷孕29天"]],"1906-31":[[1781740800000,22.0,"懷孕29天"]],"1906-61":[[1781740800000,17.3,"懷孕29天"]],"1906-7":[[1781740800000,17.3,"懷孕29天"]],"1906-8":[[1781740800000,20.7,"懷孕29天"]],"1923-1":[[1781740800000,10.7,"懷孕29天"]]};
+function getSowHistory(sowId){
+  const local=records.filter(r=>r.sowId===sowId).map(r=>({ts:r.ts,bf:r.bf,day:r.day}));
+  const embedded=(BF_HIST[sowId]||[]).map(e=>({ts:e[0],bf:e[1],day:e[2]}));
+  return local.concat(embedded).sort((a,b)=>(b.ts||0)-(a.ts||0));
+}
+
+function fmtNum(v){if(v===undefined||v===null)return '-';return (Math.round(v*10)/10).toString();}
+function updateSowCardPerf(sowId){
+  const el=document.getElementById('sow-card-perf');
+  if(!sowId){el.style.display='none';el.innerHTML='';return;}
+  const hist=getSowHistory(sowId).slice(0,2);
+  if(!hist.length){el.style.display='none';el.innerHTML='';return;}
+  el.innerHTML='<div style="color:var(--text2);font-size:11px;margin-bottom:2px">前2次背脂</div>'+
+    hist.map(r=>'<div>'+r.day+' ｜ '+r.bf+'mm</div>').join('');
+  el.style.display='block';
+}
+
+function loadAll(){
+  try{records=JSON.parse(localStorage.getItem('bf_records')||'[]')}catch(e){records=[]}
+  try{queue=JSON.parse(localStorage.getItem('bf_queue')||'[]')}catch(e){queue=[]}
+  try{sowList=JSON.parse(localStorage.getItem('bf_sowlist')||'[]')}catch(e){sowList=[]}
+  sowListOrig=[...sowList];
+}
+function saveRec(){try{localStorage.setItem('bf_records',JSON.stringify(records))}catch(e){}}
+function saveQueue(){try{localStorage.setItem('bf_queue',JSON.stringify(queue))}catch(e){}}
+function saveSowList(){try{localStorage.setItem('bf_sowlist',JSON.stringify(sowList))}catch(e){}}
+loadAll();
+
+/* ===== 一次性資料修正：2026/09/18 分娩舍-6 誤存欄位名稱為耳號的紀錄 ===== */
+/* 早期版本貼清單時欄位/耳號判斷錯誤，導致這批量測直接把欄位存成耳號；
+   已依 Drake 現場核對的欄位-耳號對照表修正回正確耳號，並補上正確檢測階段（分娩後26天）。
+   分娩舍-6-29 為誤測，該筆直接刪除。此區塊只會執行一次（用 bf_fix_20260918_fh6 旗標避免重複跑）。 */
+(function migrateFH6_20260918(){
+  if(localStorage.getItem('bf_fix_20260918_fh6'))return;
+  const PEN_TO_SOW={
+    '分娩舍-6-27':'1894-1','分娩舍-6-26':'1894-9','分娩舍-6-25':'1906-9','分娩舍-6-22':'1901-3',
+    '分娩舍-6-21':'1894-2','分娩舍-6-20':'1894-7','分娩舍-6-19':'1900-5','分娩舍-6-18':'3894-1',
+    '分娩舍-6-13':'1903-5','分娩舍-6-12':'1903-41','分娩舍-6-10':'3155-1','分娩舍-6-9':'1160-7',
+    '分娩舍-6-8':'1161-9','分娩舍-6-7':'1161-5','分娩舍-6-6':'1161-2','分娩舍-6-5':'1157-5',
+    '分娩舍-6-4':'1109-6'
+  };
+  const DELETE_PENS=new Set(['分娩舍-6-29']); // 誤測，直接刪除
+  let changed=false;
+  records=records.filter(r=>{
+    if(r.day==='-2'&&DELETE_PENS.has(r.sowId)){changed=true;return false;}
+    return true;
+  });
+  records.forEach(r=>{
+    if(r.day==='-2'&&PEN_TO_SOW[r.sowId]){
+      r.sowId=PEN_TO_SOW[r.sowId];
+      r.day='分娩後26天';
+      changed=true;
+    }
+  });
+  if(changed)saveRec();
+  try{localStorage.setItem('bf_fix_20260918_fh6','1')}catch(e){}
+})();
+
+/* ===== 一次性資料清除：刪除檢測時間為 2026-09-19 的所有歷史紀錄 ===== */
+/* 此區塊只會執行一次（用 bf_del_20260919 旗標避免重複跑）。 */
+(function deleteRecords_20260919(){
+  if(localStorage.getItem('bf_del_20260919'))return;
+  const before=records.length;
+  records=records.filter(r=>!(r.time||'').trim().startsWith('09/19'));
+  if(records.length!==before)saveRec();
+  try{localStorage.setItem('bf_del_20260919','1')}catch(e){}
+})();
+
+/* ===== 一次性資料清除：刪除檢測時間為 2026-09-21 的所有歷史紀錄 ===== */
+/* 此區塊只會執行一次（用 bf_del_20260921 旗標避免重複跑）。 */
+(function deleteRecords_20260921(){
+  if(localStorage.getItem('bf_del_20260921'))return;
+  const before=records.length;
+  records=records.filter(r=>!(r.time||'').trim().startsWith('09/21'));
+  if(records.length!==before)saveRec();
+  try{localStorage.setItem('bf_del_20260921','1')}catch(e){}
+})();
+
+/* ===== 一次性資料清除：刪除檢測時間為 2026-09-22 的所有歷史紀錄（誤匯入檔案） ===== */
+/* 此區塊只會執行一次（用 bf_del_20260922 旗標避免重複跑）。 */
+(function deleteRecords_20260922(){
+  if(localStorage.getItem('bf_del_20260922'))return;
+  const before=records.length;
+  records=records.filter(r=>!(r.time||'').trim().startsWith('09/22'));
+  if(records.length!==before)saveRec();
+  try{localStorage.setItem('bf_del_20260922','1')}catch(e){}
+})();
+
+function adj(key,delta){
+  config[key]=Math.max(1,Math.min(40,config[key]+delta));
+  document.getElementById('val-'+key).textContent=config[key];
+  updateMidRange();
+}
+function updateMidRange(){
+  document.getElementById('mid-range').textContent=config.thin+'–'+(config.fat-0.1).toFixed(1)+' mm';
+}
+
+function looksLikePen(s){
+  return /[一-鿿]/.test(s); // 含中文字（棟舍名稱）視為欄位，而非耳號
+}
+
+function importList(){
+  const text=document.getElementById('sow-paste').value;
+  if(!text.trim()){alert('請先貼上文字');return;}
+  const lines=text.split(/[\n\r]+/).filter(l=>l.trim());
+  const found=[];
+  lines.forEach(line=>{
+    const parts=line.split(/[,\s]+/).map(p=>p.trim()).filter(p=>p.length);
+    if(parts.length>=2){
+      let sowId,pen;
+      if(looksLikePen(parts[0])&&!looksLikePen(parts[1])){
+        pen=parts[0];sowId=parts[1]; // 欄位,耳號 順序（自動偵測）
+      } else {
+        sowId=parts[0];pen=parts[1]; // 耳號,欄位 順序（預設）
+      }
+      if(sowId)found.push({sowId,pen});
+    } else {
+      const m=line.trim();
+      if(m)found.push({sowId:m,pen:''});
+    }
+  });
+  if(!found.length){alert('找不到耳號，請確認格式');return;}
+  sowList=found;sowListOrig=[...found];currentSort='orig';listIndex=0;
+  saveSowList();showListPreview();
+  document.getElementById('sort-section').style.display='block';
+  updateSortBtns();
+}
+
+function clearList(){
+  sowList=[];sowListOrig=[];listIndex=0;saveSowList();
+  document.getElementById('sow-paste').value='';
+  document.getElementById('list-preview').innerHTML='';
+  document.getElementById('sort-section').style.display='none';
+}
+
+function parsePen(pen){
+  if(!pen)return null;
+  const nums=pen.match(/\d+/g);
+  return nums?nums.map(n=>parseInt(n)):null;
+}
+
+function comparePen(a,b,mode){
+  const pa=parsePen(a.pen),pb=parsePen(b.pen);
+  if(!pa&&!pb)return 0;
+  if(!pa)return 1;   // 沒有欄位資料的排最後
+  if(!pb)return -1;
+  const len=Math.max(pa.length,pb.length);
+  for(let i=0;i<len;i++){
+    const va=pa[i]!==undefined?pa[i]:-1;
+    const vb=pb[i]!==undefined?pb[i]:-1;
+    if(va!==vb)return mode==='asc'?va-vb:vb-va;
+  }
+  return 0;
+}
+
+function sortList(mode){
+  currentSort=mode;
+  // 棟舍號（欄位字串中第一個數字）相同的先分在一起，再依序比對後面的數字（如排、床號）遞增或遞減
+  sowList=mode==='orig'?[...sowListOrig]:[...sowListOrig].sort((a,b)=>comparePen(a,b,mode));
+  listIndex=0;saveSowList();showListPreview();updateSortBtns();
+}
+
+function updateSortBtns(){
+  ['orig','asc','desc'].forEach(m=>{
+    const btn=document.getElementById('sort-'+m);
+    if(!btn)return;
+    btn.classList.toggle('active',m===currentSort);
+  });
+}
+
+function showListPreview(){
+  const el=document.getElementById('list-preview');
+  if(!sowList.length){el.innerHTML='';return;}
+  el.innerHTML='<span style="color:var(--mid)">✓ 已載入 '+sowList.length+' 頭</span>　'+
+    sowList.slice(0,2).map(s=>s.sowId+(s.pen?' <span style="color:var(--text2);font-size:12px">'+s.pen+'</span>':'')).join('　')+
+    (sowList.length>2?'<span style="color:var(--text2)"> ... 等</span>':'');
+}
+
+function startSession(){
+  config.day=document.getElementById('cfg-day').value||'29';
+  sessionCount=0;batchIds=new Set();listIndex=0;
+  document.getElementById('session-count').textContent=0;
+  document.getElementById('m-day').textContent=config.day;
+  document.getElementById('m-fat').textContent=config.fat;
+  document.getElementById('m-thin').textContent=config.thin;
+  showScreen('measure');
+  resetInput();
+  updateSyncBanner();
+}
+
+function showScreen(name){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  const nb=document.getElementById('nav-'+name);
+  if(nb)nb.classList.add('active');
+  document.getElementById('bottom-nav').style.display=name==='setup'?'none':'flex';
+  if(name==='records'){renderBatch();renderHistory();}
+}
+
+function resetInput(){
+  currentInput='';
+  if(sowList.length>0&&listIndex<sowList.length){
+    const cur=sowList[listIndex];
+    currentSowId=cur.sowId;
+    currentPen=cur.pen||'';
+    inputStep=2;
+    document.getElementById('input-label').textContent='背脂厚度 (mm)';
+    document.getElementById('step1').classList.remove('active');
+    document.getElementById('step2').classList.add('active');
+    document.getElementById('special-btn').textContent='．';
+    document.getElementById('sow-card-id').textContent=cur.sowId;
+    document.getElementById('sow-card-pen').textContent=cur.pen||'';
+    document.getElementById('sow-card-idx').textContent=listIndex+1;
+    document.getElementById('sow-card-total').textContent=sowList.length;
+    document.getElementById('nav-btns').style.display='grid';
+    updateSowCardPerf(cur.sowId);
+  } else {
+    currentSowId='';currentPen='';inputStep=1;
+    document.getElementById('input-label').textContent='耳號';
+    document.getElementById('step1').classList.add('active');
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('special-btn').textContent='－';
+    document.getElementById('sow-card-id').textContent='—';
+    document.getElementById('sow-card-pen').textContent=sowList.length?'清單已完成':'無清單';
+    document.getElementById('sow-card-idx').textContent='—';
+    document.getElementById('sow-card-total').textContent=sowList.length||'—';
+    document.getElementById('nav-btns').style.display='grid';
+    updateSowCardPerf('');
+  }
+  updateDisplay();
+}
+
+function updateDisplay(){
+  const el=document.getElementById('input-display');
+  if(!currentInput){
+    el.innerHTML='<span class="placeholder">'+(inputStep===1?'1234-5':'16.5')+'</span>';
+  } else {
+    el.innerHTML=currentInput+'<span class="cursor"></span>';
+  }
+}
+
+function numPress(val){currentInput+=val;updateDisplay();}
+function specialPress(){
+  if(inputStep===1){currentInput+='-';}
+  else{if(!currentInput.includes('.'))currentInput+='.';}
+  updateDisplay();
+}
+function numDel(){currentInput=currentInput.slice(0,-1);updateDisplay();}
+
+function numConfirm(){
+  if(!currentInput)return;
+  if(inputStep===1){
+    currentSowId=currentInput.toUpperCase();currentInput='';inputStep=2;
+    document.getElementById('input-label').textContent='背脂厚度 (mm)';
+    document.getElementById('step1').classList.remove('active');
+    document.getElementById('step2').classList.add('active');
+    document.getElementById('special-btn').textContent='．';
+    if(!sowList.length){
+      currentPen='';
+      document.getElementById('sow-card-id').textContent=currentSowId;
+      document.getElementById('sow-card-pen').textContent='手動輸入';
+      updateSowCardPerf(currentSowId);
+    }
+    updateDisplay();
+  } else {
+    const bf=parseFloat(currentInput);
+    if(isNaN(bf)||bf<=0){currentInput='';updateDisplay();return;}
+    addRecord(currentSowId,bf);
+    if(sowList.length>0)listIndex++;
+    resetInput();
+  }
+}
+
+function skipSow(){
+  if(!sowList.length||listIndex>=sowList.length)return;
+  listIndex++;
+  currentInput='0';
+  resetInput();
+  updateDisplay();
+}
+function prevSow(){
+  if(listIndex<=0)return;
+  listIndex--;
+  // Find previous record for this sow if exists
+  const prevSowId = sowList.length>0 ? sowList[listIndex].sowId : '';
+  const prevRec = prevSowId ? records.find(r=>r.sowId===prevSowId&&batchIds.has(r.ts)) : null;
+  currentInput = prevRec ? String(prevRec.bf) : '';
+  // Remove previous record from batch if it exists
+  if(prevRec){
+    const idx=records.indexOf(prevRec);
+    if(idx>-1){records.splice(idx,1);saveRec();}
+    batchIds.delete(prevRec.ts);
+    sessionCount=Math.max(0,sessionCount-1);
+    document.getElementById('session-count').textContent=sessionCount;
+  }
+  resetInput();
+  if(currentInput) updateDisplay();
+}
+
+function classify(bf){
+  if(bf>=config.fat)return{label:'偏肥',cls:'fat'};
+  if(bf<config.thin)return{label:'偏瘦',cls:'thin'};
+  return{label:'中等',cls:'mid'};
+}
+
+function addRecord(sowId,bf){
+  const c=classify(bf);
+  const now=new Date();
+  const rec={
+    sowId,bf:parseFloat(bf.toFixed(1)),grade:c.label,cls:c.cls,day:config.day,
+    time:now.toLocaleString('zh-TW',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}),
+    ts:now.getTime()
+  };
+  records.unshift(rec);batchIds.add(rec.ts);saveRec();
+  sessionCount++;document.getElementById('session-count').textContent=sessionCount;
+  const panel=document.getElementById('result-panel');
+  panel.className='result-panel '+c.cls;
+  panel.innerHTML='<div><div style="font-size:20px;font-weight:700;letter-spacing:-0.5px">'+sowId+'</div><div style="font-size:12px;color:var(--text2);margin-top:2px">'+config.day+' ｜ '+bf.toFixed(1)+' mm</div></div><div class="grade-badge">'+c.label+'</div>';
+  if(navigator.onLine){syncOne(rec);}
+  else{queue.push(rec);saveQueue();updateSyncBanner();}
+}
+
+function syncOne(rec){
+  return fetch(SHEETS_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({sowId:rec.sowId,bf:rec.bf,day:rec.day,grade:rec.grade})})
+    .catch(()=>{queue.push(rec);saveQueue();updateSyncBanner();});
+}
+async function flushQueue(){
+  if(!queue.length||!navigator.onLine)return;
+  const toSync=[...queue];queue=[];saveQueue();updateSyncBanner();
+  for(const rec of toSync){try{await syncOne(rec);}catch(e){queue.push(rec);saveQueue();}}
+  updateSyncBanner();
+}
+function updateSyncBanner(){
+  const b=document.getElementById('sync-banner');
+  if(queue.length>0){document.getElementById('sync-text').textContent=queue.length;b.style.display='flex';}
+  else{b.style.display='none';}
+}
+window.addEventListener('online',flushQueue);
+setInterval(()=>{if(navigator.onLine&&queue.length)flushQueue();},30000);
+
+function switchTab(tab){
+  document.getElementById('tab-batch').style.display=tab==='batch'?'block':'none';
+  document.getElementById('tab-history').style.display=tab==='history'?'block':'none';
+  document.getElementById('tab-batch-btn').classList.toggle('active',tab==='batch');
+  document.getElementById('tab-history-btn').classList.toggle('active',tab==='history');
+}
+
+function makeStats(list){
+  const fat=list.filter(r=>r.cls==='fat').length;
+  const thin=list.filter(r=>r.cls==='thin').length;
+  return '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px">'+
+    '<div class="stat-card"><div class="stat-num">'+list.length+'</div><div class="stat-label">筆數</div></div>'+
+    '<div class="stat-card"><div class="stat-num" style="color:var(--fat)">'+fat+'</div><div class="stat-label">偏肥</div></div>'+
+    '<div class="stat-card"><div class="stat-num" style="color:var(--thin)">'+thin+'</div><div class="stat-label">偏瘦</div></div>'+
+    '</div>';
+}
+
+function makeRecordRows(list){
+  return list.map(r=>{
+    const idx=records.indexOf(r);
+    return '<div class="rec-wrap" id="wrap-'+idx+'">'
+      +'<div class="del-slide" id="del-'+idx+'" onclick="deleteRecord('+idx+')">刪除</div>'
+      +'<div class="record-item '+r.cls+'" id="rec-'+idx+'"'
+      +' ontouchstart="swipeStart(event,'+idx+')"'
+      +' ontouchmove="swipeMove(event,'+idx+')"'
+      +' ontouchend="swipeEnd(event,'+idx+')"'
+      +' onclick="recClick(event,'+idx+',this)">'
+      +'<div style="flex:1"><div style="font-size:17px;font-weight:700">'+r.sowId+'</div>'
+      +'<div style="font-size:12px;color:var(--text2);margin-top:2px">'+r.day+' ｜ '+r.time+'</div></div>'
+      +'<div style="text-align:right">'
+      +'<div style="font-size:17px;font-weight:700">'+r.bf+' mm</div>'
+      +'<div style="font-size:12px;margin-top:2px;font-weight:500" class="rec-grade '+r.cls+'">'+r.grade+'</div>'
+      +'</div></div></div>';
+  }).join('');
+}
+
+function renderBatch(){
+  const el=document.getElementById('batch-content');
+  const list=records.filter(r=>batchIds.has(r.ts));
+  if(!list.length){el.innerHTML='<div class="empty-msg">本批尚無記錄</div>';return;}
+  el.innerHTML=makeStats(list)+'<div style="font-size:12px;color:var(--text2);margin-bottom:8px">點擊查看歷史 ｜ 向左滑刪除</div>'+makeRecordRows(list);
+}
+
+function renderHistory(){
+  const el=document.getElementById('history-content');
+  const q=(document.getElementById('search-input').value||'').toUpperCase().trim();
+  const list=q?records.filter(r=>r.sowId.includes(q)):records;
+  if(!list.length){el.innerHTML='<div class="empty-msg">'+(q?'找不到「'+q+'」':'尚無歷史記錄')+'</div>';return;}
+  el.innerHTML=makeStats(list)+'<div style="font-size:12px;color:var(--text2);margin-bottom:8px">點擊查看歷史比較 ｜ 向左滑刪除</div>'+makeRecordRows(list.slice(0,200));
+}
+
+function showHistory(sowId){
+  const hist=records.filter(r=>r.sowId===sowId).sort((a,b)=>b.ts-a.ts);
+  document.getElementById('modal-title').textContent=sowId+' 歷史記錄';
+  const maxBf=Math.max(...hist.map(r=>r.bf),1);
+  document.getElementById('modal-content').innerHTML=hist.map(r=>{
+    const pct=Math.round((r.bf/maxBf)*100);
+    return '<div class="history-row">'+
+      '<div style="font-size:12px;color:var(--text2);min-width:64px;line-height:1.5">'+r.day+'<br>'+r.time+'</div>'+
+      '<div class="history-bar-wrap"><div class="history-bar '+r.cls+'" style="width:'+pct+'%"></div></div>'+
+      '<div style="font-size:13px;font-weight:700;min-width:54px;text-align:right;color:var(--'+r.cls+');line-height:1.5">'+r.bf+'mm<br><span style="font-size:11px">'+r.grade+'</span></div>'+
+      '</div>';
+  }).join('')||'<div class="empty-msg">無記錄</div>';
+  document.getElementById('history-modal').style.display='block';
+}
+function closeHistory(){document.getElementById('history-modal').style.display='none';}
+
+let swipeStartX=0,swipeStartY=0,swipeIdx=-1,swiping=false,swipeOpened=-1;
+
+function recClick(e,idx,el){
+  if(swipeOpened===idx){closeSwipe(idx);swipeOpened=-1;e.stopPropagation();return;}
+  if(records[idx])showHistory(records[idx].sowId);
+}
+
+function swipeStart(e,idx){
+  swipeStartX=e.touches[0].clientX;
+  swipeStartY=e.touches[0].clientY;
+  swipeIdx=idx;swiping=false;
+}
+
+function swipeMove(e,idx){
+  const dx=e.touches[0].clientX-swipeStartX;
+  const dy=e.touches[0].clientY-swipeStartY;
+  if(!swiping&&Math.abs(dy)>Math.abs(dx))return;
+  if(Math.abs(dx)>8){swiping=true;}
+  if(!swiping)return;
+  e.preventDefault();
+  const rec=document.getElementById('rec-'+idx);
+  const del=document.getElementById('del-'+idx);
+  if(!rec||!del)return;
+  if(dx<0){
+    const offset=Math.max(dx,-80);
+    rec.style.transform='translateX('+offset+'px)';
+    del.style.transform='translateX('+(100+offset/80*100)+'%)';
+  } else if(swipeOpened===idx){
+    const offset=Math.min(dx-80,0);
+    rec.style.transform='translateX('+offset+'px)';
+    del.style.transform='translateX('+(100+offset/80*100)+'%)';
+  }
+}
+
+function swipeEnd(e,idx){
+  if(!swiping)return;
+  const dx=e.changedTouches[0].clientX-swipeStartX;
+  const rec=document.getElementById('rec-'+idx);
+  const del=document.getElementById('del-'+idx);
+  if(!rec||!del)return;
+  if(dx<-40){
+    rec.style.transform='translateX(-80px)';
+    del.style.transform='translateX(0%)';
+    if(swipeOpened!==-1&&swipeOpened!==idx)closeSwipe(swipeOpened);
+    swipeOpened=idx;
+  } else {
+    closeSwipe(idx);
+    if(swipeOpened===idx)swipeOpened=-1;
+  }
+  swiping=false;
+}
+
+function closeSwipe(idx){
+  const rec=document.getElementById('rec-'+idx);
+  const del=document.getElementById('del-'+idx);
+  if(rec)rec.style.transform='translateX(0)';
+  if(del)del.style.transform='translateX(100%)';
+}
+
+
+
+function deleteRecord(idx){
+  if(!records[idx])return;
+  batchIds.delete(records[idx].ts);
+  records.splice(idx,1);
+  saveRec();
+  swipeOpened=-1;
+  renderBatch();
+  renderHistory();
+}
+
+function cancelLP(){if(lpTimer){clearTimeout(lpTimer);lpTimer=null;}}
+
+function clearBatch(){
+  if(!batchIds.size){alert('本批尚無記錄');return;}
+  if(confirm('清除本批計數？歷史記錄完整保留')){
+    batchIds.clear();sessionCount=0;
+    document.getElementById('session-count').textContent=0;
+    const panel=document.getElementById('result-panel');
+    panel.className='result-panel';
+    panel.innerHTML='<div style="color:var(--text2);font-size:13px;width:100%;text-align:center">上一筆結果</div>';
+    renderBatch();
+  }
+}
+
+function exportCSV(batchOnly){
+  const data=batchOnly?records.filter(r=>batchIds.has(r.ts)):records;
+  if(!data.length){alert(batchOnly?'本批尚無記錄':'尚無記錄');return;}
+  const header='日期時間,耳號,背脂(mm),檢測階段,分級\n';
+  const rows=data.map(r=>r.time+','+r.sowId+','+r.bf+','+r.day+','+r.grade).join('\n');
+  const blob=new Blob(['\uFEFF'+header+rows],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=batchOnly?'背脂_本批.csv':'背脂_全部.csv';
+  a.click();URL.revokeObjectURL(url);
+}
+
+function fmtDateFromTs(ts){
+  if(!ts&&ts!==0)return'';
+  const d=new Date(ts);
+  if(isNaN(d.getTime()))return'';
+  const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');
+  return y+'-'+m+'-'+day;
+}
+function exportWideBySow(){
+  const allIds=new Set([...records.map(r=>r.sowId),...Object.keys(BF_HIST)]);
+  if(!allIds.size){alert('尚無資料');return;}
+  const bySow={};
+  let maxLen=0;
+  allIds.forEach(id=>{
+    const hist=getSowHistory(id).slice().sort((a,b)=>(a.ts||0)-(b.ts||0));
+    bySow[id]=hist;
+    if(hist.length>maxLen)maxLen=hist.length;
+  });
+  const headerBlock=['檢測時間','耳號','背脂(mm)','檢測階段'];
+  const header=[];
+  for(let i=0;i<maxLen;i++)header.push(...headerBlock);
+  const lines=[header.join(',')];
+  Object.keys(bySow).sort((a,b)=>a.localeCompare(b,'zh-Hant',{numeric:true})).forEach(id=>{
+    const hist=bySow[id];
+    const cells=[];
+    for(let i=0;i<maxLen;i++){
+      const e=hist[i];
+      if(e){cells.push(fmtDateFromTs(e.ts),id,e.bf,e.day);}
+      else{cells.push('','','','');}
+    }
+    lines.push(cells.join(','));
+  });
+  const blob=new Blob(['\uFEFF'+lines.join('\n')],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='背脂完整檢測紀錄_依母豬.csv';
+  a.click();URL.revokeObjectURL(url);
+}
+
+function importFile(input){
+  const file=input.files[0];
+  if(!file)return;
+  const preview=document.getElementById('import-preview');
+  preview.innerHTML='讀取中...';
+  if(file.name.endsWith('.csv')){
+    const reader=new FileReader();
+    reader.onload=function(e){
+      const text=e.target.result;
+      const rows=text.split(/[\n\r]+/).filter(r=>r.trim());
+      const imported=[];
+      rows.forEach((row,i)=>{
+        if(i===0&&row.includes('耳號'))return;
+        const cols=row.split(',');
+        if(cols.length<5)return;
+        const time=cols[0].trim(),sowId=cols[1].trim();
+        const bf=parseFloat(cols[2]),day=cols[3].trim(),grade=cols[4].trim();
+        if(!sowId||isNaN(bf))return;
+        const cls=grade==='偏肥'?'fat':grade==='偏瘦'?'thin':'mid';
+        imported.push({sowId,bf,day,grade,cls,time,ts:Date.now()-Math.random()*1000000});
+      });
+      mergeImported(imported,preview);
+    };
+    reader.readAsText(file,'UTF-8');
+  } else {
+    const reader=new FileReader();
+    reader.onload=function(e){
+      try{
+        const wb=XLSX.read(e.target.result,{type:'array'});
+        const ws=wb.Sheets[wb.SheetNames[0]];
+        const data=XLSX.utils.sheet_to_json(ws,{header:1});
+        const imported=[];
+        data.forEach((row,i)=>{
+          if(i===0)return;
+          if(!row||row.length<5)return;
+          const time=String(row[0]||'').trim(),sowId=String(row[1]||'').trim();
+          const bf=parseFloat(row[2]),day=String(row[3]||'').trim(),grade=String(row[4]||'').trim();
+          if(!sowId||isNaN(bf))return;
+          const cls=grade==='偏肥'?'fat':grade==='偏瘦'?'thin':'mid';
+          imported.push({sowId,bf,day,grade,cls,time,ts:Date.now()-Math.random()*1000000});
+        });
+        mergeImported(imported,preview);
+      }catch(err){preview.innerHTML='<span style="color:var(--fat)">讀取失敗，請確認格式正確</span>';}
+    };
+    reader.readAsArrayBuffer(file);
+  }
+  input.value='';
+}
+
+function mergeImported(imported,preview){
+  if(!imported.length){preview.innerHTML='<span style="color:var(--fat)">找不到有效資料</span>';return;}
+  const existingTs=new Set(records.map(r=>r.sowId+'_'+r.bf+'_'+r.time));
+  const newRecs=imported.filter(r=>!existingTs.has(r.sowId+'_'+r.bf+'_'+r.time));
+  records=[...records,...newRecs].sort((a,b)=>b.ts-a.ts);
+  saveRec();
+  preview.innerHTML='<span style="color:var(--mid)">✓ 匯入 '+newRecs.length+' 筆（略過重複 '+(imported.length-newRecs.length)+' 筆）</span>';
+}
+
+updateMidRange();
+updateSyncBanner();
+flushQueue();
+if(sowList.length){
+  showListPreview();
+  document.getElementById('sort-section').style.display='block';
+  updateSortBtns();
+}
+</script>
+</body>
+</html>
